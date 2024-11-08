@@ -21,7 +21,7 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 text = "[b]Art[/b]
-Lari"
+Larissa Ignatz"
 
 [node name="Label_MusicSound" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
