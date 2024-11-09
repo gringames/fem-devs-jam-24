@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=18 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
 [ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/Plant/0.png" id="5_djf2k"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cpimoyvt8ajjn" path="res://Art/Plant/5.png" id="10_nx1n8"]
 [ext_resource type="Texture2D" uid="uid://wlceiyas3x1s" path="res://Art/Plant/6.png" id="11_5rxby"]
 [ext_resource type="Texture2D" uid="uid://domrbkvb43gni" path="res://Art/Plant/w.png" id="12_i2fyr"]
+[ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="PackedScene" uid="uid://c60w1gih8xyxv" path="res://Features/ClickableObjects/Phone.tscn" id="14_3hl40"]
 [ext_resource type="PackedScene" uid="uid://b78moksmavcck" path="res://Features/ClickableObjects/Notebook.tscn" id="15_lu1wx"]
 [ext_resource type="PackedScene" uid="uid://bi68oladgtk0t" path="res://Text/TaskList.tscn" id="16_cw5wg"]
@@ -64,11 +65,12 @@ plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kq
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../NextDayButton")
 phone_call_text_box = NodePath("../../TextBox")
 task_list = NodePath("../../TaskList")
+newspaper = NodePath("../../NewspaperArticle")
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 position = Vector2(-96, -200)
@@ -85,3 +87,7 @@ text_box = NodePath("../TaskList")
 
 [node name="TaskList" parent="." instance=ExtResource("16_cw5wg")]
 position = Vector2(-176, 200)
+
+[node name="NewspaperArticle" parent="." instance=ExtResource("13_k3c02")]
+position = Vector2(-488, -256)
+scale = Vector2(0.7, 0.7)

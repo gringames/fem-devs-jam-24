@@ -4,13 +4,14 @@ class_name DayManager
 @export var next_day_button: Button
 @export var phone_call_text_box: TextBox
 @export var task_list: TaskList
+@export var newspaper: NewspaperArticle
 
-# TODO: add things from Rocio and Tilli here
+
 var day_info: Dictionary = {
 	0 : {
 		"tasks": ["plant the seed"],
 		"calls": [],
-		"newspaper": "none"
+		"newspaper": []
 	},
 	1 :
 		{
@@ -212,6 +213,7 @@ var day_info: Dictionary = {
 var current_day: int = 0
 const tasks_key: String = "tasks"
 const calls_key: String = "calls"
+const newspaper_key: String = "newspaper"
 
 
 func _ready() -> void:
@@ -226,12 +228,19 @@ func _next_day() -> void:
 
 func _handle_day() -> void:
 	var current_calls: Array = day_info[current_day][calls_key]
-	var current_tasks: Array = day_info[current_day][tasks_key]
-	
 	if _is_call_happening_today(current_calls):
 		_set_up_phone_call(current_calls)
 		
+	var current_tasks: Array = day_info[current_day][tasks_key]
 	_set_up_task_list(current_tasks)
+	
+	var news:Array = day_info[current_day][newspaper_key]
+	if news.is_empty():
+		newspaper.hide()
+		return
+	var current_newspaper: Array = news
+	newspaper.set_article(current_newspaper)
+	newspaper.appear()
 
 
 func _is_call_happening_today(calls: Array) -> bool:

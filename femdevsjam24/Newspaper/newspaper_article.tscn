@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://tbr5y2o7ouv1"]
+
+[ext_resource type="Script" path="res://Newspaper/newspaper_article.gd" id="1_p5fao"]
+
+[node name="NewspaperArticle" type="Node2D"]
+script = ExtResource("1_p5fao")
+
+[node name="DialogueBox" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.171
+anchor_top = 0.244
+anchor_right = 0.45
+anchor_bottom = 0.785
+offset_left = 136.0
+offset_top = 192.0
+offset_right = 1128.0
+offset_bottom = 728.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.34
+anchor_right = 0.895
+anchor_bottom = 0.957
+offset_left = 0.255999
+offset_top = 0.759995
+offset_right = 0.159973
+offset_bottom = 18.048
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.947758)
+theme_override_font_sizes/normal_font_size = 20
+text = "NEWSPAPER ARTICLE CONTENT"
+scroll_active = false
+
+[node name="Date" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.103
+anchor_right = 0.371
+anchor_bottom = 0.25
+offset_left = 0.255999
+offset_top = 0.375996
+offset_right = -0.0320129
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.947758)
+theme_override_font_sizes/normal_font_size = 20
+text = "DATE"
+scroll_active = false
+
+[node name="Headline" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.092
+anchor_right = 0.952
+anchor_bottom = 0.315
+offset_left = -0.448029
+offset_top = 0.0639992
+offset_right = -0.384033
+offset_bottom = 7.47998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.947758)
+theme_override_font_sizes/normal_font_size = 20
+text = "HEADLINE"
+scroll_active = false
+
+[node name="CloseButton" type="Button" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.903
+anchor_top = 0.882
+anchor_right = 0.976
+anchor_bottom = 0.947
+offset_left = 0.223938
+offset_top = -0.256042
+offset_right = -0.192078
+offset_bottom = 0.223999
+text = "Close"
