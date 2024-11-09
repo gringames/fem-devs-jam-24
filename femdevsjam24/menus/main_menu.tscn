@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwep1hx2ss3np"]
+[gd_scene load_steps=11 format=3 uid="uid://dwep1hx2ss3np"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_jfuih"]
 [ext_resource type="Script" path="res://menus/main_menu.gd" id="1_t0b0h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="4_yqeo2"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="5_wm6mt"]
 [ext_resource type="AudioStream" uid="uid://dq70fyd5nd11g" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="7_ewkgf"]
+[ext_resource type="PackedScene" uid="uid://bi7dw5pgb1mgr" path="res://Buttons/scalable_button.tscn" id="7_mykxu"]
 [ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="9_tphpq"]
 
 [node name="Node2D" type="Node2D"]
@@ -24,6 +25,8 @@ text = "Credits"
 script = ExtResource("1_jfuih")
 sceneToOpenPath = "res://menus/credits.tscn"
 
+[node name="ScalableButton" parent="CreditsButton" instance=ExtResource("7_mykxu")]
+
 [node name="QuitButton" type="Button" parent="."]
 offset_left = 1720.0
 offset_top = 968.0
@@ -34,6 +37,8 @@ theme_override_font_sizes/font_size = 45
 text = "Quit
 "
 script = ExtResource("2_a1ba0")
+
+[node name="ScalableButton" parent="QuitButton" instance=ExtResource("7_mykxu")]
 
 [node name="GameNameRTL" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -70,15 +75,17 @@ position = Vector2(1000, 520)
 scale = Vector2(0.572, 0.572)
 texture = ExtResource("4_dvwtc")
 
-[node name="Button" type="Button" parent="." node_paths=PackedStringArray("fade")]
-offset_left = 816.0
-offset_top = 552.0
-offset_right = 1184.0
-offset_bottom = 776.0
+[node name="Button" type="Button" parent="0PotDry" node_paths=PackedStringArray("fade")]
+offset_left = -322.0
+offset_top = 56.0
+offset_right = 321.0
+offset_bottom = 448.0
 flat = true
 script = ExtResource("4_yqeo2")
 sceneToOpenPath = "res://Game/game.tscn"
-fade = NodePath("../BlackFadeCanvasLayer")
+fade = NodePath("../../BlackFadeCanvasLayer")
+
+[node name="ScalableButton" parent="0PotDry/Button" instance=ExtResource("7_mykxu")]
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("5_wm6mt")]
 

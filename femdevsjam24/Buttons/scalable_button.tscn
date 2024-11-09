@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi7dw5pgb1mgr"]
+
+[ext_resource type="Script" path="res://Buttons/scale_up_when_hovered.gd" id="1_v4q2u"]
+
+[node name="ScalableButton" type="Node2D"]
+script = ExtResource("1_v4q2u")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://vyextkx35m6"]
+
+[ext_resource type="AudioStream" uid="uid://bmaq1d74qqha3" path="res://Music/Plant Withered Losing Hope.mp3" id="1_8ka7s"]
+[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_a5ofw"]
+[ext_resource type="Texture2D" uid="uid://bukk0fcbnjtao" path="res://Art/Plant/7_Withered.png" id="3_fjaro"]
+[ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_yjrcf"]
+
+[node name="BadEnding" type="Node2D"]
+position = Vector2(424, 184)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_8ka7s")
+autoplay = true
+
+[node name="0PotDry" type="Sprite2D" parent="."]
+position = Vector2(544, 384)
+scale = Vector2(0.502827, 0.5)
+texture = ExtResource("2_a5ofw")
+
+[node name="7Withered" type="Sprite2D" parent="0PotDry"]
+position = Vector2(15.91, 16)
+texture = ExtResource("3_fjaro")
+
+[node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_yjrcf")]
+fade_speed = 0.5
+auto_start = true

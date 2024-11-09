@@ -4,6 +4,7 @@ class_name BlackFade
 var black_rect: ColorRect
 
 @export var fade_speed: float = 2
+@export var auto_start: bool = false
 
 var fade_to: bool = false
 var fade_from: bool = false
@@ -15,7 +16,8 @@ signal fade_out_finished
 func _ready() -> void:
 	black_rect = $ColorRect
 	black_rect.color.a = 0
-	fade_from_black()
+	if auto_start:
+		fade_from_black()
 	
 
 func fade_to_black() -> void:

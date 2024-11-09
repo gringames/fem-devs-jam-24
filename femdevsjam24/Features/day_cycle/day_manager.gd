@@ -327,8 +327,8 @@ func _determine_ending() -> void:
 	
 	if plant_withers:
 		plant.wither()
-		print("bad ending")
+		get_tree().change_scene_to_file("res://Endings/bad_ending.tscn")
 	else:
-		print("good ending")
+		get_tree().change_scene_to_file("res://Endings/good_ending.tscn")
 		
 	# TODO: switch to correct scene
