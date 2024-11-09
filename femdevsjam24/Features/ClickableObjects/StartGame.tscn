@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://by7vqjucon0hy"]
+
+[ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_1lsxy"]
+[ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/Plant/0.png" id="2_8h3rp"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_n2fvk"]
+
+[node name="StartGame" type="Node2D"]
+script = ExtResource("1_1lsxy")
+sceneToOpenPath = "res://Game/game.tscn"
+
+[node name="EmptyPotImage" type="Sprite2D" parent="."]
+texture = ExtResource("2_8h3rp")
+
+[node name="Clickable" parent="EmptyPotImage" instance=ExtResource("3_n2fvk")]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(15.6381, -16.0489)
