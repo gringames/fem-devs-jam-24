@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=14 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
-[ext_resource type="Script" path="res://Game/game_manager.gd" id="4_gshi3"]
 [ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/0.png" id="5_djf2k"]
 [ext_resource type="PackedScene" uid="uid://dji4jtqq2jpyq" path="res://Text/Input/text_input.tscn" id="5_ue57g"]
 [ext_resource type="Script" path="res://Features/day_cycle/day_manager.gd" id="6_i1hnc"]
@@ -18,19 +17,22 @@
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
+[node name="PhoneCallTB" parent="." instance=ExtResource("6_rjoll")]
+
+[node name="TasksTextBox" parent="." instance=ExtResource("6_rjoll")]
 
 [node name="TextInput" parent="." instance=ExtResource("5_ue57g")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenuButton" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 823.0
-offset_top = 15.0
-offset_right = 980.0
-offset_bottom = 46.0
+offset_left = 1160.0
+offset_top = -168.0
+offset_right = 1317.0
+offset_bottom = -137.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 size_flags_horizontal = 8
@@ -40,53 +42,29 @@ script = ExtResource("3_k2dps")
 sceneToOpenPath = "res://menus/main_menu.tscn"
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonShowBox" type="Button" parent="."]
-offset_left = 1016.0
-offset_top = 144.0
-offset_right = 1138.0
-offset_bottom = 175.0
-text = "Show Dialogue"
-metadata/_edit_use_anchors_ = true
-
-[node name="ButtonHideBox" type="Button" parent="."]
-offset_left = 1016.0
-offset_top = 184.0
-offset_right = 1138.0
-offset_bottom = 215.0
-text = "Hide Dialogue"
-metadata/_edit_use_anchors_ = true
-
-[node name="ButtonShowInput" type="Button" parent="."]
-offset_left = 1016.0
-offset_top = 232.0
-offset_right = 1138.0
-offset_bottom = 263.0
-text = "Show Input"
-metadata/_edit_use_anchors_ = true
-
-[node name="ButtonHideInput" type="Button" parent="."]
-offset_left = 1016.0
-offset_top = 272.0
-offset_right = 1138.0
-offset_bottom = 303.0
-scale = Vector2(1.07534, 1.01248)
-text = "Hide Input"
+[node name="NextDayButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1168.0
+offset_top = 816.0
+offset_right = 1325.0
+offset_bottom = 847.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Next Day
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
-position = Vector2(568, 280)
+position = Vector2(520, 520)
 plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kqnc4"), ExtResource("7_o46us"), ExtResource("8_55u7n"), ExtResource("9_yiw0o"), ExtResource("10_nx1n8"), ExtResource("11_5rxby"), ExtResource("11_5rxby"), ExtResource("12_i2fyr")])
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="MockManager" type="Node" parent="Logic" node_paths=PackedStringArray("text_box", "text_input", "button_show_box", "button_hide_box", "button_show_input", "button_hide_input")]
-script = ExtResource("4_gshi3")
-text_box = NodePath("../../TextBox")
-text_input = NodePath("../../TextInput")
-button_show_box = NodePath("../../ButtonShowBox")
-button_hide_box = NodePath("../../ButtonHideBox")
-button_show_input = NodePath("../../ButtonShowInput")
-button_hide_input = NodePath("../../ButtonHideInput")
-
-[node name="DayManager" type="Node" parent="Logic"]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box")]
 script = ExtResource("6_i1hnc")
+next_day_button = NodePath("../../NextDayButton")
+phone_call_text_box = NodePath("../../PhoneCallTB")

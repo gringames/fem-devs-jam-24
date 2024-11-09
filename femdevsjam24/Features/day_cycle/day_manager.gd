@@ -1,8 +1,10 @@
 extends Node
 class_name DayManager
 
-## will be an object in game scene -> set up all information needed for days
+@export var next_day_button: Button
+@export var phone_call_text_box: TextBox
 
+# TODO: add things from Rocio and Tilli here
 var day_info: Dictionary = {
 	0 : {
 		"tasks": ["plant the seed"],
@@ -39,25 +41,45 @@ var day_info: Dictionary = {
 }
 
 var current_day: int = 0
+const tasks_key: String = "tasks"
+const calls_key: String = "calls"
+
 
 func _ready() -> void:
-	_next_day()
+	next_day_button.connect("pressed", _next_day)
 	_next_day()
 
 
 func _next_day() -> void:
 	print("current day: ", current_day)	
-	_process_tasks_and_calls()
+	_handle_day()
 	current_day += 1
 
 
-func _process_tasks_and_calls() -> void:
-	if day_info[current_day]["calls"].is_empty():
-		print("no calls today")
-	else:
-		print("calls:", day_info[current_day]["calls"])
+func _handle_day() -> void:
+	var current_calls: Array = day_info[current_day][calls_key]
+	var current_tasks: Array = day_info[current_day][tasks_key]
+	
+	if _is_call_happening_today(current_calls):
+		print("RINGGGG, RINGGG")
+		# TODO: init phone call text box with correct pages
 		
-	if day_info[current_day]["tasks"].is_empty():
-		print("no tasks today")
-	else:
-		print("tasks:", day_info[current_day]["tasks"])
+	var checklist: String = _create_tasks_checklist(current_tasks)
+	print(checklist)
+	# TODO: set notebook text box content to checklist
+
+
+func _is_call_happening_today(calls: Array) -> bool:
+	return not calls.is_empty()
+
+
+func _create_tasks_checklist(tasks: Array) -> String:
+	if tasks.is_empty():
+		return "No tasks today."
+	
+	var checklist: String = "Tasks for today:\n"
+	var task_counter: int = 1
+	
+	for task in tasks:
+		checklist +=  str(task_counter) + ") " + str(task) + "\n"
+	return checklist
