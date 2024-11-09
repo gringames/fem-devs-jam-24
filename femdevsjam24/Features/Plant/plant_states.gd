@@ -2,7 +2,8 @@ extends Node
 class_name Plants
 
 enum States {
-	PotSeed,
+	Pot,
+	Seed,
 	Sapling,
 	Little,
 	Medium,

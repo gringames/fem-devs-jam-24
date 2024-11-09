@@ -75,7 +75,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
 position = Vector2(568, 280)
-plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kqnc4"), ExtResource("7_o46us"), ExtResource("8_55u7n"), ExtResource("9_yiw0o"), ExtResource("10_nx1n8"), ExtResource("11_5rxby"), ExtResource("12_i2fyr")])
+plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kqnc4"), ExtResource("7_o46us"), ExtResource("8_55u7n"), ExtResource("9_yiw0o"), ExtResource("10_nx1n8"), ExtResource("11_5rxby"), ExtResource("11_5rxby"), ExtResource("12_i2fyr")])
 
 [node name="Logic" type="Node" parent="."]
 

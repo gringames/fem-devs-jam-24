@@ -1,10 +1,10 @@
 extends Node2D
 
-@export_category("{PotSeed, Sapling, Little, Medium, Big, Blossom,	Withered}")
+@export_category("{Pot,Seed, Sapling, Little, Medium, Big, Blossom,	Withered}")
 @export var plant_state_images: Array[Texture2D]
 
 var clickable: Clickable
-var plant_state: Plants.States = Plants.States.PotSeed
+var plant_state: Plants.States = Plants.States.Pot
 var plant_visual: Sprite2D
 
 func _ready() -> void:
