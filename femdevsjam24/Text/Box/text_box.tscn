@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=3 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
+[ext_resource type="Script" path="res://Text/Input/text_input.gd" id="2_0gvk8"]
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
@@ -53,11 +54,11 @@ anchors_preset = -1
 anchor_left = 0.053
 anchor_top = 0.151
 anchor_right = 0.853
-anchor_bottom = 0.918
+anchor_bottom = 0.781
 offset_left = -0.0800018
 offset_top = -0.184006
 offset_right = -0.0800781
-offset_bottom = -0.112
+offset_bottom = -0.104004
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 20
@@ -90,3 +91,32 @@ offset_top = 16.008
 offset_right = -18.3601
 offset_bottom = -0.880005
 text = "Close"
+
+[node name="TextInput" type="Control" parent="DialogueBox"]
+visible = false
+layout_mode = 1
+anchor_left = 0.059
+anchor_top = 0.808
+anchor_right = 0.882
+anchor_bottom = 0.973
+offset_left = -32.24
+offset_top = -551.872
+offset_right = -1151.52
+offset_bottom = -648.232
+script = ExtResource("2_0gvk8")
+
+[node name="TextEdit" type="TextEdit" parent="DialogueBox/TextInput"]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 552.0
+offset_right = 1150.0
+offset_bottom = 648.0
+placeholder_text = "I hope that..."
+
+[node name="SendButton" type="Button" parent="DialogueBox/TextInput"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 599.0
+offset_right = 1141.0
+offset_bottom = 637.0
+text = "SEND"

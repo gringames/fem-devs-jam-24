@@ -113,5 +113,5 @@ func _split_name_and_message(line: String) -> Array:
 	
 	
 func _close() -> void:
-	clear_text()
 	disappear()
+	clear_text()

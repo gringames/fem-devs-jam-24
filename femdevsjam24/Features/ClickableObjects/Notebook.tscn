@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b78moksmavcck"]
+
+[ext_resource type="Script" path="res://Features/ClickableObjects/open_task_list.gd" id="1_xijsn"]
+[ext_resource type="Texture2D" uid="uid://bsp1yj4mjsnft" path="res://Art/notes.png" id="2_xaom2"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_fmukm"]
+
+[node name="NoteBook" type="Node2D"]
+script = ExtResource("1_xijsn")
+
+[node name="Notebook" type="Sprite2D" parent="."]
+texture = ExtResource("2_xaom2")
+
+[node name="Clickable" parent="Notebook" instance=ExtResource("3_fmukm")]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(15.6381, -16.0489)
