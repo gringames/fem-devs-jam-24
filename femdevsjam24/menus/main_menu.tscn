@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_jfuih"]
 [ext_resource type="Script" path="res://menus/quit_game.gd" id="2_a1ba0"]
 [ext_resource type="Texture2D" uid="uid://bh1hvrkl581ju" path="res://Art/Plant/seed.png" id="3_kqxqe"]
-[ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/Plant/0.png" id="4_ntd0n"]
+[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="4_dvwtc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -60,10 +60,15 @@ position = Vector2(416, 568)
 texture = ExtResource("3_kqxqe")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 856.0
-offset_top = 408.0
-offset_right = 1082.0
-offset_bottom = 657.0
-icon = ExtResource("4_ntd0n")
+offset_left = 816.0
+offset_top = 552.0
+offset_right = 1184.0
+offset_bottom = 776.0
+flat = true
 script = ExtResource("1_jfuih")
 sceneToOpenPath = "res://Game/game.tscn"
+
+[node name="0PotDry" type="Sprite2D" parent="."]
+position = Vector2(1000, 520)
+scale = Vector2(0.572, 0.572)
+texture = ExtResource("4_dvwtc")
