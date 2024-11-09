@@ -5,6 +5,7 @@ class_name DayManager
 @export var phone_call_text_box: TextBox
 @export var task_list: TaskList
 @export var newspaper: NewspaperArticle
+@export var plant: Plant
 
 
 var day_info: Dictionary = {
@@ -217,23 +218,42 @@ var day_info: Dictionary = {
 		},
 }
 
-var current_day: int = 0
+var current_day: int = 1 # start with day 1 as day 0 is main menu
+
 const tasks_key: String = "tasks"
 const calls_key: String = "calls"
 const newspaper_key: String = "newspaper"
 
+# player has to plant seed on day 0, so init array with this value
+var has_tent_today: Array[bool] = [true, false, false, false, false, false, false, false]
+
 
 func _ready() -> void:
 	next_day_button.connect("pressed", _next_day)
+	plant.connect("clicked_plant", _on_plant_clicked)
 
 
 func _next_day() -> void:
-	print("current day: ", current_day)	
+	# TODO: if not day 1: fade to black, stop music track
+	
+	print("current day: ", current_day)
+	
+	# TODO: fade from black
+	# TODO: start music track
+	
+
+	if current_day == 7:
+		print(has_tent_today)
+		_determine_ending()
+		return
+		
 	_handle_day()
 	current_day += 1
 
 
 func _handle_day() -> void:
+	plant.grow()
+	
 	var current_calls: Array = day_info[current_day][calls_key]
 	if _is_call_happening_today(current_calls):
 		_set_up_phone_call(current_calls)
@@ -249,12 +269,13 @@ func _handle_day() -> void:
 	newspaper.set_article(current_newspaper)
 
 
+
 func _is_call_happening_today(calls: Array) -> bool:
 	return not calls.is_empty()
 	
 
 func _set_up_phone_call(content) -> void:
-	print("RINGGGG, RINGGG")
+	# TODO: add ring sfx
 	phone_call_text_box.disappear()
 	phone_call_text_box.set_pages(content)
 
@@ -276,3 +297,19 @@ func _create_tasks_checklist(tasks: Array) -> String:
 		checklist +=  "\t" + str(task_counter) + ") " + str(task) + "\n"
 		task_counter += 1
 	return checklist
+
+
+func _on_plant_clicked()  -> void:
+	has_tent_today[current_day] = true
+
+
+func _determine_ending() -> void:
+	var plant_withers: bool = has_tent_today.count(false) >= 3;
+	
+	if plant_withers:
+		plant.grow()
+		print("bad ending")
+	else:
+		print("good ending")
+		
+	# TODO: switch to correct scene

@@ -58,12 +58,13 @@ scale = Vector2(4, 4)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../NextDayButton")
 phone_call_text_box = NodePath("../../TextBox")
 task_list = NodePath("../../TaskList")
 newspaper = NodePath("../../NewspaperArticle")
+plant = NodePath("../../Plant")
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 position = Vector2(-96, -200)
