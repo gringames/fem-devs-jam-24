@@ -11,9 +11,8 @@ func _ready() -> void:
 	send_button.connect("pressed", _submit_text)
 
 func _submit_text() -> void:
-	print("send:", text_edit.text)
 	Hopes.add_hope( text_edit.text)
-	Hopes.print_hopes()
+	# Hopes.print_hopes()
 	_clear_text()
 	
 
