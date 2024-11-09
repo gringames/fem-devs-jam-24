@@ -1,10 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=7 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://bid6vm5e80ew7" path="res://icon.svg" id="1_u2k15"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/Clickable.tscn" id="2_iins4"]
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
+[ext_resource type="Script" path="res://Game/game_manager.gd" id="4_gshi3"]
+[ext_resource type="PackedScene" uid="uid://dji4jtqq2jpyq" path="res://Text/Input/text_input.tscn" id="5_ue57g"]
+[ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Manager" type="Node" parent="." node_paths=PackedStringArray("text_box", "text_input", "button_show_box", "button_hide_box", "button_show_input", "button_hide_input")]
+script = ExtResource("4_gshi3")
+text_box = NodePath("../TextBox")
+text_input = NodePath("../TextInput")
+button_show_box = NodePath("../ButtonShowBox")
+button_hide_box = NodePath("../ButtonHideBox")
+button_show_input = NodePath("../ButtonShowInput")
+button_hide_input = NodePath("../ButtonHideInput")
+
+[node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
+
+[node name="TextInput" parent="." instance=ExtResource("5_ue57g")]
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(574, 316)
@@ -28,3 +44,31 @@ size_flags_vertical = 8
 text = "Main Menu"
 script = ExtResource("3_k2dps")
 sceneToOpenPath = "res://menus/main_menu.tscn"
+
+[node name="ButtonShowBox" type="Button" parent="."]
+offset_left = 1016.0
+offset_top = 144.0
+offset_right = 1138.0
+offset_bottom = 175.0
+text = "Show Dialogue"
+
+[node name="ButtonHideBox" type="Button" parent="."]
+offset_left = 1016.0
+offset_top = 184.0
+offset_right = 1138.0
+offset_bottom = 215.0
+text = "Hide Dialogue"
+
+[node name="ButtonShowInput" type="Button" parent="."]
+offset_left = 1016.0
+offset_top = 232.0
+offset_right = 1138.0
+offset_bottom = 263.0
+text = "Show Input"
+
+[node name="ButtonHideInput" type="Button" parent="."]
+offset_left = 1016.0
+offset_top = 272.0
+offset_right = 1138.0
+offset_bottom = 303.0
+text = "Hide Input"

@@ -29,11 +29,12 @@ func _ready() -> void:
 
 ### Handling Mouse Hover ------------------------------------------------------------------------------
 
-func	 _on_mouse_entered() -> void:
+func _on_mouse_entered() -> void:
 	is_mouse_over = true
-	print("mouse hover start on", name)
+	emit_signal("mouse_hover_start")
 
-func	 _on_mouse_exited() -> void:
+
+func _on_mouse_exited() -> void:
 	is_mouse_over = false
 	emit_signal("mouse_hover_end")
 
@@ -45,11 +46,12 @@ func _on_mouse_clicked() -> void:
 		return
 	is_mouse_holding_me = true
 	emit_signal("mouse_clicked_on_object")
+	print("clicked on ", name)
 		
 
 func _on_mouse_released() -> void:
 	if not is_mouse_holding_me:
 		return
 	is_mouse_holding_me = false
-	print("mouse released from", name)
+	emit_signal("mouse_released_from_object")
 	
