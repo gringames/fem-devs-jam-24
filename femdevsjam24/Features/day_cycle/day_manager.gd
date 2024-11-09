@@ -231,10 +231,14 @@ var has_tent_today: Array[bool] = [true, false, false, false, false, false, fals
 func _ready() -> void:
 	next_day_button.connect("pressed", _next_day)
 	plant.connect("clicked_plant", _on_plant_clicked)
+	_next_day() # start first day automatically
 
 
 func _next_day() -> void:
+	if current_day == 1:
+		plant.grow()
 	# TODO: if not day 1: fade to black, stop music track
+		
 	
 	print("current day: ", current_day)
 	
@@ -243,7 +247,6 @@ func _next_day() -> void:
 	
 
 	if current_day == 7:
-		print(has_tent_today)
 		_determine_ending()
 		return
 		

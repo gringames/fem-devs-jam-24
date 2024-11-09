@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdbw55po5v68o"]
+
+[ext_resource type="Script" path="res://menus/black_fade_canvas_layer.gd" id="1_n1rfe"]
+
+[node name="BlackFadeCanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_n1rfe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1912.0
+offset_bottom = 1072.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
