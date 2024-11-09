@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://8no3eo5ong1b" path="res://Music/Day 4.mp3" id="18_incir"]
 [ext_resource type="AudioStream" uid="uid://dx67jru3is7eg" path="res://Music/Day 5.mp3" id="19_viikn"]
 [ext_resource type="AudioStream" uid="uid://bn0ajnsbt53wt" path="res://Music/Day 6.mp3" id="20_6ua1p"]
-[ext_resource type="AudioStream" uid="uid://cwj5f7qirxaey" path="res://Music/Day 7.mp3" id="21_36yif"]
+[ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="21_gp6uu"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
@@ -81,7 +81,7 @@ audioTrackHandler = NodePath("../TrackHandler")
 
 [node name="TrackHandler" type="Node" parent="Logic"]
 script = ExtResource("13_towrx")
-day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"), ExtResource("16_v5dcu"), ExtResource("17_p7efk"), ExtResource("18_incir"), ExtResource("19_viikn"), ExtResource("20_6ua1p"), ExtResource("21_36yif")])
+day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"), ExtResource("16_v5dcu"), ExtResource("17_p7efk"), ExtResource("18_incir"), ExtResource("19_viikn"), ExtResource("20_6ua1p")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Logic"]
 
@@ -112,3 +112,5 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(-200, 768)
 scale = Vector2(0.7, 0.7)
 article = NodePath("../NewspaperArticle")
+
+[node name="Flicker" parent="." instance=ExtResource("21_gp6uu")]

@@ -242,21 +242,20 @@ func _ready() -> void:
 func _end_day() -> void:
 	current_day += 1
 	fade.fade_to_black()
-	audioStreamPlayer.stop()
+	_stop_current_music_track()
 
 
 func _start_day() -> void:
-	audioStreamPlayer.stream = audioTrackHandler.get_track_for_day(current_day)
-	audioStreamPlayer.play()
+	if current_day == 7:
+		_determine_ending()
+		return
+		
+	play_track_for_current_day()
 	fade.fade_from_black()
 
 
 func _next_day() -> void:
 	print("current day: ", current_day)	
-
-	if current_day == 7:
-		_determine_ending()
-		return
 		
 	_handle_day()
 
@@ -310,6 +309,15 @@ func _create_tasks_checklist(tasks: Array) -> String:
 	return checklist
 
 
+func _stop_current_music_track() -> void:
+	audioStreamPlayer.stop()
+
+
+func play_track_for_current_day() -> void:
+	audioStreamPlayer.stream = audioTrackHandler.get_track_for_day(current_day)
+	audioStreamPlayer.play()
+
+	
 func _on_plant_clicked()  -> void:
 	has_tent_today[current_day] = true
 

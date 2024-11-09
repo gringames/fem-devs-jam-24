@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwep1hx2ss3np"]
+[gd_scene load_steps=10 format=3 uid="uid://dwep1hx2ss3np"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_jfuih"]
 [ext_resource type="Script" path="res://menus/main_menu.gd" id="1_t0b0h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="4_yqeo2"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="5_wm6mt"]
 [ext_resource type="AudioStream" uid="uid://dq70fyd5nd11g" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="7_ewkgf"]
+[ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="9_tphpq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t0b0h")
@@ -84,3 +85,5 @@ fade = NodePath("../BlackFadeCanvasLayer")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ewkgf")
 autoplay = true
+
+[node name="Flicker" parent="." instance=ExtResource("9_tphpq")]
