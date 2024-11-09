@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dji4jtqq2jpyq"]
+
+[ext_resource type="Script" path="res://Text/Input/text_input.gd" id="1_wvmr1"]
+
+[node name="TextInput" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wvmr1")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 455.0
+offset_right = 1150.0
+offset_bottom = 646.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "I hope that..."
+
+[node name="SendButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 599.0
+offset_right = 1141.0
+offset_bottom = 637.0
+text = "SEND"

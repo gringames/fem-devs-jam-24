@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d277a41su2sdk"]
+
+[ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
+
+[node name="TextBox" type="Node2D"]
+script = ExtResource("1_pb4nd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 2
+bbcode_enabled = true
+text = "test text"
