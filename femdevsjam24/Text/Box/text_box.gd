@@ -45,6 +45,7 @@ func set_pages(pages: Array) -> void:
 	current_message = str(current_pages[0])
 	
 	next_button.show()
+	close_button.hide()
 	_next_page()
 
 

@@ -12,11 +12,11 @@ var day_info: Dictionary = {
 	},
 	1 : {
 		"tasks": ["water the seed", "look around"],
-		"calls": ["Good Morning. WElcome to the bunkeer", "page 2"]
+		"calls": ["Good Morning. Welcome to the bunkeer", "page 2"]
 	},
 	2 : {
 		"tasks": [],
-		"calls": [],
+		"calls": ["pae1", "padge 2"],
 	},
 	3 : {
 		"tasks": [],
