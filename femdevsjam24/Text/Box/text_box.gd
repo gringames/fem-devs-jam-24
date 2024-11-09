@@ -1,6 +1,7 @@
 extends Node2D
 class_name TextBox
 
+signal on_close
 
 @export var visible_by_default: bool = false
 
@@ -130,6 +131,7 @@ func _split_name_and_message(line: String) -> Array:
 func _close() -> void:
 	disappear()
 	clear_text()
+	emit_signal("on_close")
 
 
 func _on_sent_hope() -> void:
