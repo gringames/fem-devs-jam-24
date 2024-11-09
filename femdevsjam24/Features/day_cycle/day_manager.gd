@@ -71,8 +71,7 @@ func _handle_day() -> void:
 	if _is_call_happening_today(current_calls):
 		_set_up_phone_call(current_calls)
 		
-	var checklist: String = _create_tasks_checklist(current_tasks)
-	task_list.set_text(checklist)
+	_set_up_task_list(current_tasks)
 
 
 func _is_call_happening_today(calls: Array) -> bool:
@@ -84,6 +83,12 @@ func _set_up_phone_call(content) -> void:
 	phone_call_text_box.disappear()
 	phone_call_text_box.set_pages(content)
 
+
+
+func _set_up_task_list(content) -> void:
+	task_list.disappear()
+	var checklist: String = _create_tasks_checklist(content)
+	task_list.set_text(checklist)
 
 func _create_tasks_checklist(tasks: Array) -> String:
 	if tasks.is_empty():
