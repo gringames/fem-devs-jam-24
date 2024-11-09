@@ -6,6 +6,7 @@ class_name DayManager
 @export var task_list: TaskList
 @export var newspaper: NewspaperArticle
 @export var plant: Plant
+@export var fade: BlackFade
 
 
 var day_info: Dictionary = {
@@ -231,7 +232,8 @@ var has_tent_today: Array[bool] = [true, false, false, false, false, false, fals
 func _ready() -> void:
 	next_day_button.connect("pressed", _next_day)
 	plant.connect("clicked_plant", _on_plant_clicked)
-	_next_day() # start first day automatically
+	fade.connect("fade_in_finished", _next_day)
+	fade.fade_from_black()
 
 
 func _next_day() -> void:

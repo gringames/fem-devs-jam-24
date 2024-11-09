@@ -19,12 +19,14 @@ func _ready() -> void:
 	
 
 func fade_to_black() -> void:
+	black_rect = $ColorRect
 	black_rect.color.a = 0
 	fade_to = true
 	fade_from = false
 	
 
 func fade_from_black() -> void:
+	black_rect = $ColorRect
 	black_rect.color.a = 1
 	fade_to = false
 	fade_from = true

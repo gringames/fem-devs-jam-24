@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
 [ext_resource type="Texture2D" uid="uid://cn0vhveeyl7qg" path="res://Art/light_switch.png" id="3_ws5hu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Features/day_cycle/day_manager.gd" id="6_i1hnc"]
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
+[ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="PackedScene" uid="uid://c60w1gih8xyxv" path="res://Features/ClickableObjects/Phone.tscn" id="14_3hl40"]
 [ext_resource type="PackedScene" uid="uid://b78moksmavcck" path="res://Features/ClickableObjects/Notebook.tscn" id="15_lu1wx"]
@@ -58,13 +59,14 @@ scale = Vector2(4, 4)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../NextDayButton")
 phone_call_text_box = NodePath("../../TextBox")
 task_list = NodePath("../../TaskList")
 newspaper = NodePath("../../NewspaperArticle")
 plant = NodePath("../../Plant")
+fade = NodePath("../../BlackFadeCanvasLayer")
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 position = Vector2(-96, -200)
@@ -90,3 +92,5 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(-200, 768)
 scale = Vector2(0.7, 0.7)
 article = NodePath("../NewspaperArticle")
+
+[node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("12_lr51w")]
