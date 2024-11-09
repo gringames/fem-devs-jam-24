@@ -240,7 +240,6 @@ func _handle_day() -> void:
 		return
 	var current_newspaper: Array = news
 	newspaper.set_article(current_newspaper)
-	newspaper.appear()
 
 
 func _is_call_happening_today(calls: Array) -> bool:

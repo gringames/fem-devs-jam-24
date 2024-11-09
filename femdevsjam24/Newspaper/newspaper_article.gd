@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func set_article(article :Array):
 	if article.size() != 3:
+		_clear_all()
 		return
 	_set_date(article[0])
 	_set_headline(article[1])
@@ -53,4 +54,3 @@ func appear() -> void:
 	
 func disappear() -> void:
 	hide()
-	_clear_all()

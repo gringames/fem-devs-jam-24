@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=19 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
 [ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/Plant/0.png" id="5_djf2k"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c60w1gih8xyxv" path="res://Features/ClickableObjects/Phone.tscn" id="14_3hl40"]
 [ext_resource type="PackedScene" uid="uid://b78moksmavcck" path="res://Features/ClickableObjects/Notebook.tscn" id="15_lu1wx"]
 [ext_resource type="PackedScene" uid="uid://bi68oladgtk0t" path="res://Text/TaskList.tscn" id="16_cw5wg"]
+[ext_resource type="PackedScene" uid="uid://dhbx1ybr467b2" path="res://Features/ClickableObjects/Newspaper.tscn" id="18_hng1r"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
@@ -91,3 +92,8 @@ position = Vector2(-176, 200)
 [node name="NewspaperArticle" parent="." instance=ExtResource("13_k3c02")]
 position = Vector2(-488, -256)
 scale = Vector2(0.7, 0.7)
+
+[node name="Newspaper" parent="." node_paths=PackedStringArray("article") instance=ExtResource("18_hng1r")]
+position = Vector2(-200, 768)
+scale = Vector2(0.7, 0.7)
+article = NodePath("../NewspaperArticle")
