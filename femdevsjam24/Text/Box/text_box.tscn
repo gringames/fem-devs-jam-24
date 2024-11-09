@@ -1,21 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=3 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6yebk"]
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="DialogueBox" type="Panel" parent="."]
+offset_left = 40.0
+offset_top = 512.0
+offset_right = 1112.0
+offset_bottom = 632.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="BackgroundTexture" type="TextureRect" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 2
+
+[node name="NPCIcon" type="TextureRect" parent="DialogueBox/BackgroundTexture"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 112.0
+texture = SubResource("PlaceholderTexture2D_6yebk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox/BackgroundTexture"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.127
+anchor_top = 0.067
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.143997
+offset_top = -0.04
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "test text"
+text = " I hope I will be someday recognized for doing a good job in the field that I love!"
