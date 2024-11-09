@@ -15,6 +15,8 @@ var current_message: String
 
 var counter: int = 0
 
+var separator: String = "§"
+
 
 func _ready() -> void:
 	text_label = $DialogueBox/Message
@@ -61,7 +63,7 @@ func clear_text() -> void:
 
 # NAME ---------------------------------------------------------------------------------------------
 
-func set_npc_name(npc_name: String) -> void:
+func _set_npc_name(npc_name: String) -> void:
 	name_label.text = "[b]" + npc_name + "[/b]"
 
 
@@ -85,10 +87,29 @@ func _next_page() -> void:
 		next_button.hide()
 		close_button.show()
 		
+		
 	current_message = current_pages[counter]
-	_set_text(current_message)
+	
+	var split: Array = _split_name_and_message(current_message)
+	print("split line: ", split)
+	
+	if split.size() <= 1:
+		_set_text(current_message)
+	else:
+		_set_npc_name(str(split[0]))
+		_set_text(str(split[1]))
 	
 	counter += 1
+	
+	
+	
+func _split_name_and_message(line: String) -> Array:
+	var split = [line]
+
+	if line.contains(separator): 
+		split = line.split(separator, true, 1)
+		
+	return split
 	
 	
 func _close() -> void:
