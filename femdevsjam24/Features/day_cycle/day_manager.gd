@@ -7,6 +7,8 @@ class_name DayManager
 @export var newspaper: NewspaperArticle
 @export var plant: Plant
 @export var fade: BlackFade
+@export var audioStreamPlayer: AudioStreamPlayer
+@export var audioTrackHandler: TrackHandler
 
 
 var day_info: Dictionary = {
@@ -240,11 +242,12 @@ func _ready() -> void:
 func _end_day() -> void:
 	current_day += 1
 	fade.fade_to_black()
-	#print("stop music")
+	audioStreamPlayer.stop()
 
 
 func _start_day() -> void:
-	#print("start music")
+	audioStreamPlayer.stream = audioTrackHandler.get_track_for_day(current_day)
+	audioStreamPlayer.play()
 	fade.fade_from_black()
 
 

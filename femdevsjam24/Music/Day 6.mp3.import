@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn0ajnsbt53wt"
+path="res://.godot/imported/Day 6.mp3-aeb127b18cff9e05f85d03c55ab5bf76.mp3str"
+
+[deps]
+
+source_file="res://Music/Day 6.mp3"
+dest_files=["res://.godot/imported/Day 6.mp3-aeb127b18cff9e05f85d03c55ab5bf76.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

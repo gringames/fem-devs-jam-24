@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwj5f7qirxaey"
+path="res://.godot/imported/Day 7.mp3-548b4b6118529e139716d3a335555f8f.mp3str"
+
+[deps]
+
+source_file="res://Music/Day 7.mp3"
+dest_files=["res://.godot/imported/Day 7.mp3-548b4b6118529e139716d3a335555f8f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
