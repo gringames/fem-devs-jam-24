@@ -230,23 +230,25 @@ var has_tent_today: Array[bool] = [true, false, false, false, false, false, fals
 
 
 func _ready() -> void:
-	next_day_button.connect("pressed", _next_day)
+	next_day_button.connect("pressed", _end_day)
 	plant.connect("clicked_plant", _on_plant_clicked)
+	fade.connect("fade_out_finished", _start_day)
 	fade.connect("fade_in_finished", _next_day)
-	fade.fade_from_black()
+	_start_day()
+	
+	
+func _end_day() -> void:
+	fade.fade_to_black()
+	#print("stop music")
+
+
+func _start_day() -> void:
+	print("start music")
+	#fade.fade_from_black()
 
 
 func _next_day() -> void:
-	if current_day == 1:
-		plant.grow()
-	# TODO: if not day 1: fade to black, stop music track
-		
-	
-	print("current day: ", current_day)
-	
-	# TODO: fade from black
-	# TODO: start music track
-	
+	print("current day: ", current_day)	
 
 	if current_day == 7:
 		_determine_ending()
@@ -257,7 +259,8 @@ func _next_day() -> void:
 
 
 func _handle_day() -> void:
-	plant.grow()
+	if has_tent_today[current_day - 1]:
+		plant.grow()
 	
 	var current_calls: Array = day_info[current_day][calls_key]
 	if _is_call_happening_today(current_calls):

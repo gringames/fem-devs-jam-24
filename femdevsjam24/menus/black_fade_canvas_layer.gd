@@ -30,9 +30,9 @@ func fade_from_black() -> void:
 	black_rect.color.a = 1
 	fade_to = false
 	fade_from = true
+	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if fade_to:
 		black_rect.color.a += fade_speed * delta
