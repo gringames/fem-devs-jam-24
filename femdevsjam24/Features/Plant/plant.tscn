@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://diix6rtcrr4eq"]
+
+[ext_resource type="Texture2D" uid="uid://blyy4qi2sj1ex" path="res://Art/plant_mock.png" id="1_bwjm0"]
+[ext_resource type="Script" path="res://Features/Plant/plant.gd" id="1_cwib7"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_ymos1"]
+
+[node name="Plant" type="Node2D"]
+script = ExtResource("1_cwib7")
+
+[node name="PlantMock" type="Sprite2D" parent="."]
+scale = Vector2(0.30531, 0.30531)
+texture = ExtResource("1_bwjm0")
+
+[node name="Clickable" parent="." instance=ExtResource("2_ymos1")]
+position = Vector2(0, -16)
+scale = Vector2(13.68, 15.7235)

@@ -1,6 +1,7 @@
 extends Node
 class_name Clickable
 
+
 ### Signals -------------------------------------------------------------------------------------------
 
 signal mouse_hover_start
@@ -46,7 +47,6 @@ func _on_mouse_clicked() -> void:
 		return
 	is_mouse_holding_me = true
 	emit_signal("mouse_clicked_on_object")
-	print("clicked on ", name)
 		
 
 func _on_mouse_released() -> void:
