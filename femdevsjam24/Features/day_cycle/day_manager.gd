@@ -62,8 +62,8 @@ func _handle_day() -> void:
 	
 	if _is_call_happening_today(current_calls):
 		print("RINGGGG, RINGGG")
+		phone_call_text_box.disappear()
 		phone_call_text_box.set_pages(current_calls)
-		phone_call_text_box.appear()
 		
 	var checklist: String = _create_tasks_checklist(current_tasks)
 	print(checklist)

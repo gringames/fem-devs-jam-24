@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blyy4qi2sj1ex"
-path="res://.godot/imported/plant_mock.png-fffc9f42387e0c9b9fa3e4055c2be088.ctex"
+uid="uid://ctdm5imdtd77o"
+path="res://.godot/imported/phone.png-4c40ee9da2ebfbc855946257b18d24f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/plant_mock.png"
-dest_files=["res://.godot/imported/plant_mock.png-fffc9f42387e0c9b9fa3e4055c2be088.ctex"]
+source_file="res://Art/phone.png"
+dest_files=["res://.godot/imported/phone.png-4c40ee9da2ebfbc855946257b18d24f6.ctex"]
 
 [params]
 

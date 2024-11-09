@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c60w1gih8xyxv"]
+
+[ext_resource type="Texture2D" uid="uid://ctdm5imdtd77o" path="res://Art/phone.png" id="1_d2dhw"]
+[ext_resource type="Script" path="res://Features/ClickableObjects/open_text_box.gd" id="1_kqa2j"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_4mhec"]
+
+[node name="Phone" type="Node2D"]
+script = ExtResource("1_kqa2j")
+
+[node name="Phone" type="Sprite2D" parent="."]
+texture = ExtResource("1_d2dhw")
+
+[node name="Clickable" parent="Phone" instance=ExtResource("2_4mhec")]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(15.6381, -16.0489)
