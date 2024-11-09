@@ -2,6 +2,9 @@ extends Node
 class_name Clickable
 
 
+@export var visuals: Array[Sprite2D]
+
+
 ### Signals -------------------------------------------------------------------------------------------
 
 signal mouse_hover_start
@@ -25,7 +28,9 @@ func _ready() -> void:
 	area2D.connect("mouse_exited", _on_mouse_exited)
 	EventBus.connect("mouse_clicked", _on_mouse_clicked)
 	EventBus.connect("mouse_released", _on_mouse_released)
-
+	
+	connect("mouse_hover_start", _scale_up)
+	connect("mouse_hover_end", _scale_down)
 
 
 ### Handling Mouse Hover ------------------------------------------------------------------------------
@@ -55,3 +60,13 @@ func _on_mouse_released() -> void:
 	is_mouse_holding_me = false
 	emit_signal("mouse_released_from_object")
 	
+	
+### Mouse Hover Scaling ------------------------------------------------------------------------------
+
+func _scale_up() -> void:
+	for visual in visuals:
+		visual.scale *= 1.2
+
+func _scale_down() -> void:
+	for visual in visuals:
+		visual.scale /= 1.2

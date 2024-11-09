@@ -10,6 +10,7 @@ script = ExtResource("1_kqa2j")
 [node name="Phone" type="Sprite2D" parent="."]
 texture = ExtResource("1_d2dhw")
 
-[node name="Clickable" parent="Phone" instance=ExtResource("2_4mhec")]
+[node name="Clickable" parent="Phone" node_paths=PackedStringArray("visuals") instance=ExtResource("2_4mhec")]
 position = Vector2(0, -6.10352e-05)
 scale = Vector2(15.6381, -16.0489)
+visuals = [NodePath("..")]

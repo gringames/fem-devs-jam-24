@@ -25,6 +25,7 @@ position = Vector2(7.62939e-06, 7.62939e-06)
 scale = Vector2(0.088655, 0.088655)
 texture = ExtResource("2_7am0f")
 
-[node name="Clickable" parent="." instance=ExtResource("2_ymos1")]
+[node name="Clickable" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 position = Vector2(0, -9.53674e-07)
 scale = Vector2(3.8, 4.7235)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]

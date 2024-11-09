@@ -10,6 +10,7 @@ script = ExtResource("1_0fys1")
 [node name="NewspaperVisual" type="Sprite2D" parent="."]
 texture = ExtResource("2_yy4p0")
 
-[node name="Clickable" parent="NewspaperVisual" instance=ExtResource("3_ujdy3")]
+[node name="Clickable" parent="NewspaperVisual" node_paths=PackedStringArray("visuals") instance=ExtResource("3_ujdy3")]
 position = Vector2(0, -6.10352e-05)
 scale = Vector2(15.6381, -16.0489)
+visuals = [NodePath("..")]
