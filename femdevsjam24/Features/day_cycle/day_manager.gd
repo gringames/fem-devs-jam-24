@@ -81,5 +81,6 @@ func _create_tasks_checklist(tasks: Array) -> String:
 	var task_counter: int = 1
 	
 	for task in tasks:
-		checklist +=  str(task_counter) + ") " + str(task) + "\n"
+		checklist +=  "\t" + str(task_counter) + ") " + str(task) + "\n"
+		task_counter += 1
 	return checklist
