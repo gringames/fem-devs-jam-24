@@ -12,7 +12,7 @@ var day_info: Dictionary = {
 	},
 	1 : {
 		"tasks": ["water the seed", "look around"],
-		"calls": ["Good Morning. WElcome to the bunkeer"],
+		"calls": ["Good Morning. WElcome to the bunkeer", "page 2"]
 	},
 	2 : {
 		"tasks": [],
@@ -62,7 +62,8 @@ func _handle_day() -> void:
 	
 	if _is_call_happening_today(current_calls):
 		print("RINGGGG, RINGGG")
-		# TODO: init phone call text box with correct pages
+		phone_call_text_box.set_pages(current_calls)
+		phone_call_text_box.appear()
 		
 	var checklist: String = _create_tasks_checklist(current_tasks)
 	print(checklist)

@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=2 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6yebk"]
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
 
 [node name="DialogueBox" type="Panel" parent="."]
-offset_left = 40.0
-offset_top = 512.0
-offset_right = 1112.0
-offset_bottom = 632.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = 232.0
+offset_right = 1480.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BackgroundTexture" type="TextureRect" parent="DialogueBox"]
 layout_mode = 1
@@ -21,28 +26,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NPCIcon" type="TextureRect" parent="DialogueBox/BackgroundTexture"]
+[node name="Name" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 112.0
-offset_bottom = 112.0
-texture = SubResource("PlaceholderTexture2D_6yebk")
+anchor_left = 0.053
+anchor_top = 0.041
+anchor_right = 0.947
+anchor_bottom = 0.137
+offset_left = -0.0800018
+offset_top = 0.0559998
+offset_right = 0.0799561
+offset_bottom = -0.00800323
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_font_size = 34
+bbcode_enabled = true
+text = "[b]Name[/b]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox/BackgroundTexture"]
+"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Message" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.127
-anchor_top = 0.067
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.143997
-offset_top = -0.04
-offset_right = -8.0
-offset_bottom = -8.0
+anchor_left = 0.053
+anchor_top = 0.151
+anchor_right = 0.853
+anchor_bottom = 0.918
+offset_left = -0.0800018
+offset_top = -0.184006
+offset_right = -0.0800781
+offset_bottom = -0.112
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = " I hope I will be someday recognized for doing a good job in the field that I love!"
+text = "I hope I will be someday recognized for doing a good job in the field that I love!"
+scroll_active = false
+
+[node name="NextButton" type="Button" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.918
+anchor_top = 0.863
+anchor_right = 0.976
+anchor_bottom = 0.945
+offset_left = 15.5199
+offset_top = 16.008
+offset_right = -18.3601
+offset_bottom = -0.880005
+text = "Next"
+
+[node name="CloseButton" type="Button" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.918
+anchor_top = 0.863
+anchor_right = 0.976
+anchor_bottom = 0.945
+offset_left = 15.5199
+offset_top = 16.008
+offset_right = -18.3601
+offset_bottom = -0.880005
+text = "Close"
