@@ -1,6 +1,11 @@
 extends Node
 
 var hopes: Array[String] = []
+var player_hope: String
+
+func save_player_hope(hope: String):
+	player_hope = hope
+	
 
 func add_hope(hope: String, force_add_even_if_empty: bool = false) -> void:
 	if hope.is_empty() && not force_add_even_if_empty:

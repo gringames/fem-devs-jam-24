@@ -10,12 +10,17 @@ var name_label: RichTextLabel
 var next_button: Button
 var close_button: Button
 
+var input_field: TextInput
+
 var current_pages: Array
 var current_message: String
 
 var counter: int = 0
 
 var separator: String = "§"
+var input_indicator: String = "%"
+
+var current_button: Button
 
 
 func _ready() -> void:
@@ -30,6 +35,9 @@ func _ready() -> void:
 	
 	next_button.connect("pressed", _next_page)
 	close_button.connect("pressed", _close)
+	
+	input_field = $DialogueBox/TextInput
+	input_field.hide()
 	
 	if not visible_by_default:
 		disappear()
@@ -82,16 +90,23 @@ func disappear() -> void:
 func _next_page() -> void:
 	if counter >= current_pages.size():
 		return
+		
+	current_button = next_button
 	
 	if counter == current_pages.size() - 1:
 		next_button.hide()
 		close_button.show()
-		
+		current_button = close_button
 		
 	current_message = current_pages[counter]
 	
+	if current_message.contains(input_indicator):
+		current_message.left(current_message.length() - 1)
+		input_field.show()
+		current_button.disabled = true
+		input_field.connect("sent_hope", _on_sent_hope)
+	
 	var split: Array = _split_name_and_message(current_message)
-	print("split line: ", split)
 	
 	if split.size() <= 1:
 		_set_text(current_message)
@@ -115,3 +130,8 @@ func _split_name_and_message(line: String) -> Array:
 func _close() -> void:
 	disappear()
 	clear_text()
+
+
+func _on_sent_hope() -> void:
+	current_button.disabled = false
+	input_field.hide()

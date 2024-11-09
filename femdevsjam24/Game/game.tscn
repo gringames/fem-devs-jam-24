@@ -46,9 +46,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = 1160.0
-offset_top = 168.0
+offset_top = -72.0
 offset_right = 1317.0
-offset_bottom = 199.0
+offset_bottom = -41.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 size_flags_horizontal = 8
@@ -58,7 +58,8 @@ text = "Next Day
 metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
-position = Vector2(528, 192)
+position = Vector2(520, 176)
+scale = Vector2(4, 4)
 plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kqnc4"), ExtResource("7_o46us"), ExtResource("8_55u7n"), ExtResource("9_yiw0o"), ExtResource("10_nx1n8"), ExtResource("11_5rxby"), ExtResource("11_5rxby"), ExtResource("12_i2fyr")])
 
 [node name="Logic" type="Node" parent="."]
@@ -84,10 +85,3 @@ text_box = NodePath("../TaskList")
 
 [node name="TaskList" parent="." instance=ExtResource("16_cw5wg")]
 position = Vector2(-176, 200)
-
-[node name="StartDay1" type="Button" parent="."]
-offset_left = 1040.0
-offset_top = -160.0
-offset_right = 1133.0
-offset_bottom = -96.0
-text = "Start Day 1"
