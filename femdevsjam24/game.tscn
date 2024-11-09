@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=4 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://bid6vm5e80ew7" path="res://icon.svg" id="1_0ccbn"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Clickable.tscn" id="2_6xrwa"]
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="2_qtyi2"]
 
 [node name="Game" type="Node2D"]
@@ -8,6 +9,9 @@
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(574, 316)
 texture = ExtResource("1_0ccbn")
+
+[node name="Clickable" parent="Icon" instance=ExtResource("2_6xrwa")]
+scale = Vector2(6.92, 6.96)
 
 [node name="MainMenuButton" type="Button" parent="."]
 anchors_preset = 1
