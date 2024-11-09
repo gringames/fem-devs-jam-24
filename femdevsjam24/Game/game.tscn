@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=15 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
 [ext_resource type="Script" path="res://Game/game_manager.gd" id="4_gshi3"]
+[ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/0.png" id="5_djf2k"]
 [ext_resource type="PackedScene" uid="uid://dji4jtqq2jpyq" path="res://Text/Input/text_input.tscn" id="5_ue57g"]
 [ext_resource type="Script" path="res://Features/day_cycle/day_manager.gd" id="6_i1hnc"]
+[ext_resource type="Texture2D" uid="uid://bxq0srspbp8yi" path="res://Art/1.png" id="6_kqnc4"]
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
+[ext_resource type="Texture2D" uid="uid://c6yiaa7kbpu01" path="res://Art/2.png" id="7_o46us"]
+[ext_resource type="Texture2D" uid="uid://cnedxxo7y4y3k" path="res://Art/3.png" id="8_55u7n"]
+[ext_resource type="Texture2D" uid="uid://dhrxhi6to7pnv" path="res://Art/4.png" id="9_yiw0o"]
+[ext_resource type="Texture2D" uid="uid://cpimoyvt8ajjn" path="res://Art/5.png" id="10_nx1n8"]
+[ext_resource type="Texture2D" uid="uid://wlceiyas3x1s" path="res://Art/6.png" id="11_5rxby"]
+[ext_resource type="Texture2D" uid="uid://domrbkvb43gni" path="res://Art/w.png" id="12_i2fyr"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
@@ -67,6 +75,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
 position = Vector2(568, 280)
+plant_state_images = Array[Texture2D]([ExtResource("5_djf2k"), ExtResource("6_kqnc4"), ExtResource("7_o46us"), ExtResource("8_55u7n"), ExtResource("9_yiw0o"), ExtResource("10_nx1n8"), ExtResource("11_5rxby"), ExtResource("12_i2fyr")])
 
 [node name="Logic" type="Node" parent="."]
 

@@ -6,8 +6,9 @@
 
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_cwib7")
+plant_state_images = Array[Texture2D]([null, null, null, null, null, null, null, null])
 
-[node name="PlantMock" type="Sprite2D" parent="."]
+[node name="PlantVisual" type="Sprite2D" parent="."]
 scale = Vector2(0.30531, 0.30531)
 texture = ExtResource("1_bwjm0")
 
