@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 
 [node name="Game" type="Node2D"]
+position = Vector2(424, 184)
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 
 [node name="TextInput" parent="." instance=ExtResource("5_ue57g")]
+metadata/_edit_use_anchors_ = true
 
 [node name="MainMenuButton" type="Button" parent="."]
 anchors_preset = 1
@@ -28,6 +30,7 @@ size_flags_vertical = 8
 text = "Main Menu"
 script = ExtResource("3_k2dps")
 sceneToOpenPath = "res://menus/main_menu.tscn"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonShowBox" type="Button" parent="."]
 offset_left = 1016.0
@@ -35,6 +38,7 @@ offset_top = 144.0
 offset_right = 1138.0
 offset_bottom = 175.0
 text = "Show Dialogue"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonHideBox" type="Button" parent="."]
 offset_left = 1016.0
@@ -42,6 +46,7 @@ offset_top = 184.0
 offset_right = 1138.0
 offset_bottom = 215.0
 text = "Hide Dialogue"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonShowInput" type="Button" parent="."]
 offset_left = 1016.0
@@ -49,6 +54,7 @@ offset_top = 232.0
 offset_right = 1138.0
 offset_bottom = 263.0
 text = "Show Input"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonHideInput" type="Button" parent="."]
 offset_left = 1016.0
@@ -57,6 +63,7 @@ offset_right = 1138.0
 offset_bottom = 303.0
 scale = Vector2(1.07534, 1.01248)
 text = "Hide Input"
+metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
 position = Vector2(568, 280)
