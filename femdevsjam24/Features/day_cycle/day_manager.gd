@@ -238,13 +238,14 @@ func _ready() -> void:
 	
 	
 func _end_day() -> void:
+	current_day += 1
 	fade.fade_to_black()
 	#print("stop music")
 
 
 func _start_day() -> void:
-	print("start music")
-	#fade.fade_from_black()
+	#print("start music")
+	fade.fade_from_black()
 
 
 func _next_day() -> void:
@@ -255,7 +256,6 @@ func _next_day() -> void:
 		return
 		
 	_handle_day()
-	current_day += 1
 
 
 func _handle_day() -> void:
@@ -315,7 +315,7 @@ func _determine_ending() -> void:
 	var plant_withers: bool = has_tent_today.count(false) >= 3;
 	
 	if plant_withers:
-		plant.grow()
+		plant.wither()
 		print("bad ending")
 	else:
 		print("good ending")

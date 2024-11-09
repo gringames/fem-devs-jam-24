@@ -25,6 +25,11 @@ func grow() -> void:
 	_update_visual()
 
 
+func wither() -> void:
+	plant_state = Plants.States.Withered
+	_update_visual()
+
+
 func _update_visual() -> void:
 	if plant_state >= plant_state_images.size():
 		return
