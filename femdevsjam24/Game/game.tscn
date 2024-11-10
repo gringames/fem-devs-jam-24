@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=33 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://bn0ajnsbt53wt" path="res://Music/Day 6.mp3" id="20_6ua1p"]
 [ext_resource type="AudioStream" uid="uid://cqcfei7lid4my" path="res://Sounds/Off switch fluorescent light Short.mp3" id="21_g6cem"]
 [ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="21_gp6uu"]
+[ext_resource type="Texture2D" uid="uid://buetfp1dgn2n4" path="res://Art/background.png" id="32_a84nj"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
@@ -156,3 +157,8 @@ position = Vector2(-424, -184)
 [node name="Newspaper" parent="." node_paths=PackedStringArray("article") instance=ExtResource("18_hng1r")]
 position = Vector2(-104, 712)
 article = NodePath("../NewspaperArticle")
+
+[node name="Background2" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(536, 352)
+texture = ExtResource("32_a84nj")

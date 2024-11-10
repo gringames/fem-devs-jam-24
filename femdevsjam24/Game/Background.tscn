@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl1gpg5puexqu"]
+[gd_scene load_steps=8 format=3 uid="uid://cl1gpg5puexqu"]
 
+[ext_resource type="Texture2D" uid="uid://buetfp1dgn2n4" path="res://Art/background.png" id="1_621l6"]
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_cu7m5"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_80c1t"]
 [ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="3_hrqxr"]
@@ -8,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="6_b3iob"]
 
 [node name="Background" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(960, 536)
+texture = ExtResource("1_621l6")
 
 [node name="Counter" type="Sprite2D" parent="."]
 texture = ExtResource("1_cu7m5")

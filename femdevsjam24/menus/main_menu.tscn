@@ -50,12 +50,12 @@ script = ExtResource("2_a1ba0")
 
 [node name="GameNameRTL" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(100, 100)
-offset_left = 640.0
-offset_top = 64.0
-offset_right = 1352.0
-offset_bottom = 256.0
+offset_left = 632.0
+offset_top = 136.0
+offset_right = 1344.0
+offset_bottom = 328.0
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0, 0.85098, 0, 1)
+theme_override_colors/default_color = Color(0.910202, 1, 0.900379, 1)
 theme_override_fonts/normal_font = ExtResource("5_x1fmw")
 theme_override_fonts/italics_font = ExtResource("8_uqrr4")
 theme_override_fonts/bold_italics_font = ExtResource("9_5sjmu")
@@ -66,6 +66,7 @@ text = "[center]OXYGEN[/center]"
 text_direction = 1
 
 [node name="GameNameRTL2" type="RichTextLabel" parent="."]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_left = 24.0
 offset_top = 24.0
@@ -89,4 +90,4 @@ stream = ExtResource("7_ewkgf")
 autoplay = true
 
 [node name="Flicker" parent="." instance=ExtResource("9_tphpq")]
-position = Vector2(2712, 408)
+position = Vector2(2688, 472)
