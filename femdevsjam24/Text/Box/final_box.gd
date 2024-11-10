@@ -1,6 +1,8 @@
 extends Node2D
 class_name FinalBox
 
+@export var fade: BlackFade
+@export var final: Final
 
 var text_label: RichTextLabel
 var name_label: RichTextLabel
@@ -115,4 +117,6 @@ func _split_name_and_message(line: String) -> Array:
 	return split
 	
 func _close() -> void:
-	get_tree().change_scene_to_file("res://Endings/bad_final_ending.tscn")
+	fade.fade_to_black()
+	await  fade.fade_out_finished
+	final.start()

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw8mbfe7g7us2"]
+
+[ext_resource type="Script" path="res://Text/Box/click_text.gd" id="1_of48r"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_of48r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = 0.296
+anchor_right = 0.904
+anchor_bottom = 0.652
+offset_left = -7.04001
+offset_top = 0.320007
+offset_right = 0.319946
+offset_bottom = -0.160034

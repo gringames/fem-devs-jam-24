@@ -1,26 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://ch8hggnmootfr"]
 
 [ext_resource type="AudioStream" uid="uid://bmaq1d74qqha3" path="res://Music/Plant Withered Losing Hope.mp3" id="1_fd2k2"]
-[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_6laqq"]
-[ext_resource type="Texture2D" uid="uid://bukk0fcbnjtao" path="res://Art/Plant/7_Withered.png" id="3_nubkb"]
+[ext_resource type="PackedScene" uid="uid://cw8mbfe7g7us2" path="res://Text/Box/Final.tscn" id="3_n4dir"]
+[ext_resource type="PackedScene" uid="uid://5ewcfc7r65ud" path="res://Text/Box/final_box.tscn" id="4_5x6h8"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_sxqwc"]
 
-[node name="BadEnding" type="Node2D"]
+[node name="GoodFinalEnding" type="Node2D"]
 position = Vector2(424, 184)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_fd2k2")
 autoplay = true
 
-[node name="0PotDry" type="Sprite2D" parent="."]
-position = Vector2(544, 384)
-scale = Vector2(0.502827, 0.5)
-texture = ExtResource("2_6laqq")
-
-[node name="7Withered" type="Sprite2D" parent="0PotDry"]
-position = Vector2(15.91, 16)
-texture = ExtResource("3_nubkb")
-
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_sxqwc")]
 fade_speed = 0.5
 auto_start = true
+
+[node name="Final" parent="." instance=ExtResource("3_n4dir")]
+texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
+
+[node name="TextBox" parent="." instance=ExtResource("4_5x6h8")]
