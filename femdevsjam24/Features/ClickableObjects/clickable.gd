@@ -19,6 +19,7 @@ var area2D : Area2D
 var is_mouse_over : bool = false
 var is_mouse_holding_me : bool = false
 
+var active: bool = true
 
 ### Ready & Process -----------------------------------------------------------------------------------
 
@@ -36,11 +37,15 @@ func _ready() -> void:
 ### Handling Mouse Hover ------------------------------------------------------------------------------
 
 func _on_mouse_entered() -> void:
+	if not active:
+		return
 	is_mouse_over = true
 	emit_signal("mouse_hover_start")
 
 
 func _on_mouse_exited() -> void:
+	if not active:
+		return
 	is_mouse_over = false
 	emit_signal("mouse_hover_end")
 
@@ -48,6 +53,8 @@ func _on_mouse_exited() -> void:
 ### Handling Mouse Click ------------------------------------------------------------------------------
 
 func _on_mouse_clicked() -> void:
+	if not active:
+		return
 	if not is_mouse_over:
 		return
 	is_mouse_holding_me = true
@@ -55,6 +62,8 @@ func _on_mouse_clicked() -> void:
 		
 
 func _on_mouse_released() -> void:
+	if not active:
+		return
 	if not is_mouse_holding_me:
 		return
 	is_mouse_holding_me = false

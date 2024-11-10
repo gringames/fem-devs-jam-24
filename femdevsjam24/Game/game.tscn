@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=30 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="7_jwwqj"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="10_0og64"]
+[ext_resource type="AudioStream" uid="uid://60joqxplnit4" path="res://Sounds/Off switch fluorescent light.wav" id="11_667re"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
@@ -97,7 +98,7 @@ position = Vector2(552, 352)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "audioTrackHandler", "phone")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "sfx", "audioTrackHandler", "phone")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../LightSwitch/LightSwitchClickable")
 phone_call_text_box = NodePath("../../TextBox")
@@ -105,7 +106,8 @@ task_list = NodePath("../../TaskList")
 newspaper = NodePath("../../NewspaperArticle")
 plant = NodePath("../../Plant")
 fade = NodePath("../BlackFadeCanvasLayer")
-audioStreamPlayer = NodePath("../AudioStreamPlayer")
+audioStreamPlayer = NodePath("../MusicPlayer")
+sfx = NodePath("../LightSFXPlayer")
 audioTrackHandler = NodePath("../TrackHandler")
 phone = NodePath("../../Phone")
 
@@ -113,7 +115,10 @@ phone = NodePath("../../Phone")
 script = ExtResource("13_towrx")
 day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"), ExtResource("16_v5dcu"), ExtResource("17_p7efk"), ExtResource("18_incir"), ExtResource("19_viikn"), ExtResource("20_6ua1p")])
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Logic"]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Logic"]
+
+[node name="LightSFXPlayer" type="AudioStreamPlayer" parent="Logic"]
+stream = ExtResource("11_667re")
 
 [node name="BlackFadeCanvasLayer" parent="Logic" instance=ExtResource("12_lr51w")]
 fade_speed = 1.0
