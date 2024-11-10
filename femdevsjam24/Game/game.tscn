@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=29 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="7_jwwqj"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="10_0og64"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
@@ -81,21 +82,15 @@ script = ExtResource("3_k2dps")
 sceneToOpenPath = "res://menus/main_menu.tscn"
 metadata/_edit_use_anchors_ = true
 
-[node name="NextDayButton" type="Button" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 1344.0
-offset_top = 40.0
-offset_right = 1639.0
-offset_bottom = 353.0
-grow_horizontal = 0
-scale = Vector2(0.4, 0.4)
-size_flags_horizontal = 8
-size_flags_vertical = 8
-icon = ExtResource("3_ws5hu")
-flat = true
-metadata/_edit_use_anchors_ = true
+[node name="LightSwitch" type="Sprite2D" parent="."]
+position = Vector2(1384, 104)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ws5hu")
+
+[node name="LightSwitchClickable" parent="LightSwitch" node_paths=PackedStringArray("visuals") instance=ExtResource("10_0og64")]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(15.68, 16.48)
+visuals = [NodePath("..")]
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
 position = Vector2(552, 352)
@@ -104,7 +99,7 @@ position = Vector2(552, 352)
 
 [node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "audioTrackHandler", "phone")]
 script = ExtResource("6_i1hnc")
-next_day_button = NodePath("../../NextDayButton")
+next_day_button = NodePath("../../LightSwitch/LightSwitchClickable")
 phone_call_text_box = NodePath("../../TextBox")
 task_list = NodePath("../../TaskList")
 newspaper = NodePath("../../NewspaperArticle")

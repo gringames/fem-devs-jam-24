@@ -1,7 +1,7 @@
 extends Node
 class_name DayManager
 
-@export var next_day_button: Button
+@export var next_day_button: Clickable
 @export var phone_call_text_box: TextBox
 @export var task_list: TaskList
 @export var newspaper: NewspaperArticle
@@ -233,7 +233,7 @@ var has_tent_today: Array[bool] = [true, false, false, false, false, false, fals
 
 
 func _ready() -> void:
-	next_day_button.connect("pressed", _end_day)
+	next_day_button.connect("mouse_clicked_on_object", _end_day)
 	plant.connect("clicked_plant", _on_plant_clicked)
 	fade.connect("fade_out_finished", _start_day)
 	fade.connect("fade_in_finished", _next_day)
