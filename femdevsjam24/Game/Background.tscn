@@ -31,6 +31,6 @@ position = Vector2(1472, 880)
 texture = ExtResource("5_t8ejx")
 
 [node name="0PotDry" type="Sprite2D" parent="."]
-position = Vector2(496, 32)
+position = Vector2(472, 32)
 texture = ExtResource("6_b3iob")
 centered = false

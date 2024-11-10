@@ -1,10 +1,11 @@
-extends Button
+extends Node2D
 
 @export var sceneToOpenPath: String
 @export var fade: BlackFade
 
 func _ready():
-	self.connect("pressed", _start_fading_out)
+	$Clickable.connect("mouse_clicked_on_object", _start_fading_out)
+	get_parent().get_node("0PotDry").hide()
 
 
 func _start_fading_out() -> void:
@@ -12,5 +13,4 @@ func _start_fading_out() -> void:
 	fade.connect("fade_out_finished", change_scene)
 
 func change_scene() -> void:
-	print("change sdene")
 	get_tree().change_scene_to_file(sceneToOpenPath)

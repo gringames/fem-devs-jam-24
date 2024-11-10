@@ -98,7 +98,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
-position = Vector2(576, 352)
+position = Vector2(552, 352)
 
 [node name="Logic" type="Node" parent="."]
 
