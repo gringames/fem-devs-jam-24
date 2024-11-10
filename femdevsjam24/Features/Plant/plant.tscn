@@ -13,11 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://cvcwlfcflbqq0" path="res://Art/Plant/0_Pot_Wet.png" id="10_7mr2u"]
 [ext_resource type="AudioStream" uid="uid://vfbj25dr5kcf" path="res://Sounds/Watering the plant Short.wav" id="12_fyvq5"]
 
-[node name="Plant" type="Node2D"]
+[node name="Plant" type="Node2D" node_paths=PackedStringArray("clickables")]
 script = ExtResource("1_cwib7")
 plant_state_images = Array[Texture2D]([ExtResource("2_7am0f"), ExtResource("3_sa75d"), ExtResource("4_3t1oi"), ExtResource("5_5wgwu"), ExtResource("6_wimh5"), ExtResource("7_s4adr"), ExtResource("8_74oxc"), ExtResource("9_wec8e")])
 pot_dry = ExtResource("2_7am0f")
 pot_wet = ExtResource("10_7mr2u")
+clickables = [NodePath("Clickable0"), NodePath("Clickable1"), NodePath("Clickable2"), NodePath("Clickable3"), NodePath("Clickable4"), NodePath("Clickable5"), NodePath("Clickable6"), NodePath("Clickable7")]
 
 [node name="PotVisual" type="Sprite2D" parent="."]
 position = Vector2(7.62939e-06, 7.62939e-06)
@@ -26,10 +27,55 @@ texture = ExtResource("2_7am0f")
 [node name="PlantVisual" type="Sprite2D" parent="."]
 position = Vector2(7.62939e-06, 7.62939e-06)
 
-[node name="Clickable" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
-position = Vector2(0, -9.53674e-07)
-scale = Vector2(30.2349, 48.5348)
+[node name="Clickable0" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 264)
+scale = Vector2(-30.6554, -15.9513)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable1" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 224)
+scale = Vector2(-30.6554, -19.5913)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable2" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 176)
+scale = Vector2(-28.6485, -26.3646)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable3" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 128)
+scale = Vector2(-30.6554, -29.4313)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable4" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 56)
+scale = Vector2(-30.6554, -36.2713)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable5" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 32)
+scale = Vector2(-30.6554, -37.9113)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable6" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(-35.1183, -46.2119)
+visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+
+[node name="Clickable7" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
+visible = false
+position = Vector2(0, 264)
+scale = Vector2(-30.6554, -15.9513)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
 
 [node name="WateringSFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fyvq5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
