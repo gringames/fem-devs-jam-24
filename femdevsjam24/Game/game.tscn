@@ -1,10 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=32 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
 [ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="3_bs44s"]
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
-[ext_resource type="Texture2D" uid="uid://cn0vhveeyl7qg" path="res://Art/light_switch.png" id="3_ws5hu"]
 [ext_resource type="Texture2D" uid="uid://nuhjno4to41e" path="res://Art/Counter/notebook.png" id="4_vbbta"]
 [ext_resource type="Texture2D" uid="uid://c0gltx8a47cxc" path="res://Art/Counter/cellphone_nocall.png" id="5_g17cm"]
 [ext_resource type="Script" path="res://Features/day_cycle/day_manager.gd" id="6_i1hnc"]
@@ -12,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="7_jwwqj"]
+[ext_resource type="Texture2D" uid="uid://dvl1up1bne3pn" path="res://Art/lightswitch_on.png" id="9_djhp4"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="10_0og64"]
+[ext_resource type="Script" path="res://Game/light_switch.gd" id="10_uo6bn"]
+[ext_resource type="Texture2D" uid="uid://q4rrys76p47i" path="res://Art/lightswitch_off.png" id="11_8q24f"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
@@ -84,13 +86,15 @@ sceneToOpenPath = "res://menus/main_menu.tscn"
 metadata/_edit_use_anchors_ = true
 
 [node name="LightSwitch" type="Sprite2D" parent="."]
-position = Vector2(1384, 104)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_ws5hu")
+position = Vector2(-112, 344)
+texture = ExtResource("9_djhp4")
+script = ExtResource("10_uo6bn")
+on = ExtResource("9_djhp4")
+off = ExtResource("11_8q24f")
 
 [node name="LightSwitchClickable" parent="LightSwitch" node_paths=PackedStringArray("visuals") instance=ExtResource("10_0og64")]
 position = Vector2(-4.76837e-07, 0)
-scale = Vector2(15.68, 16.48)
+scale = Vector2(8.64001, 10.04)
 visuals = [NodePath("..")]
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
