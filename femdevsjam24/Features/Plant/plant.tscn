@@ -77,5 +77,3 @@ visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
 
 [node name="WateringSFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fyvq5")
-
-[node name="Camera2D" type="Camera2D" parent="."]
