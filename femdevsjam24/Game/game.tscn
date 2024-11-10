@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=28 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="6_l2jbh"]
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
+[ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="7_jwwqj"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
@@ -74,6 +75,7 @@ grow_horizontal = 0
 scale = Vector2(2, 2)
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("7_jwwqj")
 text = "Main Menu"
 script = ExtResource("3_k2dps")
 sceneToOpenPath = "res://menus/main_menu.tscn"
@@ -126,7 +128,8 @@ position = Vector2(440, 184)
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 visible = false
-position = Vector2(-96, -200)
+z_index = 3
+position = Vector2(-400, -424)
 
 [node name="Phone" parent="." node_paths=PackedStringArray("text_box") instance=ExtResource("14_3hl40")]
 position = Vector2(1048, 696)
@@ -138,12 +141,13 @@ text_box = NodePath("../TaskList")
 
 [node name="TaskList" parent="." instance=ExtResource("16_cw5wg")]
 visible = false
-position = Vector2(-176, 200)
+z_index = 3
+position = Vector2(-424, -184)
 
 [node name="NewspaperArticle" parent="." instance=ExtResource("13_k3c02")]
 visible = false
-position = Vector2(-488, -256)
-scale = Vector2(0.7, 0.7)
+z_index = 3
+position = Vector2(-424, -184)
 
 [node name="Newspaper" parent="." node_paths=PackedStringArray("article") instance=ExtResource("18_hng1r")]
 position = Vector2(-104, 712)

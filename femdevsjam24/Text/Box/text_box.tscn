@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=7 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
 [ext_resource type="Script" path="res://Text/Input/text_input.gd" id="2_0gvk8"]
+[ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="2_0vked"]
+[ext_resource type="FontFile" uid="uid://xbhj7mwadq52" path="res://Fonts/arsenal/Arsenal-Italic.otf" id="3_05ypr"]
+[ext_resource type="FontFile" uid="uid://3hke8kf5q8k8" path="res://Fonts/arsenal/Arsenal-BoldItalic.otf" id="4_tcajj"]
+[ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="5_6nwor"]
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
@@ -40,6 +44,10 @@ offset_right = 0.0799561
 offset_bottom = 41.464
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_0vked")
+theme_override_fonts/italics_font = ExtResource("3_05ypr")
+theme_override_fonts/bold_italics_font = ExtResource("4_tcajj")
+theme_override_fonts/bold_font = ExtResource("5_6nwor")
 theme_override_font_sizes/bold_font_size = 34
 bbcode_enabled = true
 text = "[b]Name[/b]
@@ -61,6 +69,10 @@ offset_right = -0.192017
 offset_bottom = -0.0320129
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_0vked")
+theme_override_fonts/italics_font = ExtResource("3_05ypr")
+theme_override_fonts/bold_italics_font = ExtResource("4_tcajj")
+theme_override_fonts/bold_font = ExtResource("5_6nwor")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "I hope I will be someday recognized for doing a good job in the field that I love!"
@@ -77,6 +89,7 @@ offset_left = 0.0639648
 offset_top = -3.05176e-05
 offset_right = 0.00793457
 offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_0vked")
 text = "Next"
 
 [node name="CloseButton" type="Button" parent="DialogueBox"]
@@ -90,6 +103,7 @@ offset_left = 0.0639648
 offset_top = -3.05176e-05
 offset_right = -0.112061
 offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_0vked")
 text = "Close"
 
 [node name="TextInput" type="Control" parent="DialogueBox"]
@@ -111,6 +125,7 @@ offset_left = 28.0
 offset_top = 499.0
 offset_right = 884.0
 offset_bottom = 579.0
+theme_override_fonts/font = ExtResource("2_0vked")
 placeholder_text = "I hope that..."
 
 [node name="SendButton" type="Button" parent="DialogueBox/TextInput"]
@@ -119,4 +134,5 @@ offset_left = 822.0
 offset_top = 538.0
 offset_right = 873.0
 offset_bottom = 569.0
+theme_override_fonts/font = ExtResource("2_0vked")
 text = "SEND"

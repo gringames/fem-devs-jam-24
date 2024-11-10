@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfnxquoiq7m18"]
+[gd_scene load_steps=11 format=3 uid="uid://cfnxquoiq7m18"]
 
 [ext_resource type="AudioStream" uid="uid://cwj5f7qirxaey" path="res://Music/Day 7.mp3" id="1_iwq3x"]
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_c3e0a"]
 [ext_resource type="Texture2D" uid="uid://dkrb4kwyj336g" path="res://Art/Plant/6_Plant_Day_6.png" id="3_p0qa3"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_qb0wp"]
-[ext_resource type="Script" path="res://Text/Box/text_box.gd" id="5_uen5w"]
-[ext_resource type="Script" path="res://Text/Input/text_input.gd" id="6_2bxvo"]
+[ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="5_brf6e"]
+[ext_resource type="FontFile" uid="uid://xbhj7mwadq52" path="res://Fonts/arsenal/Arsenal-Italic.otf" id="6_65io7"]
 [ext_resource type="Script" path="res://Endings/good_ending_manager.gd" id="7_i6jr5"]
+[ext_resource type="FontFile" uid="uid://3hke8kf5q8k8" path="res://Fonts/arsenal/Arsenal-BoldItalic.otf" id="7_pi526"]
+[ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="8_4hoxp"]
+[ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="10_m37eh"]
 
 [node name="GoodEnding" type="Node2D"]
 position = Vector2(424, 184)
@@ -44,6 +47,10 @@ size_flags_vertical = 3
 [node name="Label_Art" type="RichTextLabel" parent="Credits"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_brf6e")
+theme_override_fonts/italics_font = ExtResource("6_65io7")
+theme_override_fonts/bold_italics_font = ExtResource("7_pi526")
+theme_override_fonts/bold_font = ExtResource("8_4hoxp")
 bbcode_enabled = true
 text = "[b]Art[/b]
 Larissa Ignatz"
@@ -51,6 +58,10 @@ Larissa Ignatz"
 [node name="Label_MusicSound" type="RichTextLabel" parent="Credits"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_brf6e")
+theme_override_fonts/italics_font = ExtResource("6_65io7")
+theme_override_fonts/bold_italics_font = ExtResource("7_pi526")
+theme_override_fonts/bold_font = ExtResource("8_4hoxp")
 bbcode_enabled = true
 text = "[b]Music & Sound[/b]
 Seren Huges"
@@ -58,6 +69,10 @@ Seren Huges"
 [node name="Label_GameDesign" type="RichTextLabel" parent="Credits"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_brf6e")
+theme_override_fonts/italics_font = ExtResource("6_65io7")
+theme_override_fonts/bold_italics_font = ExtResource("7_pi526")
+theme_override_fonts/bold_font = ExtResource("8_4hoxp")
 bbcode_enabled = true
 text = "[b]Music & Sound[/b]
 Tilli Netta Saunders"
@@ -65,6 +80,10 @@ Tilli Netta Saunders"
 [node name="Label_Story" type="RichTextLabel" parent="Credits"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_brf6e")
+theme_override_fonts/italics_font = ExtResource("6_65io7")
+theme_override_fonts/bold_italics_font = ExtResource("7_pi526")
+theme_override_fonts/bold_font = ExtResource("8_4hoxp")
 bbcode_enabled = true
 text = "[b]Music & Sound[/b]
 Rocio Solares"
@@ -72,128 +91,16 @@ Rocio Solares"
 [node name="Label_Programming" type="RichTextLabel" parent="Credits"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("5_brf6e")
+theme_override_fonts/italics_font = ExtResource("6_65io7")
+theme_override_fonts/bold_italics_font = ExtResource("7_pi526")
+theme_override_fonts/bold_font = ExtResource("8_4hoxp")
 bbcode_enabled = true
 text = "[b]Programming[/b]
 Kerstin Pfaffinger"
 
-[node name="TextBox" type="Node2D" parent="."]
-position = Vector2(-816, 0)
-script = ExtResource("5_uen5w")
-
-[node name="DialogueBox" type="Panel" parent="TextBox"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 456.0
-offset_top = 592.0
-offset_right = 1480.0
-offset_bottom = 816.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackgroundTexture" type="TextureRect" parent="TextBox/DialogueBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Name" type="RichTextLabel" parent="TextBox/DialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.053
-anchor_top = 0.041
-anchor_right = 0.947
-anchor_bottom = 0.137
-offset_left = -0.0800018
-offset_top = 10.752
-offset_right = 0.0799561
-offset_bottom = 41.464
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/bold_font_size = 34
-bbcode_enabled = true
-text = "[b]Name[/b]
-
-"
-scroll_active = false
-shortcut_keys_enabled = false
-
-[node name="Message" type="RichTextLabel" parent="TextBox/DialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.053
-anchor_top = 0.348
-anchor_right = 0.883
-anchor_bottom = 0.893
-offset_left = -0.272003
-offset_top = 0.0479965
-offset_right = -0.192017
-offset_bottom = -0.0320129
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "I hope I will be someday recognized for doing a good job in the field that I love!"
-scroll_active = false
-
-[node name="NextButton" type="Button" parent="TextBox/DialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.914
-anchor_top = 0.75
-anchor_right = 0.958
-anchor_bottom = 0.888
-offset_left = 0.0639648
-offset_top = -3.05176e-05
-offset_right = 0.00793457
-offset_bottom = 0.0879669
-text = "Next"
-
-[node name="CloseButton" type="Button" parent="TextBox/DialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.914
-anchor_top = 0.75
-anchor_right = 0.963
-anchor_bottom = 0.888
-offset_left = 0.0639648
-offset_top = -3.05176e-05
-offset_right = -0.112061
-offset_bottom = 0.0879669
-text = "Close"
-
-[node name="TextInput" type="Control" parent="TextBox/DialogueBox"]
-visible = false
-layout_mode = 1
-anchor_left = 0.055
-anchor_top = 0.571
-anchor_right = 0.891
-anchor_bottom = 0.929
-offset_left = -28.144
-offset_top = -498.784
-offset_right = -1160.74
-offset_bottom = -638.376
-script = ExtResource("6_2bxvo")
-
-[node name="TextEdit" type="TextEdit" parent="TextBox/DialogueBox/TextInput"]
-layout_mode = 1
-offset_left = 28.0
-offset_top = 499.0
-offset_right = 884.0
-offset_bottom = 579.0
-placeholder_text = "I hope that..."
-
-[node name="SendButton" type="Button" parent="TextBox/DialogueBox/TextInput"]
-layout_mode = 0
-offset_left = 822.0
-offset_top = 538.0
-offset_right = 873.0
-offset_bottom = 569.0
-text = "SEND"
+[node name="TextBox" parent="." instance=ExtResource("10_m37eh")]
+position = Vector2(-784, -40)
 
 [node name="GoodEndingManager" type="Node2D" parent="." node_paths=PackedStringArray("text_box")]
 script = ExtResource("7_i6jr5")

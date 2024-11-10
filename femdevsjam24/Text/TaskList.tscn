@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi68oladgtk0t"]
+[gd_scene load_steps=4 format=3 uid="uid://bi68oladgtk0t"]
 
 [ext_resource type="Script" path="res://Text/task_list.gd" id="1_bnmim"]
+[ext_resource type="Texture2D" uid="uid://c1j1a5qns87ro" path="res://Art/Counter/task_list.png" id="2_3w74m"]
+[ext_resource type="FontFile" uid="uid://1tjsccgpmb8k" path="res://Fonts/Blokletters-Viltstift.ttf" id="3_wjkny"]
 
 [node name="TaskList" type="Node2D"]
 script = ExtResource("1_bnmim")
@@ -11,10 +13,10 @@ anchor_left = 0.171
 anchor_top = 0.244
 anchor_right = 0.45
 anchor_bottom = 0.785
-offset_left = 136.0
-offset_top = 192.0
-offset_right = 480.0
-offset_bottom = 472.0
+offset_left = 760.0
+offset_top = 400.0
+offset_right = 1104.0
+offset_bottom = 680.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -25,33 +27,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_3w74m")
 
 [node name="Message" type="RichTextLabel" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.104
-anchor_top = 0.096
-anchor_right = 0.905
-anchor_bottom = 0.863
-offset_left = 0.255997
-offset_top = -0.0639687
-offset_right = -0.0800171
-offset_bottom = 0.00799561
+anchor_left = -0.233
+anchor_top = 0.143
+anchor_right = 1.326
+anchor_bottom = 2.029
+offset_left = 0.152016
+offset_top = -0.0400085
+offset_right = -0.144043
+offset_bottom = -0.119995
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 42
+theme_override_fonts/normal_font = ExtResource("3_wjkny")
+theme_override_font_sizes/normal_font_size = 29
 text = "No tasks today."
 scroll_active = false
 
 [node name="CloseButton" type="Button" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.791
-anchor_top = 0.8
-anchor_right = 0.936
-anchor_bottom = 0.911
-offset_left = -0.104004
-offset_top = 1.52588e-05
-offset_right = 0.0159912
-offset_bottom = -0.0800018
+anchor_left = 1.209
+anchor_top = -0.371
+anchor_right = 1.355
+anchor_bottom = -0.261
+offset_left = 0.103973
+offset_top = -0.119995
+offset_right = -0.119995
+offset_bottom = 0.0800171
 text = "Close"
