@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vfbj25dr5kcf"
+path="res://.godot/imported/Watering the plant Short.wav-080929ad1e4bc38e35d98a709f78892a.sample"
+
+[deps]
+
+source_file="res://Sounds/Watering the plant Short.wav"
+dest_files=["res://.godot/imported/Watering the plant Short.wav-080929ad1e4bc38e35d98a709f78892a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

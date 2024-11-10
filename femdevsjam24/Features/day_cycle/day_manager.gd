@@ -244,6 +244,7 @@ func _ready() -> void:
 	
 func _end_day() -> void:
 	next_day_button.active = false
+	phone._stop_ringing()
 	
 	current_day += 1
 	sfx.play()
@@ -269,6 +270,7 @@ func _next_day() -> void:
 func _handle_day() -> void:
 	if has_tent_today[current_day - 1]:
 		plant.grow()
+	plant.get_dry()
 	
 	var current_calls: Array = day_info[current_day][calls_key]
 	if _is_call_happening_today(current_calls):
