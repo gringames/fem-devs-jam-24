@@ -1,16 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://c60w1gih8xyxv"]
+[gd_scene load_steps=7 format=3 uid="uid://c60w1gih8xyxv"]
 
-[ext_resource type="Texture2D" uid="uid://ctdm5imdtd77o" path="res://Art/phone.png" id="1_d2dhw"]
-[ext_resource type="Script" path="res://Features/ClickableObjects/open_text_box.gd" id="1_kqa2j"]
+[ext_resource type="Script" path="res://Features/ClickableObjects/phone.gd" id="1_kqa2j"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_4mhec"]
+[ext_resource type="Texture2D" uid="uid://blb521urs6j4q" path="res://Art/Counter/cellphone_call.png" id="2_hl4dy"]
+[ext_resource type="Texture2D" uid="uid://c0gltx8a47cxc" path="res://Art/Counter/cellphone_nocall.png" id="4_msqhh"]
+[ext_resource type="AudioStream" uid="uid://b32w7osl8bbh3" path="res://Sounds/Phone ring.wav" id="5_u6w3s"]
+[ext_resource type="AudioStream" uid="uid://diegvw5mewo4j" path="res://Sounds/Phone pick up.wav" id="6_5frcb"]
 
 [node name="Phone" type="Node2D"]
 script = ExtResource("1_kqa2j")
 
+[node name="Notebook2" type="Sprite2D" parent="."]
+texture = ExtResource("4_msqhh")
+
 [node name="Phone" type="Sprite2D" parent="."]
-texture = ExtResource("1_d2dhw")
+texture = ExtResource("2_hl4dy")
 
 [node name="Clickable" parent="Phone" node_paths=PackedStringArray("visuals") instance=ExtResource("2_4mhec")]
 position = Vector2(0, -6.10352e-05)
 scale = Vector2(15.6381, -16.0489)
 visuals = [NodePath("..")]
+
+[node name="AudioRing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_u6w3s")
+
+[node name="AudioPickUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5frcb")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwep1hx2ss3np"]
+[gd_scene load_steps=10 format=3 uid="uid://dwep1hx2ss3np"]
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_jfuih"]
 [ext_resource type="Script" path="res://menus/main_menu.gd" id="1_t0b0h"]
+[ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="2_41n3b"]
 [ext_resource type="Script" path="res://menus/quit_game.gd" id="2_a1ba0"]
-[ext_resource type="Texture2D" uid="uid://bh1hvrkl581ju" path="res://Art/Plant/seed.png" id="3_kqxqe"]
-[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="4_dvwtc"]
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="4_yqeo2"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="5_wm6mt"]
 [ext_resource type="AudioStream" uid="uid://dq70fyd5nd11g" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="7_ewkgf"]
@@ -14,31 +13,41 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t0b0h")
 
+[node name="Background" parent="." instance=ExtResource("2_41n3b")]
+
+[node name="Button" type="Button" parent="Background" node_paths=PackedStringArray("fade")]
+offset_left = 704.0
+offset_top = 616.0
+offset_right = 1280.0
+offset_bottom = 968.0
+flat = true
+script = ExtResource("4_yqeo2")
+sceneToOpenPath = "res://Game/game.tscn"
+fade = NodePath("../../BlackFadeCanvasLayer")
+
+[node name="ScalableButton" parent="Background/Button" instance=ExtResource("7_mykxu")]
+
 [node name="CreditsButton" type="Button" parent="."]
 offset_left = 1720.0
-offset_top = 856.0
+offset_top = 32.0
 offset_right = 1898.0
-offset_bottom = 945.0
+offset_bottom = 121.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "Credits"
 script = ExtResource("1_jfuih")
 sceneToOpenPath = "res://menus/credits.tscn"
 
-[node name="ScalableButton" parent="CreditsButton" instance=ExtResource("7_mykxu")]
-
 [node name="QuitButton" type="Button" parent="."]
 offset_left = 1720.0
-offset_top = 968.0
+offset_top = 144.0
 offset_right = 1896.0
-offset_bottom = 1057.0
+offset_bottom = 233.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 45
 text = "Quit
 "
 script = ExtResource("2_a1ba0")
-
-[node name="ScalableButton" parent="QuitButton" instance=ExtResource("7_mykxu")]
 
 [node name="GameNameRTL" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -55,37 +64,16 @@ text_direction = 1
 
 [node name="GameNameRTL2" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(100, 100)
-offset_left = 32.0
-offset_top = 920.0
-offset_right = 976.0
-offset_bottom = 1112.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 560.0
+offset_bottom = 216.0
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0.85098, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "Click on the pot to start the game."
 text_direction = 1
-
-[node name="Seed" type="Sprite2D" parent="."]
-position = Vector2(416, 568)
-texture = ExtResource("3_kqxqe")
-
-[node name="0PotDry" type="Sprite2D" parent="."]
-position = Vector2(1000, 520)
-scale = Vector2(0.572, 0.572)
-texture = ExtResource("4_dvwtc")
-
-[node name="Button" type="Button" parent="0PotDry" node_paths=PackedStringArray("fade")]
-offset_left = -322.0
-offset_top = 56.0
-offset_right = 321.0
-offset_bottom = 448.0
-flat = true
-script = ExtResource("4_yqeo2")
-sceneToOpenPath = "res://Game/game.tscn"
-fade = NodePath("../../BlackFadeCanvasLayer")
-
-[node name="ScalableButton" parent="0PotDry/Button" instance=ExtResource("7_mykxu")]
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("5_wm6mt")]
 
@@ -94,3 +82,4 @@ stream = ExtResource("7_ewkgf")
 autoplay = true
 
 [node name="Flicker" parent="." instance=ExtResource("9_tphpq")]
+position = Vector2(2712, 408)

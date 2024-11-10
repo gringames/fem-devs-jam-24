@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhbx1ybr467b2"]
 
 [ext_resource type="Script" path="res://Features/ClickableObjects/open_newspaper.gd" id="1_0fys1"]
-[ext_resource type="Texture2D" uid="uid://rrhm1bqfqqok" path="res://Art/news.png" id="2_yy4p0"]
+[ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="2_mwx7o"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_ujdy3"]
 
 [node name="Newspaper" type="Node2D"]
 script = ExtResource("1_0fys1")
 
 [node name="NewspaperVisual" type="Sprite2D" parent="."]
-texture = ExtResource("2_yy4p0")
+texture = ExtResource("2_mwx7o")
 
 [node name="Clickable" parent="NewspaperVisual" node_paths=PackedStringArray("visuals") instance=ExtResource("3_ujdy3")]
 position = Vector2(0, -6.10352e-05)
-scale = Vector2(15.6381, -16.0489)
+scale = Vector2(32.4676, -19.3049)
 visuals = [NodePath("..")]

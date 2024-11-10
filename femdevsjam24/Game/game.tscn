@@ -1,9 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=27 format=3 uid="uid://b2ffyvuyqw2vg"]
 
+[ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
+[ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
+[ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="3_bs44s"]
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="3_k2dps"]
 [ext_resource type="Texture2D" uid="uid://cn0vhveeyl7qg" path="res://Art/light_switch.png" id="3_ws5hu"]
-[ext_resource type="PackedScene" uid="uid://dji4jtqq2jpyq" path="res://Text/Input/text_input.tscn" id="5_ue57g"]
+[ext_resource type="Texture2D" uid="uid://nuhjno4to41e" path="res://Art/Counter/notebook.png" id="4_vbbta"]
+[ext_resource type="Texture2D" uid="uid://c0gltx8a47cxc" path="res://Art/Counter/cellphone_nocall.png" id="5_g17cm"]
 [ext_resource type="Script" path="res://Features/day_cycle/day_manager.gd" id="6_i1hnc"]
+[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="6_l2jbh"]
 [ext_resource type="PackedScene" uid="uid://diix6rtcrr4eq" path="res://Features/Plant/plant.tscn" id="6_ownbs"]
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
@@ -25,9 +30,37 @@
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="TextInput" parent="." instance=ExtResource("5_ue57g")]
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-424, -184)
+
+[node name="Counter" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_ru2wo")
+centered = false
+
+[node name="Lamp" type="Sprite2D" parent="Background"]
+texture = ExtResource("2_jsnd2")
+centered = false
+
+[node name="Newspaper" type="Sprite2D" parent="Background"]
 visible = false
-metadata/_edit_use_anchors_ = true
+position = Vector2(0, 712)
+texture = ExtResource("3_bs44s")
+centered = false
+
+[node name="Notebook" type="Sprite2D" parent="Background"]
+visible = false
+position = Vector2(1800, 864)
+texture = ExtResource("4_vbbta")
+
+[node name="CellphoneNocall" type="Sprite2D" parent="Background"]
+position = Vector2(1472, 880)
+texture = ExtResource("5_g17cm")
+
+[node name="0PotDry" type="Sprite2D" parent="Background"]
+visible = false
+position = Vector2(496, 32)
+texture = ExtResource("6_l2jbh")
+centered = false
 
 [node name="MainMenuButton" type="Button" parent="."]
 anchors_preset = 1
@@ -63,12 +96,11 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Plant" parent="." instance=ExtResource("6_ownbs")]
-position = Vector2(520, 176)
-scale = Vector2(4, 4)
+position = Vector2(576, 352)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "audioTrackHandler")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "audioTrackHandler", "phone")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../NextDayButton")
 phone_call_text_box = NodePath("../../TextBox")
@@ -78,6 +110,7 @@ plant = NodePath("../../Plant")
 fade = NodePath("../BlackFadeCanvasLayer")
 audioStreamPlayer = NodePath("../AudioStreamPlayer")
 audioTrackHandler = NodePath("../TrackHandler")
+phone = NodePath("../../Phone")
 
 [node name="TrackHandler" type="Node" parent="Logic"]
 script = ExtResource("13_towrx")
@@ -88,29 +121,30 @@ day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"
 [node name="BlackFadeCanvasLayer" parent="Logic" instance=ExtResource("12_lr51w")]
 fade_speed = 1.0
 
+[node name="Flicker" parent="Logic" instance=ExtResource("21_gp6uu")]
+position = Vector2(440, 184)
+
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
+visible = false
 position = Vector2(-96, -200)
 
 [node name="Phone" parent="." node_paths=PackedStringArray("text_box") instance=ExtResource("14_3hl40")]
-position = Vector2(1104, 800)
-scale = Vector2(0.506317, 0.497595)
+position = Vector2(1048, 696)
 text_box = NodePath("../TextBox")
 
 [node name="NoteBook" parent="." node_paths=PackedStringArray("text_box") instance=ExtResource("15_lu1wx")]
-position = Vector2(472, 752)
-scale = Vector2(0.7, 0.7)
+position = Vector2(1376, 680)
 text_box = NodePath("../TaskList")
 
 [node name="TaskList" parent="." instance=ExtResource("16_cw5wg")]
+visible = false
 position = Vector2(-176, 200)
 
 [node name="NewspaperArticle" parent="." instance=ExtResource("13_k3c02")]
+visible = false
 position = Vector2(-488, -256)
 scale = Vector2(0.7, 0.7)
 
 [node name="Newspaper" parent="." node_paths=PackedStringArray("article") instance=ExtResource("18_hng1r")]
-position = Vector2(-200, 768)
-scale = Vector2(0.7, 0.7)
+position = Vector2(-104, 712)
 article = NodePath("../NewspaperArticle")
-
-[node name="Flicker" parent="." instance=ExtResource("21_gp6uu")]
