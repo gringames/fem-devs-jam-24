@@ -115,8 +115,7 @@ func _next_page() -> void:
 	else:
 		_set_npc_name(str(split[0]))
 		_set_text(str(split[1]))
-	
-	counter += 1
+		counter += 1
 	
 	
 	

@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://bygadr8aeh2ii"]
+
+[ext_resource type="Script" path="res://Text/Box/good_ending_text_box.gd" id="1_fcl31"]
+[ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="2_k176f"]
+[ext_resource type="FontFile" uid="uid://xbhj7mwadq52" path="res://Fonts/arsenal/Arsenal-Italic.otf" id="3_7y5iw"]
+[ext_resource type="FontFile" uid="uid://3hke8kf5q8k8" path="res://Fonts/arsenal/Arsenal-BoldItalic.otf" id="4_fyk4e"]
+[ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="5_lnxl7"]
+[ext_resource type="Texture2D" uid="uid://cvcwlfcflbqq0" path="res://Art/Plant/0_Pot_Wet.png" id="6_fk1pv"]
+[ext_resource type="Texture2D" uid="uid://dkrb4kwyj336g" path="res://Art/Plant/6_Plant_Day_6.png" id="7_y2l5f"]
+
+[node name="TextBox" type="Node2D" node_paths=PackedStringArray("goodFinalBtn1", "continueBtn", "goodFinalBtn2", "badinalBtn")]
+script = ExtResource("1_fcl31")
+goodFinalBtn1 = NodePath("DialogueBox/GoodFinalEndingBtn")
+continueBtn = NodePath("DialogueBox/continueBtn")
+goodFinalBtn2 = NodePath("DialogueBox/GoodFinalEndingBtn2")
+badinalBtn = NodePath("DialogueBox/BadFinalEndingBtn")
+
+[node name="DialogueBox" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 752.0
+offset_right = 1088.0
+offset_bottom = 976.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.041
+anchor_right = 0.947
+anchor_bottom = 0.137
+offset_left = -0.0800018
+offset_top = 10.752
+offset_right = 0.0799561
+offset_bottom = 41.464
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_k176f")
+theme_override_fonts/italics_font = ExtResource("3_7y5iw")
+theme_override_fonts/bold_italics_font = ExtResource("4_fyk4e")
+theme_override_fonts/bold_font = ExtResource("5_lnxl7")
+theme_override_font_sizes/bold_font_size = 34
+bbcode_enabled = true
+text = "[b]Name[/b]
+
+"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Message" type="RichTextLabel" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053
+anchor_top = 0.348
+anchor_right = 0.883
+anchor_bottom = 0.893
+offset_left = -0.272003
+offset_top = 0.0479965
+offset_right = -0.192017
+offset_bottom = -0.0320129
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_k176f")
+theme_override_fonts/italics_font = ExtResource("3_7y5iw")
+theme_override_fonts/bold_italics_font = ExtResource("4_fyk4e")
+theme_override_fonts/bold_font = ExtResource("5_lnxl7")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "I hope I will be someday recognized for doing a good job in the field that I love!"
+scroll_active = false
+
+[node name="NextButton" type="Button" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 0.75
+anchor_right = 0.958
+anchor_bottom = 0.888
+offset_left = 0.0639648
+offset_top = -3.05176e-05
+offset_right = 0.00793457
+offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_k176f")
+text = "Next"
+
+[node name="GoodFinalEndingBtn" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 0.75
+anchor_right = 0.963
+anchor_bottom = 0.888
+offset_left = -879.936
+offset_top = -3.05176e-05
+offset_right = -570.112
+offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_k176f")
+text = "Yes, I understand."
+
+[node name="continueBtn" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 0.75
+anchor_right = 0.963
+anchor_bottom = 0.888
+offset_left = -511.936
+offset_top = -3.05176e-05
+offset_right = -202.112
+offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_k176f")
+text = "If this is what is left, we don't deserve it.
+"
+
+[node name="GoodFinalEndingBtn2" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 0.75
+anchor_right = 0.963
+anchor_bottom = 0.888
+offset_left = -879.936
+offset_right = -570.112
+offset_bottom = 0.0879974
+theme_override_fonts/font = ExtResource("2_k176f")
+text = "No, you're right.
+"
+
+[node name="BadFinalEndingBtn" type="Button" parent="DialogueBox"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 0.75
+anchor_right = 0.963
+anchor_bottom = 0.888
+offset_left = -511.936
+offset_top = -3.05176e-05
+offset_right = -202.112
+offset_bottom = 0.0879669
+theme_override_fonts/font = ExtResource("2_k176f")
+text = "Yes. The world is like this because of us.
+"
+
+[node name="0PotWet" type="Sprite2D" parent="."]
+position = Vector2(1596, 628)
+texture = ExtResource("6_fk1pv")
+
+[node name="6PlantDay6" type="Sprite2D" parent="."]
+position = Vector2(1612, 644)
+texture = ExtResource("7_y2l5f")
