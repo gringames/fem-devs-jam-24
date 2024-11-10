@@ -8,7 +8,18 @@ var name_label: RichTextLabel
 var next_button: Button
 var close_button: Button
 
-var current_pages: Array = ["1", "2"]
+var current_pages: Array = 	["Anton§I can see the tree from my monitor right now! Why is it like this? What happened!?",
+			"WHAT HAVE YOU DONE!?",
+			"You didn't take care of it properly, did you?",
+			"You let it die, and all the sacrifices we made with it!",
+			"Kate, Alessandro and Mila... You think they left so we would have enough supplies? You think they are out there, living their lives like nothing happened?",
+			"They are dead! I killed them! I locked them out when they went to check on our first attempt of a forest!",
+			"We didn't have enough food for everyone to survive, for us to take care of this tree until it was fully grown.",
+			"Someone had to make the decision. I made it for all of us! AND FOR WHAT?!",
+			"You let it die! You let all of our hopes die!",
+			"\"%\" Isn't that what you said?!",
+	"What now!? Your words will be no more than dust in the wind! Why would you do this!?",
+			]
 var current_message: String
 
 var counter: int = 0
@@ -93,6 +104,9 @@ func _next_page() -> void:
 		current_button = close_button
 		
 	current_message = current_pages[counter]
+	
+	if current_message.contains("%"):
+		current_message = current_message.replace("%", Hopes.player_hope)
 	
 	var split: Array = _split_name_and_message(current_message)
 	

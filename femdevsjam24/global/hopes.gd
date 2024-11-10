@@ -1,7 +1,7 @@
 extends Node
 
 var hopes: Array[String] = []
-var player_hope: String
+var player_hope: String = "I hope I'll do the right thing"
 
 func save_player_hope(hope: String):
 	player_hope = hope
