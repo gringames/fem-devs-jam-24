@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="6_rjoll"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="7_jwwqj"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="10_0og64"]
-[ext_resource type="AudioStream" uid="uid://60joqxplnit4" path="res://Sounds/Off switch fluorescent light.wav" id="11_667re"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
@@ -28,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://8no3eo5ong1b" path="res://Music/Day 4.mp3" id="18_incir"]
 [ext_resource type="AudioStream" uid="uid://dx67jru3is7eg" path="res://Music/Day 5.mp3" id="19_viikn"]
 [ext_resource type="AudioStream" uid="uid://bn0ajnsbt53wt" path="res://Music/Day 6.mp3" id="20_6ua1p"]
+[ext_resource type="AudioStream" uid="uid://cqcfei7lid4my" path="res://Sounds/Off switch fluorescent light Short.mp3" id="21_g6cem"]
 [ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="21_gp6uu"]
 
 [node name="Game" type="Node2D"]
@@ -118,7 +118,7 @@ day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="Logic"]
 
 [node name="LightSFXPlayer" type="AudioStreamPlayer" parent="Logic"]
-stream = ExtResource("11_667re")
+stream = ExtResource("21_g6cem")
 
 [node name="BlackFadeCanvasLayer" parent="Logic" instance=ExtResource("12_lr51w")]
 fade_speed = 1.0

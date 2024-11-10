@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqcfei7lid4my"
+path="res://.godot/imported/Off switch fluorescent light Short.mp3-5b42f545ff2a12bf5142dc3844ffe9e6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Off switch fluorescent light Short.mp3"
+dest_files=["res://.godot/imported/Off switch fluorescent light Short.mp3-5b42f545ff2a12bf5142dc3844ffe9e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
