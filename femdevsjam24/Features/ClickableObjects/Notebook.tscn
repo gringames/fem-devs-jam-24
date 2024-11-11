@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b78moksmavcck"]
+[gd_scene load_steps=5 format=3 uid="uid://b78moksmavcck"]
 
 [ext_resource type="Script" path="res://Features/ClickableObjects/open_task_list.gd" id="1_xijsn"]
 [ext_resource type="Texture2D" uid="uid://nuhjno4to41e" path="res://Art/Counter/notebook.png" id="2_gnje4"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_fmukm"]
+[ext_resource type="AudioStream" uid="uid://ci7kxebov6t7v" path="res://Sounds/notepad pickup.wav" id="4_y2hic"]
 
 [node name="NoteBook" type="Node2D"]
 script = ExtResource("1_xijsn")
@@ -14,3 +15,6 @@ texture = ExtResource("2_gnje4")
 position = Vector2(0, -6.10352e-05)
 scale = Vector2(13.1951, -22.4442)
 visuals = [NodePath("..")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y2hic")

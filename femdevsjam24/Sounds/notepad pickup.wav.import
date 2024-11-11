@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci7kxebov6t7v"
+path="res://.godot/imported/notepad pickup.wav-332f5643cb837b3eae9197ec7f9e7a21.sample"
+
+[deps]
+
+source_file="res://Sounds/notepad pickup.wav"
+dest_files=["res://.godot/imported/notepad pickup.wav-332f5643cb837b3eae9197ec7f9e7a21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

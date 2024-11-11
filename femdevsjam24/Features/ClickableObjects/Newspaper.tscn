@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhbx1ybr467b2"]
+[gd_scene load_steps=5 format=3 uid="uid://dhbx1ybr467b2"]
 
 [ext_resource type="Script" path="res://Features/ClickableObjects/open_newspaper.gd" id="1_0fys1"]
 [ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="2_mwx7o"]
 [ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_ujdy3"]
+[ext_resource type="AudioStream" uid="uid://cnfqt6t4qkge3" path="res://Sounds/Picking up newspaper.wav" id="4_bku07"]
 
 [node name="Newspaper" type="Node2D"]
 script = ExtResource("1_0fys1")
@@ -14,3 +15,6 @@ texture = ExtResource("2_mwx7o")
 position = Vector2(0, -6.10352e-05)
 scale = Vector2(32.4676, -19.3049)
 visuals = [NodePath("..")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bku07")

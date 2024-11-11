@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnfqt6t4qkge3"
+path="res://.godot/imported/Picking up newspaper.wav-b6daa61da50a469457bc0d831019a77b.sample"
+
+[deps]
+
+source_file="res://Sounds/Picking up newspaper.wav"
+dest_files=["res://.godot/imported/Picking up newspaper.wav-b6daa61da50a469457bc0d831019a77b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
