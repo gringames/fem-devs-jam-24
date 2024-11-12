@@ -46,6 +46,8 @@ func _ready() -> void:
 	set_pages(current_pages)
 	appear()
 	
+	EndingPlantState.final_plant_state = Plants.States.Withered
+	
 
 
 # PAGES --------------------------------------------------------------------------------------------

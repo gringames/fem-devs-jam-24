@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch8hggnmootfr"]
+[gd_scene load_steps=11 format=3 uid="uid://ch8hggnmootfr"]
 
 [ext_resource type="AudioStream" uid="uid://dux323ey75hv6" path="res://Music/Day 7.mp3" id="1_y0pan"]
 [ext_resource type="PackedScene" uid="uid://cw8mbfe7g7us2" path="res://Text/Box/Final.tscn" id="3_n4dir"]
 [ext_resource type="PackedScene" uid="uid://5ewcfc7r65ud" path="res://Text/Box/final_box.tscn" id="4_5x6h8"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_sxqwc"]
+[ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="5_0cj51"]
+[ext_resource type="Texture2D" uid="uid://bukk0fcbnjtao" path="res://Art/Plant/7_Withered.png" id="5_rfphi"]
+[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="6_7wbmb"]
+[ext_resource type="Texture2D" uid="uid://crk18badgkrd0" path="res://Art/Spotlight/Spotlight Overlay.png" id="6_8sk5i"]
+[ext_resource type="Texture2D" uid="uid://dkrb4kwyj336g" path="res://Art/Plant/6_Plant_Day_6.png" id="7_65dno"]
+[ext_resource type="Texture2D" uid="uid://cvcwlfcflbqq0" path="res://Art/Plant/0_Pot_Wet.png" id="7_x5dn3"]
 
 [node name="GoodFinalEnding" type="Node2D"]
 position = Vector2(424, 184)
@@ -16,9 +22,38 @@ autoplay = true
 fade_speed = 0.5
 auto_start = true
 
-[node name="Final" parent="." instance=ExtResource("3_n4dir")]
+[node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("3_n4dir")]
 texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
+plant_visual_blossom = ExtResource("7_65dno")
+plant_visual_withered = ExtResource("5_rfphi")
+plant_visual = NodePath("../Plant")
+pot_dry = ExtResource("6_7wbmb")
+pot_wet = ExtResource("7_x5dn3")
+pot_visual = NodePath("../Background/0PotDry")
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(560, 360)
+texture = ExtResource("7_65dno")
 
 [node name="TextBox" parent="." node_paths=PackedStringArray("fade", "final") instance=ExtResource("4_5x6h8")]
 fade = NodePath("../BlackFadeCanvasLayer")
 final = NodePath("../Final")
+
+[node name="Background" parent="." instance=ExtResource("5_0cj51")]
+z_index = -2
+position = Vector2(-424, -184)
+
+[node name="Newspaper" parent="Background" index="3"]
+visible = false
+
+[node name="Notebook" parent="Background" index="4"]
+visible = false
+
+[node name="CellphoneNocall" parent="Background" index="5"]
+visible = false
+
+[node name="SpotlightOverlay" type="Sprite2D" parent="."]
+position = Vector2(536, 352)
+texture = ExtResource("6_8sk5i")
+
+[editable path="Background"]
