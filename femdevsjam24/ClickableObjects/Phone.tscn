@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c60w1gih8xyxv"]
 
-[ext_resource type="Script" path="res://Features/ClickableObjects/phone.gd" id="1_kqa2j"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_4mhec"]
+[ext_resource type="Script" path="res://ClickableObjects/phone.gd" id="1_kqa2j"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="2_4mhec"]
 [ext_resource type="Texture2D" uid="uid://blb521urs6j4q" path="res://Art/Counter/cellphone_call.png" id="2_hl4dy"]
 [ext_resource type="Texture2D" uid="uid://c0gltx8a47cxc" path="res://Art/Counter/cellphone_nocall.png" id="4_msqhh"]
 [ext_resource type="AudioStream" uid="uid://b32w7osl8bbh3" path="res://Sounds/Phone ring.wav" id="5_u6w3s"]

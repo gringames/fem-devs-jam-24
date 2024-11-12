@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Buttons/open_scene.gd" id="1_1lsxy"]
 [ext_resource type="Texture2D" uid="uid://p2w116ewatxm" path="res://Art/Plant/0.png" id="2_8h3rp"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_n2fvk"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="3_n2fvk"]
 
 [node name="StartGame" type="Node2D"]
 script = ExtResource("1_1lsxy")

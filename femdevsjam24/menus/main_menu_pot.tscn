@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="1_oq6ly"]
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="2_fy5wt"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_okok4"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="2_okok4"]
 
 [node name="0PotDry2" type="Sprite2D"]
 position = Vector2(1000, 528)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://diix6rtcrr4eq"]
 
-[ext_resource type="Script" path="res://Features/Plant/plant.gd" id="1_cwib7"]
+[ext_resource type="Script" path="res://Plant/plant.gd" id="1_cwib7"]
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_7am0f"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="2_ymos1"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="2_ymos1"]
 [ext_resource type="Texture2D" uid="uid://dyb4ovvb1gpq4" path="res://Art/Plant/1_Plant_Day_1.png" id="3_sa75d"]
 [ext_resource type="Texture2D" uid="uid://du7owsyh83vrf" path="res://Art/Plant/2_Plant_Day_2.png" id="4_3t1oi"]
 [ext_resource type="Texture2D" uid="uid://cdktxyp66h730" path="res://Art/Plant/3_Plant_Day_3.png" id="5_5wgwu"]

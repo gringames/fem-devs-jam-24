@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhbx1ybr467b2"]
 
-[ext_resource type="Script" path="res://Features/ClickableObjects/open_newspaper.gd" id="1_0fys1"]
+[ext_resource type="Script" path="res://ClickableObjects/open_newspaper.gd" id="1_0fys1"]
 [ext_resource type="Texture2D" uid="uid://bqnavax22s0vv" path="res://Art/Counter/newspaper.png" id="2_mwx7o"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://Features/ClickableObjects/Clickable.tscn" id="3_ujdy3"]
+[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="3_ujdy3"]
 [ext_resource type="AudioStream" uid="uid://byah2v3vhehe5" path="res://Sounds/Newspaper Pickup single.wav" id="4_yv1rg"]
 
 [node name="Newspaper" type="Node2D"]
