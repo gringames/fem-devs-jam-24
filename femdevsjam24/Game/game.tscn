@@ -60,6 +60,7 @@ position = Vector2(1800, 864)
 texture = ExtResource("4_vbbta")
 
 [node name="CellphoneNocall" type="Sprite2D" parent="Background"]
+visible = false
 position = Vector2(1472, 880)
 texture = ExtResource("5_g17cm")
 

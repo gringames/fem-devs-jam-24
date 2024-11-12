@@ -10,13 +10,13 @@
 [node name="Phone" type="Node2D"]
 script = ExtResource("1_kqa2j")
 
-[node name="Notebook2" type="Sprite2D" parent="."]
+[node name="DefaultPhone" type="Sprite2D" parent="."]
 texture = ExtResource("4_msqhh")
 
-[node name="Phone" type="Sprite2D" parent="."]
+[node name="RingingPhone" type="Sprite2D" parent="."]
 texture = ExtResource("2_hl4dy")
 
-[node name="Clickable" parent="Phone" node_paths=PackedStringArray("visuals") instance=ExtResource("2_4mhec")]
+[node name="Clickable" parent="RingingPhone" node_paths=PackedStringArray("visuals") instance=ExtResource("2_4mhec")]
 position = Vector2(16, 8)
 rotation = 0.264018
 scale = Vector2(14.3972, -17.7292)
@@ -27,3 +27,5 @@ stream = ExtResource("5_u6w3s")
 
 [node name="AudioPickUp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5frcb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

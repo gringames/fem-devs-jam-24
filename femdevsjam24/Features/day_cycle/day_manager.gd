@@ -245,7 +245,6 @@ func _ready() -> void:
 	plant.connect("clicked_plant", _on_plant_clicked)
 	fade.connect("fade_out_finished", _start_day)
 	fade.connect("fade_in_finished", _next_day)
-	phone.hide()
 	_start_day()
 	
 	
@@ -284,10 +283,10 @@ func _handle_day() -> void:
 	var current_calls: Array = day_info[current_day][calls_key]
 	if _is_call_happening_today(current_calls):
 		phone.ring()
-		phone.show()
+		phone.activate()
 		_set_up_phone_call(current_calls)
 	else:
-		phone.hide()
+		phone.deactivate()
 		
 	var current_tasks: Array = day_info[current_day][tasks_key]
 	_set_up_task_list(current_tasks)
