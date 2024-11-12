@@ -14,8 +14,10 @@
 [node name="BadFinalEnding" type="Node2D"]
 
 [node name="TextBox" parent="." node_paths=PackedStringArray("fade", "final") instance=ExtResource("1_2suc5")]
+position = Vector2(0, 272)
 fade = NodePath("../BlackFadeCanvasLayer")
-final = NodePath("")
+final = NodePath("../Final")
+current_pages = Array[String](["Anton§You are nothing but an ungrateful and selfish prick!", "Don't you dare hung up on me. Don't you—"])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8behs")
@@ -27,7 +29,7 @@ auto_start = true
 
 [node name="Background" parent="." instance=ExtResource("5_33f8t")]
 z_index = -2
-position = Vector2(-424, -184)
+position = Vector2(0, 4)
 
 [node name="Newspaper" parent="Background" index="3"]
 visible = false
@@ -39,10 +41,14 @@ visible = false
 visible = false
 
 [node name="SpotlightOverlay" type="Sprite2D" parent="."]
-position = Vector2(536, 352)
+position = Vector2(960, 540)
 texture = ExtResource("6_ywuml")
 
 [node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("2_n11y4")]
+offset_left = -1264.0
+offset_top = -368.0
+offset_right = -1264.0
+offset_bottom = -368.0
 texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
 plant_visual_blossom = ExtResource("7_gu5b8")
 plant_visual_withered = ExtResource("8_8wylq")
@@ -52,7 +58,7 @@ pot_wet = ExtResource("10_032tu")
 pot_visual = NodePath("../Background/0PotDry")
 
 [node name="Plant" type="Sprite2D" parent="."]
-position = Vector2(560, 360)
+position = Vector2(976, 544)
 texture = ExtResource("7_gu5b8")
 
 [editable path="Background"]

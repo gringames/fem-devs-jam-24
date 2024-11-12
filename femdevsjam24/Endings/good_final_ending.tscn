@@ -44,7 +44,7 @@ texture = ExtResource("7_65dno")
 position = Vector2(-440, 80)
 fade = NodePath("../BlackFadeCanvasLayer")
 final = NodePath("../Final")
-current_pages = Array[String](["I always knew you had what it takes, doctor.", "Now I'll get the recognition I always deserved.", "Mizuki will be able to go back to her beloved city, and Sai will look back one day and be proud of what he accomplished.", "Of what we have accomplished.", "As for you... \"%\".", "That's what you wanted, right? It'll come to be as well. All thank to the decisions we were able to make.", "Bring the tree outside, doctor. Today, we make history."])
+current_pages = Array[String](["Anton§I always knew you had what it takes, doctor.", "Now I'll get the recognition I always deserved.", "Mizuki will be able to go back to her beloved city, and Sai will look back one day and be proud of what he accomplished.", "Of what we have accomplished.", "As for you... \"%\".", "That's what you wanted, right? It'll come to be as well. All thank to the decisions we were able to make.", "Bring the tree outside, doctor. Today, we make history."])
 
 [node name="Background" parent="." instance=ExtResource("5_0cj51")]
 z_index = -2
