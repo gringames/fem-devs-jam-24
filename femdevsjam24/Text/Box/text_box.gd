@@ -4,6 +4,7 @@ class_name TextBox
 signal on_close
 
 @export var visible_by_default: bool = false
+@export var blibs: Array[AudioStream]
 
 var text_label: RichTextLabel
 var name_label: RichTextLabel
@@ -23,6 +24,7 @@ var separator: String = "§"
 var input_indicator: String = "%"
 
 var current_button: Button
+var open: bool = true
 
 
 func _ready() -> void:
@@ -83,20 +85,19 @@ func _set_npc_name(npc_name: String) -> void:
 func appear() -> void:
 	_next_page()
 	show()
-	dialogue_sfx.play()
+	_restart_dialogue_sfx()
+	open = true
 	
 	
 func disappear() -> void:
 	dialogue_sfx.stop()
 	hide()
+	open = false
 
 
 # BUTTONS ------------------------------------------------------------------------------------------
 
-func _next_page() -> void:
-	dialogue_sfx.stop()
-	dialogue_sfx.play()
-	
+func _next_page() -> void:	
 	if counter >= current_pages.size():
 		return
 		
@@ -124,7 +125,7 @@ func _next_page() -> void:
 		_set_text(str(split[1]))
 	
 	counter += 1
-	
+	_restart_dialogue_sfx()
 	
 	
 func _split_name_and_message(line: String) -> Array:
@@ -145,3 +146,18 @@ func _close() -> void:
 func _on_sent_hope() -> void:
 	current_button.disabled = false
 	input_field.hide()
+	
+
+func _restart_dialogue_sfx() -> void:
+	dialogue_sfx.stop()
+	dialogue_sfx.play()
+	_change_pitch_repeatedly()
+	await get_tree().create_timer(randf_range(1.8, 2.5)).timeout
+	dialogue_sfx.stop()
+	
+func _change_pitch_repeatedly() -> void:
+	if not open:
+		return
+	dialogue_sfx.pitch_scale = randf_range(0.95, 1.05)
+	await get_tree().create_timer(randf_range(0.2, 0.6)).timeout
+	_change_pitch_repeatedly()

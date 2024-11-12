@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=9 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
 [ext_resource type="Script" path="res://Text/Input/text_input.gd" id="2_0gvk8"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="2_0vked"]
+[ext_resource type="AudioStream" uid="uid://d0ys2t3ll3kj7" path="res://Sounds/Dialogue blips 1.wav" id="2_6g0mp"]
 [ext_resource type="FontFile" uid="uid://xbhj7mwadq52" path="res://Fonts/arsenal/Arsenal-Italic.otf" id="3_05ypr"]
 [ext_resource type="FontFile" uid="uid://3hke8kf5q8k8" path="res://Fonts/arsenal/Arsenal-BoldItalic.otf" id="4_tcajj"]
 [ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="5_6nwor"]
@@ -10,6 +11,7 @@
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
+blibs = Array[AudioStream]([ExtResource("2_6g0mp"), ExtResource("7_kq633")])
 
 [node name="DialogueBox" type="Panel" parent="."]
 anchors_preset = 8
