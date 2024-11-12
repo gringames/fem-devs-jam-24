@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbtxacfpixmnd"]
+[gd_scene load_steps=4 format=3 uid="uid://cbtxacfpixmnd"]
 
 [ext_resource type="Script" path="res://Game/flicker.gd" id="1_jn3k0"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="2_q02nd"]
+[ext_resource type="AudioStream" uid="uid://bx8npbeic50dw" path="res://Sounds/Fluorescent flickering 1.mp3" id="3_l3u2w"]
 
 [node name="Flicker" type="Node2D"]
 script = ExtResource("1_jn3k0")
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("2_q02nd")]
+
+[node name="flickerSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l3u2w")
