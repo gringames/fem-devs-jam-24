@@ -263,7 +263,7 @@ func _start_day() -> void:
 
 
 func _next_day() -> void:
-	print("current day: ", current_day)	
+	# print("current day: ", current_day)	
 	_handle_day()
 
 
