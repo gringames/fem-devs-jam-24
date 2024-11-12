@@ -71,6 +71,7 @@ texture = ExtResource("6_l2jbh")
 centered = false
 
 [node name="MainMenuButton" type="Button" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
