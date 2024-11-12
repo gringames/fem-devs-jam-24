@@ -17,8 +17,9 @@ texture = ExtResource("4_msqhh")
 texture = ExtResource("2_hl4dy")
 
 [node name="Clickable" parent="Phone" node_paths=PackedStringArray("visuals") instance=ExtResource("2_4mhec")]
-position = Vector2(0, -6.10352e-05)
-scale = Vector2(15.6381, -16.0489)
+position = Vector2(16, 8)
+rotation = 0.264018
+scale = Vector2(14.3972, -17.7292)
 visuals = [NodePath("..")]
 
 [node name="AudioRing" type="AudioStreamPlayer" parent="."]

@@ -13,7 +13,8 @@ texture = ExtResource("2_gnje4")
 
 [node name="Clickable" parent="Notebook" node_paths=PackedStringArray("visuals") instance=ExtResource("3_fmukm")]
 position = Vector2(0, -6.10352e-05)
-scale = Vector2(13.1951, -22.4442)
+rotation = 0.179043
+scale = Vector2(11.9682, -21.1704)
 visuals = [NodePath("..")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
