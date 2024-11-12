@@ -12,6 +12,7 @@ var next_button: Button
 var close_button: Button
 
 var input_field: TextInput
+var dialogue_sfx: AudioStreamPlayer
 
 var current_pages: Array
 var current_message: String
@@ -40,6 +41,8 @@ func _ready() -> void:
 	input_field = $DialogueBox/TextInput
 	input_field.hide()
 	
+	dialogue_sfx = $DialogueSFX
+	
 	if not visible_by_default:
 		disappear()
 
@@ -57,7 +60,6 @@ func set_pages(pages: Array) -> void:
 	
 	next_button.show()
 	close_button.hide()
-	_next_page()
 
 
 # MESSAGE ------------------------------------------------------------------------------------------
@@ -79,16 +81,22 @@ func _set_npc_name(npc_name: String) -> void:
 # BOX ----------------------------------------------------------------------------------------------
 
 func appear() -> void:
+	_next_page()
 	show()
+	dialogue_sfx.play()
 	
 	
 func disappear() -> void:
+	dialogue_sfx.stop()
 	hide()
 
 
 # BUTTONS ------------------------------------------------------------------------------------------
 
 func _next_page() -> void:
+	dialogue_sfx.stop()
+	dialogue_sfx.play()
+	
 	if counter >= current_pages.size():
 		return
 		

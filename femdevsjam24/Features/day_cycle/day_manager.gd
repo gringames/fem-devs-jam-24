@@ -310,7 +310,7 @@ func _set_up_task_list(content) -> void:
 
 func _create_tasks_checklist(tasks: Array) -> String:
 	if tasks.is_empty():
-		return "\t1) Turn off the lights."
+		return "\t1) turn off the lights."
 	
 	var checklist: String = "Tasks for today:\n"
 	var task_counter: int = 1
@@ -318,7 +318,7 @@ func _create_tasks_checklist(tasks: Array) -> String:
 	for task in tasks:
 		checklist +=  "\t" + str(task_counter) + ") " + str(task) + "\n"
 		task_counter += 1
-	return checklist + "\t" + str(task_counter) + ") Turn off the lights."
+	return checklist + "\t" + str(task_counter) + ") turn off the lights."
 
 
 func _stop_current_music_track() -> void:

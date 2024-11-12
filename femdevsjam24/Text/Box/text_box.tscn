@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d277a41su2sdk"]
+[gd_scene load_steps=8 format=3 uid="uid://d277a41su2sdk"]
 
 [ext_resource type="Script" path="res://Text/Box/text_box.gd" id="1_pb4nd"]
 [ext_resource type="Script" path="res://Text/Input/text_input.gd" id="2_0gvk8"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://xbhj7mwadq52" path="res://Fonts/arsenal/Arsenal-Italic.otf" id="3_05ypr"]
 [ext_resource type="FontFile" uid="uid://3hke8kf5q8k8" path="res://Fonts/arsenal/Arsenal-BoldItalic.otf" id="4_tcajj"]
 [ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="5_6nwor"]
+[ext_resource type="AudioStream" uid="uid://celprjm58fs2k" path="res://Sounds/Dialogue blips 2.wav" id="7_kq633"]
 
 [node name="TextBox" type="Node2D"]
 script = ExtResource("1_pb4nd")
@@ -136,3 +137,7 @@ offset_right = 873.0
 offset_bottom = 569.0
 theme_override_fonts/font = ExtResource("2_0vked")
 text = "SEND"
+
+[node name="DialogueSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kq633")
+volume_db = -10.0
