@@ -6,6 +6,8 @@
 
 [node name="Flicker" type="Node2D"]
 script = ExtResource("1_jn3k0")
+flicker_interval_min = 5.0
+flicker_interval_max = 10.0
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("2_q02nd")]
 
