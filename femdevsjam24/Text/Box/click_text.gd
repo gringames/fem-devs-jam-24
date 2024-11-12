@@ -1,6 +1,9 @@
 extends Control
 class_name Final
 
+@export_category("Fade")
+@export var fade: BlackFade
+
 @export_category("Final TextBox Text")
 @export var texts: Array = ["You made your choice.", "v"]
 
@@ -14,8 +17,9 @@ class_name Final
 
 
 var index: int = 0
-
 var label: RichTextLabel
+
+
 
 func _ready() -> void:
 	label = $CanvasLayer/CenterContainer/RichTextLabel
@@ -42,7 +46,9 @@ func start() -> void:
 
 func _next() -> void:
 	if index == texts.size():
-		get_tree().change_scene_to_file("res://menus/main_menu.tscn")
+		fade.fade_to_black()
+		await fade.fade_out_finished
+		get_tree().change_scene_to_file("res://menus/credits.tscn")
 		return
 	
 	label.text = "[b][center]" + texts[index]
