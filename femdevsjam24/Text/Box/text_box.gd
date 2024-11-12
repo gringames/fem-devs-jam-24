@@ -42,7 +42,6 @@ func _ready() -> void:
 	
 	input_field = $DialogueBox/TextInput
 	input_field.hide()
-	input_field.send_button.connect("pressed", _next_page)
 	
 	dialogue_sfx = $DialogueSFX
 	
@@ -114,7 +113,7 @@ func _next_page() -> void:
 	if current_message.contains(input_indicator):
 		current_message = current_message.left(current_message.length() - 1)
 		input_field.show()
-		current_button.disabled = true
+		current_button.hide()
 		input_field.connect("sent_hope", _on_sent_hope)
 	
 	var split: Array = _split_name_and_message(current_message)
@@ -145,8 +144,9 @@ func _close() -> void:
 
 
 func _on_sent_hope() -> void:
-	current_button.disabled = false
+	current_button.show()
 	input_field.hide()
+	_next_page()
 	
 
 func _restart_dialogue_sfx() -> void:
