@@ -34,10 +34,10 @@ func _set_content(text: String) -> void:
 	content_label.text = text;
 
 func _set_date(text: String) -> void:
-	date_label.text = text;
+	date_label.text = "[center]" + text + "[/center]";
 
 func _set_headline(text: String) -> void:
-	headline_label.text = text;
+	headline_label.text = "[center]" + text + "[/center]";
 	
 	
 func _clear_all() -> void:

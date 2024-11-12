@@ -36,11 +36,12 @@ var day_info: Dictionary = {
 			"Keep the tree alive. I don't need to remind you this one, right?",
 			"Check your notepad if you aren't sure of what it needs.",
 			"Also, Sai said he would leave the newspaper on your desk when it arrives.",
-			"We receive it monthly. Not much we can do about it with how things are outside.",
+			"We'll receive it monthly now. I know it's a long time, but there isn't much we can do about it with how things are outside.",
 			"Lastly, when you are finished, for the love of God, do not forget to turn the lights off. We have NO energy to waste.",
-			"I have to go now. I hope this turns out right...",
-			"We've been talking about during breakfast, you know? Hopes.",
-			"They all rely on what we're doing here, buddy. Keep tight."
+			"And that's basically it. I hope this turns out right...",
+			"We've been talking about it during breakfast, you know? Hopes. An interesting topic in the times we live in.",
+			"Anyway, I have to hurry and repair the vents. I swear I can hear a sandstorm forming in the distance.",
+			"Everyone is relying on what we're doing here, buddy. So keep tight."
 			],
 		"newspaper":
 			[
@@ -60,20 +61,21 @@ var day_info: Dictionary = {
 			[
 			"Sai§What's up, mate? Your friendly molecular biologist Sai here!",
 			"How's everything going? Are you eating all right? The food isn't exactly tasty here but, hey, it's better than nothing, right?",
-			"I'm sorry I haven't had the chance to visit your lab lately. I left the newspaper while you were asleep, but we are busy up here!",
+			"I'm sorry I haven't had the chance to visit your lab lately. I left the newspaper while you were asleep and left. We are busy up here!",
 			"There is a strong sand storm outside that is threatening to tear the facilities apart.",
 			"Man, am I tired of cleaning the stupid sand. It gets into everything!",
 			"Anyway, I don't know if Anton told you, but we've been talking about hopes this past month.",
 			"You know, to try and cheer each other up.",
 			"So, I was wondering... What is your hope for the future?%",
 			"I am sure it will turn out well, mate.",
-			"Well, I have to go. It's me and one single sweeper against an entire sandstorm today!",
+			"I wonder what Mila, Kate and Alessandro would've hoped for if they hadn't decided to leave...",
+			"Well, I'll be on my way. It's me and one single sweeper against an entire sandstorm today!",
 			],
 		"newspaper":
 			[
 			"04-05-2084",
 			"Oxygen drops to never-before-seen levels.",
-			"Oxygen levels in the atmosphere keep dropping at a fast pace. Breathing outside of  aconditionated areas has become an impossible tasks. Oxygen masks's prices have increased due to high demand."
+			"Oxygen levels in the atmosphere keep dropping at a fast pace. Breathing outside of aconditionated areas has become an impossible task. Oxygen mask prices have increased to exhorbitant prices due to high demand."
 			]
 		},
 	3 : 
@@ -89,7 +91,7 @@ var day_info: Dictionary = {
 			"What do you think of the soil I produced? Is it working fine?",
 			"If you think I need to make a different one, just tell me so. I've been thinking about some nutrients I could add.",
 			"By the way, I also have to tell you about food supplies. We are running short, so we'll need to cut rations in half.",
-			"It's fine, though... I mean, since Kate, Alessandro and Mila decided to leave...",
+			"It's fine, though... I mean, since Kate, Alessandro and Mila left us...",
 			"We will make it with what we have. Thanks to them.",
 			"Do you ever wonder how they are? If they are still...?",
 			"No, I can't think like this. I'm sure they are just fine. Waiting for us to finish our job here.",
@@ -99,7 +101,7 @@ var day_info: Dictionary = {
 			[
 			"05-08-2084",
 			"Human population at its lowest.",
-			"The future of humanity is uncertain. The number of deaths doubles births each day. 90% of young people have declared not to have kids. Who would want to bring a baby into this world?"
+			"The future of humanity is uncertain. The number of deaths doubles births each day. 90% of young people declare to have decided not to have kids. This newspaper would like to throw the following question: who would want to bring a baby into this world?"
 			]
 		},
 	4 : 
@@ -113,19 +115,19 @@ var day_info: Dictionary = {
 			"Mizuki§Hello, it's Mizuki Watanabe. I came up with a better soil for the tree.",
 			"I left it in your lab this morning with this month's newspaper. I took the old soil with me so you wouldn't get confused.",
 			"I've seen the tree is growing well. I really hope it turns out to be a healthy, resilient tree in the end.",
-			"Did Anton and Sai tell you about the \"hopes\" conversations we've been maintaining?",
-			"I don't usually like to talk about myself, but... I agreed to share my feelings with them. I felt like this was important.",
+			"Did Anton and Sai tell you about the \"hopes\" conversations we've been maintaining the past months?",
+			"I don't usually like to talk about myself, but... I agreed to share my feelings with them. It feels important.",
 			"Hopes are what keep us alive, aren't they? We live in a world without oxygen. The only thing fueling us are hopes now.",
-			"It feels kind of poetic, don't you think? If our tree grows, it will provide us with oxygen to help us achieve our hopes one day.",
-			"I wish... I hope I can go back to Kyoto when this is over. Walk alongside Kamo river. See the herons take flight once more...",
-			"If there is anyone left alive, that is.",
-			"I need to hang up. Sai is screaming about finding sand in his coffee again. Please, enjoy your day."
+			"It feels kind of poetic, don't you think? If our tree grows, we will get the oxygen back to then fuel our hopes.",
+			"As for me, I hope I can go back to Kyoto when this is over. Walk alongside the Kamo river. See the herons take flight once more...",
+			"If there is any left alive, that is.",
+			"Sorry, I need to hang up. Sai is screaming about finding sand in his coffee again. Please, enjoy your day."
 			],
 		"newspaper":
 			[
 			"06-03-2084",
 			"Great freezes turn northern Europe uninhabitable.",
-			"Great amounts of population are gathering in southern France and northern Spain. The Mediterranean Sea seems to be humanity's last haven on earth. The rest of the world has turned into either a frozen landscape or scorched desert."
+			"Great amounts of population are gathering in southern France and northern Spain. The Mediterranean Sea seems to be humanity's last haven on Earth. The rest of the world has turned into either frozen landscape or scorched desert."
 			]
 		},
 	5 : 
@@ -140,8 +142,8 @@ var day_info: Dictionary = {
 			[
 			"Sai§Hi, mate! Doctor sand-exterminator Banerjee on the phone!",
 			"I'm actually terrible at getting rid of the sand, though. I think Mizuki is starting to get annoyed by my futile tries.",
-			"I just wanted to chek up on you. Are you alright? Feeling well and rested?",
-			"I received a letter from my wife today. She attatched a photo of our kids. If you saw how much they grew!",
+			"I just wanted to check up on you. Are you alright? Feeling well and rested?",
+			"I received a letter from my wife today. She attached a photo of our kids. If you saw how much they grew!",
 			"I remember when they were like, 2 or 3, and I was asked to take care of them while my wife had a shower.",
 			"I was reading a very interesting abstract on telomeres in some kind of Swedish bird and didn't notice the kiddo walking to the stairs.",
 			"He was using one of those baby-walkers full of hanging toys. The noise they made when he fell all the way down!",
@@ -173,13 +175,13 @@ var day_info: Dictionary = {
 			],
 		"calls": 
 			[
-			"Anton§Hey, Anton Hopper here. I wanted to check the tree status with you. It was looking healthy last time I checked. You are watering it properly, right?",
+			"Anton§Hey, Anton Hopper here. I wanted to check the tree status with you. It was looking healthy last time I monitored. You are watering it properly, right?",
 			"Sorry, I don't mean to imply that you don't know how to do your job. It's just... This needs to work. It has to work.",
 			"So... You heard about the hopes talk, yeah? Sai told us yours. But now that time has passed, I've been wondering more about...",
 			"Regrets.",
 			"I have some. They are deep, and dark, and sometimes keep me awake at night.",
-			"I... I think I need to share them with someone or they'll turn me mad.",
-			"But not yet. I don't feel prepared. Still, do you promise you won't judge me once I can tell you?",
+			"And I... I think I need to share them with someone. Or they'll turn me mad.",
+			"But not yet. I don't feel prepared. Still, do you promise you won't judge me once I have the courage to tell you?",
 			"It's just... too hard. This has been eating me alive. But it's fine. It will be fine.",
 			"Everything we're doing here will make it worthwhile.",
 			"Did you read yesterday's newspaper? If so, you may be wondering why I didn't tell anyone from outside about our tree.",
@@ -199,28 +201,29 @@ var day_info: Dictionary = {
 	7 : 
 		{
 		"tasks":
-			[
-			],
+			[],
 		"calls": 
 			[
-			"Anton§Hey, Anton Hopper here. Just making the routine check-up call.",
-			"The tree hasn't died yet, has it? That's great news. Sorry if I am a bit nervous about this. We need to make it work.",
-			"Anyway, let's go over your duties real quick. I need to get out to fix the damn vents that broke yesterday.",
-			"Keep the tree alive. I don't need to remind you this one, right?",
-			"Check your notepad if you aren't sure of what it needs.",
-			"Also, Sai said he would leave the newspaper on your desk when it arrives.",
-			"We receive it monthly. Not much we can do about it with how things are outside.",
-			"Lastly, when you are finished, for the love of God, do not forget to turn the lights off. We have NO energy to waste.",
-			"I have to go now. I hope this turns out right...",
-			"We've been talking about during breakfast, you know? Hopes.",
-			"They all rely on what we're doing here, buddy. Keep tight."
+			"Anton§Congratulations! I received the report where you confirm the tree is ready to be transplanted outside!",
+			"We made it, Doctor! We made it! I can't believe it! After all this time! After all the effort!",
+			"It took so much out of us. We had to make so many sacrifices. But it's done. It's finally done!",
+			"And it was worth it, all of it. For this moment.",
+			"...",
+			"I can trust you, right? You told me you wouldn't judge me when I was ready to let my regrets out.",
+			"I've been keeping this secret for very long. You wouldn't imagine how it has chased me, day and night.",
+			"I need to let it out. Tell someone. I think you will understand it now.",
+			"Remember the day Alessandro, Kate and Mila left? I told you they decided to go outside because they realised we wouldn't have supplies to survive.",
+			"All lies.",
+			"They didn't leave. They never decided to do so. I had to force them.",
+			"When they went outside to check on what was left of our first attempt of a forest... I locked them out.",
+			"We all knew food wouldn't be enough. Not for everyone. Not until this tree grew.",
+			"I mean, even without them, we have been eating nothing but potato salad for the last 30 days!.",
+			"It would have been impossible to mantain so many people in here. Someone had to make the decision.",
+			"You understand it, right? That we deserve this. The recognision.",
+			"We are saving what's left of humanity. People like us who did whatever was needed to survive!"
 			],
 		"newspaper":
-			[
-			"03-07-2084",
-			"Flooding in Venice leaves bodies on the streets.",
-			"The local police is trying to identify as many corpses as possible, and all citizens are encouraged to abandon their houses. The body of a dead dolphin has also been found in Saint Mark's Square, an animal that was believed to had extinted 20 years ago."
-			]
+			[]
 		},
 }
 
