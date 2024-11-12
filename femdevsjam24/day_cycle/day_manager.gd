@@ -14,11 +14,17 @@ class_name DayManager
 @export var phone: Phone
 @export var light_switch: LightSwitch
 
+@export_category("Action Buttons")
+@export var water_button: Button
+@export var trim_button: Button
+@export var feed_button: Button
+@export var check_temperature_button: Button
+
 
 var day_info: Dictionary = {
 	0 :
 		{
-		"tasks": ["plant the seed"],
+		"tasks": [Plants.Tasks.Plant],
 		"calls": [],
 		"newspaper": []
 		},
@@ -26,8 +32,7 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the seed",
-			"look around"
+			Plants.Tasks.Water
 			],
 		"calls": 
 			[
@@ -55,8 +60,8 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the seedling",
-			"check seedling temperature",
+			Plants.Tasks.Water,
+			Plants.Tasks.CheckTemperature,
 			],
 		"calls": 
 			[
@@ -83,8 +88,8 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the sapling",
-			"trim the sapling"
+			Plants.Tasks.Water,
+			Plants.Tasks.Trim,
 			],
 		"calls": 
 			[
@@ -109,7 +114,7 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the sapling",
+			Plants.Tasks.Water,
 			],
 		"calls": 
 			[
@@ -135,9 +140,9 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the sapling",
-			"feed the sapling",
-			"check sapling temperature",
+			Plants.Tasks.Water,
+			Plants.Tasks.Feed,
+			Plants.Tasks.CheckTemperature,
 			],
 		"calls": 
 			[
@@ -169,10 +174,10 @@ var day_info: Dictionary = {
 		{
 		"tasks":
 			[
-			"water the sapling",
-			"trim the sapling",
-			"feed the sapling",
-			"check sapling temperature",
+			Plants.Tasks.Water,
+			Plants.Tasks.Feed,
+			Plants.Tasks.Trim,
+			Plants.Tasks.CheckTemperature,
 			],
 		"calls": 
 			[
@@ -237,20 +242,29 @@ const calls_key: String = "calls"
 const newspaper_key: String = "newspaper"
 
 # player has to plant seed on day 0, so init array with this value
-var has_tent_today: Array[bool] = [true, false, false, false, false, false, false, false]
+var has_tent_today: Array[bool] = [true, false, false, false, false, false, false]
+var todays_actions: Array[Plants.Tasks] = []
+
+var current_tasks: Array
 
 
 func _ready() -> void:
 	next_day_button.connect("mouse_clicked_on_object", _end_day)
-	plant.connect("clicked_plant", _on_plant_clicked)
 	fade.connect("fade_out_finished", _start_day)
 	fade.connect("fade_in_finished", _next_day)
+	
+	water_button.connect("pressed", _on_water_sapling)
+	trim_button.connect("pressed", _on_trim_sapling)
+	feed_button.connect("pressed", _on_feed_sapling)
+	check_temperature_button.connect("pressed", _on_check_temperature)
+	
 	_start_day()
 	
 	
+	
 func _end_day() -> void:
-	next_day_button.active = false
 	phone._stop_ringing()
+	_evaluate_todays_actions()
 	
 	current_day += 1
 	lights_off_sfx.play()
@@ -263,7 +277,8 @@ func _start_day() -> void:
 	if current_day == 7:
 		_determine_ending()
 		return
-		
+	
+	_clear_todays_actions()
 	if has_tent_today[current_day - 1]:
 		plant.grow()
 	plant.get_dry()
@@ -288,7 +303,7 @@ func _handle_day() -> void:
 	else:
 		phone.deactivate()
 		
-	var current_tasks: Array = day_info[current_day][tasks_key]
+	current_tasks = day_info[current_day][tasks_key]
 	_set_up_task_list(current_tasks)
 	
 	var news:Array = day_info[current_day][newspaper_key]
@@ -317,15 +332,27 @@ func _set_up_task_list(content) -> void:
 
 func _create_tasks_checklist(tasks: Array) -> String:
 	if tasks.is_empty():
-		return "\t1) turn off the lights."
+		return "\t1) Turn off the lights."
 	
 	var checklist: String = "Tasks for today:\n"
 	var task_counter: int = 1
 	
 	for task in tasks:
-		checklist +=  "\t" + str(task_counter) + ") " + str(task) + "\n"
+		checklist +=  "\t" + str(task_counter) + ") " + _task_to_string(task) + "\n"
 		task_counter += 1
-	return checklist + "\t" + str(task_counter) + ") turn off the lights."
+	return checklist + "\t" + str(task_counter) + ") Turn off the lights."
+
+
+func _task_to_string(task: Plants.Tasks) -> String:
+	match task:
+		Plants.Tasks.Plant: return "Plant the seedling."
+		Plants.Tasks.Water: return "Water the sapling."
+		Plants.Tasks.Feed: return "Feed the sapling."
+		Plants.Tasks.Trim: return "Trim the sapling."
+		Plants.Tasks.CheckTemperature: return "Check seedling temperature."
+	return "Turn off lights"
+
+
 
 
 func _stop_current_music_track() -> void:
@@ -335,10 +362,45 @@ func _stop_current_music_track() -> void:
 func play_track_for_current_day() -> void:
 	audioStreamPlayer.stream = audioTrackHandler.get_track_for_day(current_day)
 	audioStreamPlayer.play()
+	
+	
+func _on_water_sapling() -> void:
+	if todays_actions.has(Plants.Tasks.Water):
+		print("I shouldn't waste water")
+		return
+	todays_actions.push_back(Plants.Tasks.Water)
+	plant._get_wet()
 
 	
-func _on_plant_clicked()  -> void:
-	has_tent_today[current_day] = true
+func _on_feed_sapling() -> void:
+	if todays_actions.has(Plants.Tasks.Feed):
+		return
+	todays_actions.push_back(Plants.Tasks.Feed)
+	
+
+func _on_trim_sapling() -> void:
+	if todays_actions.has(Plants.Tasks.Trim):
+		return
+	todays_actions.push_back(Plants.Tasks.Trim)
+	
+
+func _on_check_temperature() -> void:
+	if todays_actions.has(Plants.Tasks.CheckTemperature):
+		return
+	todays_actions.push_back(Plants.Tasks.CheckTemperature)
+	
+
+func _evaluate_todays_actions() -> void:
+	# when empty, foreach is not executed so keep initial value
+	var has_done_correct_tasks: bool = not todays_actions.is_empty()
+	for action in todays_actions:
+		if current_tasks.has(action) != todays_actions.has(action):
+			has_done_correct_tasks = false
+	has_tent_today[current_day] = has_done_correct_tasks
+	
+
+func _clear_todays_actions() -> void:
+	todays_actions.clear()
 
 
 func _determine_ending() -> void:

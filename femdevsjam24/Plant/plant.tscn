@@ -32,48 +32,56 @@ visible = false
 position = Vector2(0, 264)
 scale = Vector2(-30.6554, -15.9513)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable1" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 224)
 scale = Vector2(-30.6554, -19.5913)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable2" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 176)
 scale = Vector2(-28.6485, -26.3646)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable3" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 128)
 scale = Vector2(-30.6554, -29.4313)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable4" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 56)
 scale = Vector2(-30.6554, -36.2713)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable5" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 32)
 scale = Vector2(-30.6554, -37.9113)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable6" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, -40)
 scale = Vector2(-35.1183, -46.2119)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="Clickable7" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_ymos1")]
 visible = false
 position = Vector2(0, 264)
 scale = Vector2(-30.6554, -15.9513)
 visuals = [NodePath("../PotVisual"), NodePath("../PlantVisual")]
+scale_when_hovered = false
 
 [node name="WateringSFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_fyvq5")

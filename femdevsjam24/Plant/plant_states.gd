@@ -11,3 +11,11 @@ enum States {
 	Blossom,
 	Withered
 }
+
+enum Tasks {
+	Plant,
+	Water,
+	Feed,
+	Trim,
+	CheckTemperature
+}

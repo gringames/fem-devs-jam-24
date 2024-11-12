@@ -19,11 +19,14 @@ fade_speed = 0.5
 auto_start = true
 
 [node name="TextBox" parent="." instance=ExtResource("5_jnko3")]
-position = Vector2(-424, 80)
+position = Vector2(-424, 88)
 
 [node name="Background" parent="." instance=ExtResource("4_awyev")]
 z_index = -2
 position = Vector2(-424, -184)
+
+[node name="Counter" parent="Background" index="1"]
+position = Vector2(0, -8)
 
 [node name="Newspaper" parent="Background" index="3"]
 visible = false

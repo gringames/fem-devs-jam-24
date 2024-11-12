@@ -3,6 +3,7 @@ class_name Clickable
 
 
 @export var visuals: Array[Sprite2D]
+@export var scale_when_hovered: bool = true
 
 
 ### Signals -------------------------------------------------------------------------------------------
@@ -30,8 +31,9 @@ func _ready() -> void:
 	EventBus.connect("mouse_clicked", _on_mouse_clicked)
 	EventBus.connect("mouse_released", _on_mouse_released)
 	
-	connect("mouse_hover_start", _scale_up)
-	connect("mouse_hover_end", _scale_down)
+	if scale_when_hovered:
+		connect("mouse_hover_start", _scale_up)
+		connect("mouse_hover_end", _scale_down)
 
 
 ### Handling Mouse Hover ------------------------------------------------------------------------------
