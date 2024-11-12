@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Day 0 Soundscape Room Noise.mp3-81f7d5553e5c8
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
