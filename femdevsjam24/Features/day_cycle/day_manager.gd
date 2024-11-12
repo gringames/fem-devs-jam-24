@@ -8,7 +8,8 @@ class_name DayManager
 @export var plant: Plant
 @export var fade: BlackFade
 @export var audioStreamPlayer: AudioStreamPlayer
-@export var sfx: AudioStreamPlayer
+@export var lights_off_sfx: AudioStreamPlayer
+@export var lights_on_sfx: AudioStreamPlayer
 @export var audioTrackHandler: TrackHandler
 @export var phone: Phone
 
@@ -247,7 +248,7 @@ func _end_day() -> void:
 	phone._stop_ringing()
 	
 	current_day += 1
-	sfx.play()
+	lights_off_sfx.play()
 	fade.fade_to_black()
 	_stop_current_music_track()
 
@@ -259,7 +260,7 @@ func _start_day() -> void:
 		
 	play_track_for_current_day()
 	fade.fade_from_black()
-	next_day_button.active = true
+	lights_on_sfx.play()
 
 
 func _next_day() -> void:

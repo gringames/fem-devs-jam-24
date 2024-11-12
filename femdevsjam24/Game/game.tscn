@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=34 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -18,17 +18,18 @@
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="12_lr51w"]
 [ext_resource type="PackedScene" uid="uid://tbr5y2o7ouv1" path="res://Newspaper/newspaper_article.tscn" id="13_k3c02"]
 [ext_resource type="Script" path="res://Game/track_handler.gd" id="13_towrx"]
+[ext_resource type="AudioStream" uid="uid://d3px0oxrfhaug" path="res://Sounds/Light Switch On.wav" id="13_tt2u6"]
 [ext_resource type="PackedScene" uid="uid://c60w1gih8xyxv" path="res://Features/ClickableObjects/Phone.tscn" id="14_3hl40"]
-[ext_resource type="AudioStream" uid="uid://dq70fyd5nd11g" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="14_v38i1"]
-[ext_resource type="AudioStream" uid="uid://bj0a67o4rjsc2" path="res://Music/Day 1.mp3" id="15_4c28u"]
+[ext_resource type="AudioStream" uid="uid://co6mhkiea3kty" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="14_v38i1"]
+[ext_resource type="AudioStream" uid="uid://bslvfv3bm20bi" path="res://Music/Day 1.mp3" id="15_4c28u"]
 [ext_resource type="PackedScene" uid="uid://b78moksmavcck" path="res://Features/ClickableObjects/Notebook.tscn" id="15_lu1wx"]
 [ext_resource type="PackedScene" uid="uid://bi68oladgtk0t" path="res://Text/TaskList.tscn" id="16_cw5wg"]
-[ext_resource type="AudioStream" uid="uid://bol3jdg14n2wb" path="res://Music/Day 2.mp3" id="16_v5dcu"]
-[ext_resource type="AudioStream" uid="uid://cor5mr8clajun" path="res://Music/Day 3.mp3" id="17_p7efk"]
+[ext_resource type="AudioStream" uid="uid://bm8vamp8wgxml" path="res://Music/Day 2.mp3" id="16_v5dcu"]
+[ext_resource type="AudioStream" uid="uid://dxv157k6ldmgt" path="res://Music/Day 3.mp3" id="17_p7efk"]
 [ext_resource type="PackedScene" uid="uid://dhbx1ybr467b2" path="res://Features/ClickableObjects/Newspaper.tscn" id="18_hng1r"]
-[ext_resource type="AudioStream" uid="uid://8no3eo5ong1b" path="res://Music/Day 4.mp3" id="18_incir"]
-[ext_resource type="AudioStream" uid="uid://dx67jru3is7eg" path="res://Music/Day 5.mp3" id="19_viikn"]
-[ext_resource type="AudioStream" uid="uid://bn0ajnsbt53wt" path="res://Music/Day 6.mp3" id="20_6ua1p"]
+[ext_resource type="AudioStream" uid="uid://cbxarvbj5eji3" path="res://Music/Day 4.mp3" id="18_incir"]
+[ext_resource type="AudioStream" uid="uid://dlltm11wr518e" path="res://Music/Day 5.mp3" id="19_viikn"]
+[ext_resource type="AudioStream" uid="uid://cdevmiwe5aov6" path="res://Music/Day 6.mp3" id="20_6ua1p"]
 [ext_resource type="AudioStream" uid="uid://cqcfei7lid4my" path="res://Sounds/Off switch fluorescent light Short.mp3" id="21_g6cem"]
 [ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="21_gp6uu"]
 [ext_resource type="Texture2D" uid="uid://buetfp1dgn2n4" path="res://Art/background.png" id="32_a84nj"]
@@ -93,6 +94,12 @@ script = ExtResource("10_uo6bn")
 on = ExtResource("9_djhp4")
 off = ExtResource("11_8q24f")
 
+[node name="LightSFXoff" type="AudioStreamPlayer" parent="LightSwitch"]
+stream = ExtResource("21_g6cem")
+
+[node name="LightSFXon" type="AudioStreamPlayer" parent="LightSwitch"]
+stream = ExtResource("13_tt2u6")
+
 [node name="LightSwitchClickable" parent="LightSwitch" node_paths=PackedStringArray("visuals") instance=ExtResource("10_0og64")]
 position = Vector2(-4.76837e-07, 0)
 scale = Vector2(8.64001, 10.04)
@@ -103,7 +110,7 @@ position = Vector2(552, 352)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "sfx", "audioTrackHandler", "phone")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "lights_off_sfx", "lights_on_sfx", "audioTrackHandler", "phone")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../LightSwitch/LightSwitchClickable")
 phone_call_text_box = NodePath("../../TextBox")
@@ -112,7 +119,8 @@ newspaper = NodePath("../../NewspaperArticle")
 plant = NodePath("../../Plant")
 fade = NodePath("../BlackFadeCanvasLayer")
 audioStreamPlayer = NodePath("../MusicPlayer")
-sfx = NodePath("../LightSFXPlayer")
+lights_off_sfx = NodePath("../../LightSwitch/LightSFXoff")
+lights_on_sfx = NodePath("../../LightSwitch/LightSFXon")
 audioTrackHandler = NodePath("../TrackHandler")
 phone = NodePath("../../Phone")
 
@@ -121,9 +129,6 @@ script = ExtResource("13_towrx")
 day_tracks = Array[AudioStream]([ExtResource("14_v38i1"), ExtResource("15_4c28u"), ExtResource("16_v5dcu"), ExtResource("17_p7efk"), ExtResource("18_incir"), ExtResource("19_viikn"), ExtResource("20_6ua1p")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="Logic"]
-
-[node name="LightSFXPlayer" type="AudioStreamPlayer" parent="Logic"]
-stream = ExtResource("21_g6cem")
 
 [node name="BlackFadeCanvasLayer" parent="Logic" instance=ExtResource("12_lr51w")]
 fade_speed = 1.0

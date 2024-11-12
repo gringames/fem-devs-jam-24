@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bewkm2ohlnojy"
+path="res://.godot/imported/Day 7(1).mp3-f5119c2e1b18c17f7c72baa6805c45cb.mp3str"
+
+[deps]
+
+source_file="res://Music/Day 7(1).mp3"
+dest_files=["res://.godot/imported/Day 7(1).mp3-f5119c2e1b18c17f7c72baa6805c45cb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

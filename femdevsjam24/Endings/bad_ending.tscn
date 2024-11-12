@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://vyextkx35m6"]
 
-[ext_resource type="AudioStream" uid="uid://bmaq1d74qqha3" path="res://Music/Plant Withered Losing Hope.mp3" id="1_8ka7s"]
+[ext_resource type="AudioStream" uid="uid://85l80s2xk8d7" path="res://Music/Plant Withered Losing Hope.mp3" id="1_8ka7s"]
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_a5ofw"]
 [ext_resource type="Texture2D" uid="uid://bukk0fcbnjtao" path="res://Art/Plant/7_Withered.png" id="3_fjaro"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_yjrcf"]

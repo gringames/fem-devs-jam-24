@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ch8hggnmootfr"]
 
-[ext_resource type="AudioStream" uid="uid://cwj5f7qirxaey" path="res://Music/Day 7.mp3" id="1_y0pan"]
+[ext_resource type="AudioStream" uid="uid://dux323ey75hv6" path="res://Music/Day 7.mp3" id="1_y0pan"]
 [ext_resource type="PackedScene" uid="uid://cw8mbfe7g7us2" path="res://Text/Box/Final.tscn" id="3_n4dir"]
 [ext_resource type="PackedScene" uid="uid://5ewcfc7r65ud" path="res://Text/Box/final_box.tscn" id="4_5x6h8"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_sxqwc"]

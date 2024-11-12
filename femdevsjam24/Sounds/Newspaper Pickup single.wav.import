@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byah2v3vhehe5"
+path="res://.godot/imported/Newspaper Pickup single.wav-6787d227a458621d758e82e0a9713fe0.sample"
+
+[deps]
+
+source_file="res://Sounds/Newspaper Pickup single.wav"
+dest_files=["res://.godot/imported/Newspaper Pickup single.wav-6787d227a458621d758e82e0a9713fe0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
