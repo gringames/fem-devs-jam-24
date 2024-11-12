@@ -42,6 +42,7 @@ func _ready() -> void:
 	
 	input_field = $DialogueBox/TextInput
 	input_field.hide()
+	input_field.send_button.connect("pressed", _next_page)
 	
 	dialogue_sfx = $DialogueSFX
 	
