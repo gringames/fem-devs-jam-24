@@ -110,7 +110,7 @@ position = Vector2(552, 352)
 
 [node name="Logic" type="Node" parent="."]
 
-[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "lights_off_sfx", "lights_on_sfx", "audioTrackHandler", "phone")]
+[node name="DayManager" type="Node" parent="Logic" node_paths=PackedStringArray("next_day_button", "phone_call_text_box", "task_list", "newspaper", "plant", "fade", "audioStreamPlayer", "lights_off_sfx", "lights_on_sfx", "audioTrackHandler", "phone", "light_switch")]
 script = ExtResource("6_i1hnc")
 next_day_button = NodePath("../../LightSwitch/LightSwitchClickable")
 phone_call_text_box = NodePath("../../TextBox")
@@ -123,6 +123,7 @@ lights_off_sfx = NodePath("../../LightSwitch/LightSFXoff")
 lights_on_sfx = NodePath("../../LightSwitch/LightSFXon")
 audioTrackHandler = NodePath("../TrackHandler")
 phone = NodePath("../../Phone")
+light_switch = NodePath("../../LightSwitch")
 
 [node name="TrackHandler" type="Node" parent="Logic"]
 script = ExtResource("13_towrx")

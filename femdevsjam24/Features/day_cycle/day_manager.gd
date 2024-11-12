@@ -12,6 +12,7 @@ class_name DayManager
 @export var lights_on_sfx: AudioStreamPlayer
 @export var audioTrackHandler: TrackHandler
 @export var phone: Phone
+@export var light_switch: LightSwitch
 
 
 var day_info: Dictionary = {
@@ -227,7 +228,9 @@ var day_info: Dictionary = {
 		},
 }
 
-var current_day: int = 1 # start with day 1 as day 0 is main menu
+
+ # start with day 1 as day 0 is main menu
+var current_day: int = 1
 
 const tasks_key: String = "tasks"
 const calls_key: String = "calls"
@@ -252,6 +255,7 @@ func _end_day() -> void:
 	
 	current_day += 1
 	lights_off_sfx.play()
+	light_switch.switch_off()
 	fade.fade_to_black()
 	_stop_current_music_track()
 
@@ -261,21 +265,22 @@ func _start_day() -> void:
 		_determine_ending()
 		return
 		
-	play_track_for_current_day()
-	fade.fade_from_black()
-	lights_on_sfx.play()
-
-
-func _next_day() -> void:
-	# print("current day: ", current_day)	
-	_handle_day()
-
-
-func _handle_day() -> void:
 	if has_tent_today[current_day - 1]:
 		plant.grow()
 	plant.get_dry()
 	
+	play_track_for_current_day()
+	fade.fade_from_black()
+	lights_on_sfx.play()
+	light_switch.switch_on()
+	
+	
+
+func _next_day() -> void:
+	_handle_day()
+
+
+func _handle_day() -> void:	
 	var current_calls: Array = day_info[current_day][calls_key]
 	if _is_call_happening_today(current_calls):
 		phone.ring()

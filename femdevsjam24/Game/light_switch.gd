@@ -1,15 +1,17 @@
 extends Sprite2D
+class_name LightSwitch
 
 @export var on: Texture2D
 @export var off: Texture2D
 
 
 func _ready() -> void:
-	texture = off
-	$LightSwitchClickable.connect("mouse_clicked_on_object", _switch)
+	switch_on()
+	$LightSwitchClickable.connect("mouse_clicked_on_object", switch_off)
 	
 	
-func _switch():
+func switch_on():
 	texture = on
-	await get_tree().create_timer(0.5).timeout
+
+func switch_off():
 	texture = off
