@@ -52,9 +52,6 @@ func _ready() -> void:
 	name_label = $DialogueBox/Name
 	
 	next_button = $DialogueBox/NextButton
-	
-	next_button.hide()
-	
 	next_button.connect("pressed", _next_page)
 	
 	goodFinalBtn1.connect("pressed", gotoGoodFinal)

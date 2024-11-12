@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfnxquoiq7m18"]
+[gd_scene load_steps=8 format=3 uid="uid://cfnxquoiq7m18"]
 
 [ext_resource type="AudioStream" uid="uid://dux323ey75hv6" path="res://Music/Day 7.mp3" id="1_iwq3x"]
-[ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="2_c3e0a"]
 [ext_resource type="Texture2D" uid="uid://dkrb4kwyj336g" path="res://Art/Plant/6_Plant_Day_6.png" id="3_p0qa3"]
+[ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="4_8amkm"]
+[ext_resource type="Texture2D" uid="uid://cvcwlfcflbqq0" path="res://Art/Plant/0_Pot_Wet.png" id="4_db6ks"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_qb0wp"]
-[ext_resource type="PackedScene" uid="uid://d277a41su2sdk" path="res://Text/Box/text_box.tscn" id="10_m37eh"]
+[ext_resource type="Texture2D" uid="uid://crk18badgkrd0" path="res://Art/Spotlight/Spotlight Overlay.png" id="6_ck1ae"]
+[ext_resource type="PackedScene" uid="uid://bygadr8aeh2ii" path="res://Text/Box/good_ending_text_box.tscn" id="7_ji7wu"]
 
 [node name="GoodEnding" type="Node2D"]
 position = Vector2(424, 184)
@@ -13,18 +15,35 @@ position = Vector2(424, 184)
 stream = ExtResource("1_iwq3x")
 autoplay = true
 
-[node name="0PotDry" type="Sprite2D" parent="."]
-position = Vector2(1184, 624)
-scale = Vector2(0.502827, 0.5)
-texture = ExtResource("2_c3e0a")
-
-[node name="7Withered" type="Sprite2D" parent="0PotDry"]
-position = Vector2(15.91, 16)
-texture = ExtResource("3_p0qa3")
-
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_qb0wp")]
 fade_speed = 0.5
 auto_start = true
 
-[node name="TextBox" parent="." instance=ExtResource("10_m37eh")]
-position = Vector2(-784, -40)
+[node name="Background" parent="." instance=ExtResource("4_8amkm")]
+z_index = -1
+position = Vector2(-424, -184)
+
+[node name="Newspaper" parent="Background" index="3"]
+visible = false
+
+[node name="Notebook" parent="Background" index="4"]
+visible = false
+
+[node name="CellphoneNocall" parent="Background" index="5"]
+visible = false
+
+[node name="0PotDry" parent="Background" index="6"]
+texture = ExtResource("4_db6ks")
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(560, 360)
+texture = ExtResource("3_p0qa3")
+
+[node name="SpotlightOverlay" type="Sprite2D" parent="."]
+position = Vector2(536, 352)
+texture = ExtResource("6_ck1ae")
+
+[node name="TextBox2" parent="." instance=ExtResource("7_ji7wu")]
+position = Vector2(-416, -184)
+
+[editable path="Background"]
