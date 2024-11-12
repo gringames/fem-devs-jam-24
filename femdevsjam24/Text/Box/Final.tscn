@@ -1,24 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw8mbfe7g7us2"]
+[gd_scene load_steps=4 format=3 uid="uid://cw8mbfe7g7us2"]
 
 [ext_resource type="Script" path="res://Text/Box/click_text.gd" id="1_of48r"]
+[ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="2_ojsj2"]
+[ext_resource type="FontFile" uid="uid://dvxig3y6u5rkg" path="res://Fonts/arsenal/Arsenal-Bold.otf" id="3_hvwys"]
 
 [node name="Final" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -872.0
+offset_top = -164.0
+offset_right = -872.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_of48r")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.137
-anchor_top = 0.296
-anchor_right = 0.904
-anchor_bottom = 0.652
-offset_left = -7.04001
-offset_top = 0.320007
-offset_right = 0.319946
-offset_bottom = -0.160034
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_left = 352.0
+offset_top = 424.0
+offset_right = 1852.0
+offset_bottom = 1424.0
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CenterContainer"]
+z_index = 6
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_ojsj2")
+theme_override_fonts/bold_font = ExtResource("3_hvwys")
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 100
+bbcode_enabled = true
+text = "[b][center]The last tree on Earth thrives thanks to everyone's sacrifice,[/center][/b]"

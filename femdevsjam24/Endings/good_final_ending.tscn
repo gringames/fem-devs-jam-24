@@ -18,12 +18,13 @@ position = Vector2(424, 184)
 stream = ExtResource("1_y0pan")
 autoplay = true
 
-[node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_sxqwc")]
-fade_speed = 0.5
-auto_start = true
-
 [node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("3_n4dir")]
-texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
+z_index = 14
+offset_left = -336.0
+offset_top = 192.0
+offset_right = 1568.0
+offset_bottom = 1280.0
+texts = ["The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
 plant_visual_blossom = ExtResource("7_65dno")
 plant_visual_withered = ExtResource("5_rfphi")
 plant_visual = NodePath("../Plant")
@@ -31,13 +32,19 @@ pot_dry = ExtResource("6_7wbmb")
 pot_wet = ExtResource("7_x5dn3")
 pot_visual = NodePath("../Background/0PotDry")
 
+[node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_sxqwc")]
+fade_speed = 0.5
+auto_start = true
+
 [node name="Plant" type="Sprite2D" parent="."]
 position = Vector2(560, 360)
 texture = ExtResource("7_65dno")
 
 [node name="TextBox" parent="." node_paths=PackedStringArray("fade", "final") instance=ExtResource("4_5x6h8")]
+position = Vector2(-440, 80)
 fade = NodePath("../BlackFadeCanvasLayer")
 final = NodePath("../Final")
+current_pages = Array[String](["I always knew you had what it takes, doctor.", "Now I'll get the recognition I always deserved.", "Mizuki will be able to go back to her beloved city, and Sai will look back one day and be proud of what he accomplished.", "Of what we have accomplished.", "As for you... \"%\".", "That's what you wanted, right? It'll come to be as well. All thank to the decisions we were able to make.", "Bring the tree outside, doctor. Today, we make history."])
 
 [node name="Background" parent="." instance=ExtResource("5_0cj51")]
 z_index = -2

@@ -18,9 +18,11 @@ var index: int = 0
 var label: RichTextLabel
 
 func _ready() -> void:
-	label = $RichTextLabel
+	label = $CanvasLayer/CenterContainer/RichTextLabel
+	label.hide()
 	label.text = texts[index]
 	_prepare_plant_visuals()
+	
 
 # plant visual has to be same as in ending before
 func _prepare_plant_visuals() -> void:
@@ -34,6 +36,7 @@ func _prepare_plant_visuals() -> void:
 
 func start() -> void:
 	EventBus.connect("mouse_clicked", _next)
+	label.show()
 	_next()
 
 
@@ -42,5 +45,5 @@ func _next() -> void:
 		get_tree().change_scene_to_file("res://menus/main_menu.tscn")
 		return
 	
-	label.text = texts[index]
+	label.text = "[b][center]" + texts[index]
 	index += 1
