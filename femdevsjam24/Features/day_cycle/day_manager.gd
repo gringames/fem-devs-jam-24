@@ -297,7 +297,6 @@ func _is_call_happening_today(calls: Array) -> bool:
 	
 
 func _set_up_phone_call(content) -> void:
-	# TODO: add ring sfx
 	phone_call_text_box.disappear()
 	phone_call_text_box.set_pages(content)
 
@@ -343,4 +342,3 @@ func _determine_ending() -> void:
 	else:
 		get_tree().change_scene_to_file("res://Endings/good_ending.tscn")
 		
-	# TODO: switch to correct scene

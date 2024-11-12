@@ -102,7 +102,7 @@ func _next_page() -> void:
 	current_message = current_pages[counter]
 	
 	if current_message.contains(input_indicator):
-		current_message.left(current_message.length() - 1)
+		current_message = current_message.left(current_message.length() - 1)
 		input_field.show()
 		current_button.disabled = true
 		input_field.connect("sent_hope", _on_sent_hope)

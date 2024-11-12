@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ch8hggnmootfr"]
 
-[ext_resource type="AudioStream" uid="uid://bmaq1d74qqha3" path="res://Music/Plant Withered Losing Hope.mp3" id="1_fd2k2"]
+[ext_resource type="AudioStream" uid="uid://cwj5f7qirxaey" path="res://Music/Day 7.mp3" id="1_y0pan"]
 [ext_resource type="PackedScene" uid="uid://cw8mbfe7g7us2" path="res://Text/Box/Final.tscn" id="3_n4dir"]
 [ext_resource type="PackedScene" uid="uid://5ewcfc7r65ud" path="res://Text/Box/final_box.tscn" id="4_5x6h8"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_sxqwc"]
@@ -9,7 +9,7 @@
 position = Vector2(424, 184)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_fd2k2")
+stream = ExtResource("1_y0pan")
 autoplay = true
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_sxqwc")]
@@ -19,4 +19,6 @@ auto_start = true
 [node name="Final" parent="." instance=ExtResource("3_n4dir")]
 texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
 
-[node name="TextBox" parent="." instance=ExtResource("4_5x6h8")]
+[node name="TextBox" parent="." node_paths=PackedStringArray("fade", "final") instance=ExtResource("4_5x6h8")]
+fade = NodePath("../BlackFadeCanvasLayer")
+final = NodePath("../Final")

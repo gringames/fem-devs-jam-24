@@ -7,8 +7,9 @@
 
 [node name="BadFinalEnding" type="Node2D"]
 
-[node name="TextBox" parent="." node_paths=PackedStringArray("fade") instance=ExtResource("1_2suc5")]
+[node name="TextBox" parent="." node_paths=PackedStringArray("fade", "final") instance=ExtResource("1_2suc5")]
 fade = NodePath("../BlackFadeCanvasLayer")
+final = NodePath("../Final")
 
 [node name="Final" parent="." instance=ExtResource("2_n11y4")]
 texts = ["You made your choice.", "The last tree on Earth rots in front of your eyes,", "and so all hopes wither."]
