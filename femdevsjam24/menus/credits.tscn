@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://it2nutfv0qjy"]
+[gd_scene load_steps=11 format=3 uid="uid://it2nutfv0qjy"]
 
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="1_3d7dc"]
 [ext_resource type="Texture2D" uid="uid://dkoiqqau5neo1" path="res://Logos/femdevs_gamejam_logo.png" id="1_npcjv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="2_hln86"]
 [ext_resource type="Texture2D" uid="uid://cu4w8qdubwtjy" path="res://Art/logo.png" id="3_a28uw"]
 [ext_resource type="Script" path="res://menus/quit_game.gd" id="3_v5gao"]
+[ext_resource type="PackedScene" uid="uid://bi7dw5pgb1mgr" path="res://Buttons/scalable_button.tscn" id="5_v3nwi"]
 [ext_resource type="Texture2D" uid="uid://1ytq88sv3sbe" path="res://Logos/godot.png" id="7_ovnv6"]
 [ext_resource type="AudioStream" uid="uid://c5ponqt38faxh" path="res://Music/Credits.mp3" id="9_6d62a"]
 
@@ -107,6 +108,8 @@ text = "Main Menu"
 script = ExtResource("1_s31yv")
 sceneToOpenPath = "res://menus/main_menu.tscn"
 
+[node name="ScalableButton" parent="MainMenuButton" instance=ExtResource("5_v3nwi")]
+
 [node name="QuitButton" type="Button" parent="."]
 offset_left = 1736.0
 offset_top = 128.0
@@ -118,6 +121,8 @@ theme_override_font_sizes/font_size = 45
 text = "Quit
 "
 script = ExtResource("3_v5gao")
+
+[node name="ScalableButton" parent="QuitButton" instance=ExtResource("5_v3nwi")]
 
 [node name="Background" parent="." instance=ExtResource("2_hln86")]
 z_index = -1

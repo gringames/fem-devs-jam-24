@@ -5,9 +5,9 @@ class_name ScalableButton
 
 
 func _ready() -> void:
-	
 	button.connect("mouse_entered", _scale_up)
 	button.connect("mouse_exited", _scale_down)
+	button.pivot_offset = Vector2(button.size / 2)
 
 func _scale_up() -> void:
 	button.scale *= 1.2
