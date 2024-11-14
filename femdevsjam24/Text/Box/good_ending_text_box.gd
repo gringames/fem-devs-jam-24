@@ -65,6 +65,7 @@ func _ready() -> void:
 	
 	EndingPlantState.final_plant_state = Plants.States.Blossom
 	audio_stream_player = $AudioStreamPlayer
+	audio_stream_player.play(MusicTracker.current_music_offset)
 
 
 # PAGES --------------------------------------------------------------------------------------------
@@ -154,10 +155,11 @@ func contBt():
 	continueBtn.hide()
 	
 func gotoGoodFinal():
-	BadEndingMusic.current_music_offset = 	audio_stream_player.get_playback_position()
+	MusicTracker.current_music_offset = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Endings/good_final_ending.tscn")
 
 func gotoBadFinal():
+	MusicTracker.current_music_offset = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Endings/bad_final_ending.tscn")
 	
 func _split_name_and_message(line: String) -> Array:
@@ -169,4 +171,5 @@ func _split_name_and_message(line: String) -> Array:
 	return split
 	
 func _close() -> void:
+	MusicTracker.current_music_offset = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Endings/bad_final_ending.tscn")

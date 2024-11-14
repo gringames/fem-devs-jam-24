@@ -40,7 +40,7 @@ func _ready() -> void:
 	appear()
 	
 	audio_stream_player =$AudioStreamPlayer
-	audio_stream_player.play(BadEndingMusic.current_music_offset)
+	audio_stream_player.play(MusicTracker.current_music_offset)
 
 
 # PAGES --------------------------------------------------------------------------------------------

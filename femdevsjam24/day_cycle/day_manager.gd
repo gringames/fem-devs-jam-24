@@ -356,12 +356,12 @@ func _task_to_string(task: Plants.Tasks) -> String:
 
 
 func _stop_current_music_track() -> void:
-	audioStreamPlayer.stop()
+	MusicTracker.current_music_offset = audioStreamPlayer.get_playback_position()
 
 
 func play_track_for_current_day() -> void:
 	audioStreamPlayer.stream = audioTrackHandler.get_track_for_day(current_day)
-	audioStreamPlayer.play()
+	audioStreamPlayer.play(MusicTracker.current_music_offset)
 	
 	
 func _on_water_sapling() -> void:

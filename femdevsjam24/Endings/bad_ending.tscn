@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vyextkx35m6"]
+[gd_scene load_steps=8 format=3 uid="uid://vyextkx35m6"]
 
 [ext_resource type="AudioStream" uid="uid://85l80s2xk8d7" path="res://Music/Plant Withered Losing Hope.mp3" id="1_8ka7s"]
 [ext_resource type="Texture2D" uid="uid://bukk0fcbnjtao" path="res://Art/Plant/7_Withered.png" id="3_fjaro"]
 [ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="4_awyev"]
+[ext_resource type="Script" path="res://menus/credits_music_player.gd" id="4_f6mf2"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="4_yjrcf"]
 [ext_resource type="PackedScene" uid="uid://dnj1861erqbyf" path="res://Text/Box/ending_text_box.tscn" id="5_jnko3"]
 [ext_resource type="Texture2D" uid="uid://crk18badgkrd0" path="res://Art/Spotlight/Spotlight Overlay.png" id="6_ars6q"]
@@ -19,7 +20,7 @@ position = Vector2(-424, 88)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox"]
 stream = ExtResource("1_8ka7s")
-autoplay = true
+script = ExtResource("4_f6mf2")
 
 [node name="Background" parent="." instance=ExtResource("4_awyev")]
 z_index = -2

@@ -44,6 +44,5 @@ position = Vector2(-416, -184)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox2"]
 stream = ExtResource("1_iwq3x")
-autoplay = true
 
 [editable path="Background"]

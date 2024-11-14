@@ -3,6 +3,7 @@ class_name Final
 
 @export_category("Fade")
 @export var fade: BlackFade
+@export var music: AudioStreamPlayer
 
 @export_category("Final TextBox Text")
 @export var texts: Array = ["You made your choice.", "v"]
@@ -57,4 +58,5 @@ func start() -> void:
 
 	# wait an extra second for cinematic reasons
 	await get_tree().create_timer(2).timeout
+	MusicTracker.current_music_offset = music.get_playback_position()
 	get_tree().change_scene_to_file("res://menus/credits.tscn")

@@ -29,10 +29,11 @@ visible = false
 [node name="CellphoneNocall" parent="Background" index="5"]
 visible = false
 
-[node name="0PotDry2" parent="Background" node_paths=PackedStringArray("fade") instance=ExtResource("3_k2jjv")]
+[node name="0PotDry2" parent="Background" node_paths=PackedStringArray("fade", "music_player") instance=ExtResource("3_k2jjv")]
 position = Vector2(976, 528)
 sceneToOpenPath = "res://Game/game.tscn"
 fade = NodePath("../../BlackFadeCanvasLayer")
+music_player = NodePath("../../AudioStreamPlayer")
 
 [node name="PlantSFX" type="AudioStreamPlayer" parent="Background/0PotDry2"]
 stream = ExtResource("4_1jqq5")

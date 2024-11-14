@@ -134,5 +134,5 @@ func _split_name_and_message(line: String) -> Array:
 	return split
 	
 func _close() -> void:
-	BadEndingMusic.current_music_offset = audio_stream_player.get_playback_position()
+	MusicTracker.current_music_offset = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Endings/bad_final_ending.tscn")

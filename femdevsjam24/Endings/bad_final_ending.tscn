@@ -44,11 +44,12 @@ visible = false
 position = Vector2(960, 540)
 texture = ExtResource("6_ywuml")
 
-[node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("2_n11y4")]
+[node name="Final" parent="." node_paths=PackedStringArray("music", "plant_visual", "pot_visual") instance=ExtResource("2_n11y4")]
 offset_left = -1264.0
 offset_top = -368.0
 offset_right = -1264.0
 offset_bottom = -368.0
+music = NodePath("../TextBox/AudioStreamPlayer")
 texts = ["You made your choice.", "The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
 plant_visual_blossom = ExtResource("7_gu5b8")
 plant_visual_withered = ExtResource("8_8wylq")

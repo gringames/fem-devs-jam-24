@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 EventBus="*res://global/event_bus.gd"
 Hopes="*res://global/hopes.gd"
 EndingPlantState="*res://global/ending_plant_state.gd"
-BadEndingMusic="*res://global/bad_ending_music.gd"
+MusicTracker="*res://global/music_tracker.gd"
 
 [display]
 

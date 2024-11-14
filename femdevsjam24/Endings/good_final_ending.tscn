@@ -14,12 +14,13 @@
 [node name="GoodFinalEnding" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("3_n4dir")]
+[node name="Final" parent="." node_paths=PackedStringArray("music", "plant_visual", "pot_visual") instance=ExtResource("3_n4dir")]
 z_index = 14
 offset_left = -336.0
 offset_top = 192.0
 offset_right = 1568.0
 offset_bottom = 1280.0
+music = NodePath("../TextBox/AudioStreamPlayer")
 texts = ["The last tree on Earth thrives thanks to everyone's sacrifice,", "and so do humanity's hopes."]
 plant_visual_blossom = ExtResource("7_65dno")
 plant_visual_withered = ExtResource("5_rfphi")
