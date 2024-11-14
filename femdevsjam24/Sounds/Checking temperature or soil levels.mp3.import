@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djha1ux1v2a0y"
+path="res://.godot/imported/Checking temperature or soil levels.mp3-97265baa6c3d9b6217cfa2404cdecbcd.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Checking temperature or soil levels.mp3"
+dest_files=["res://.godot/imported/Checking temperature or soil levels.mp3-97265baa6c3d9b6217cfa2404cdecbcd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

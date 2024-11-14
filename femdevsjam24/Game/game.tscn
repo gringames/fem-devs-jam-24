@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2ffyvuyqw2vg"]
+[gd_scene load_steps=43 format=3 uid="uid://b2ffyvuyqw2vg"]
 
 [ext_resource type="Texture2D" uid="uid://0dclu50pqptn" path="res://Art/Counter/counter.png" id="1_ru2wo"]
 [ext_resource type="Texture2D" uid="uid://d3s4ubqdv63m4" path="res://Art/Counter/lamp.png" id="2_jsnd2"]
@@ -32,7 +32,12 @@
 [ext_resource type="AudioStream" uid="uid://cdevmiwe5aov6" path="res://Music/Day 6.mp3" id="20_6ua1p"]
 [ext_resource type="AudioStream" uid="uid://cqcfei7lid4my" path="res://Sounds/Off switch fluorescent light Short.mp3" id="21_g6cem"]
 [ext_resource type="PackedScene" uid="uid://cbtxacfpixmnd" path="res://Game/flicker.tscn" id="21_gp6uu"]
+[ext_resource type="Script" path="res://Game/button_sfx.gd" id="28_cci4g"]
+[ext_resource type="AudioStream" uid="uid://vfbj25dr5kcf" path="res://Sounds/Watering the plant Short.wav" id="29_xvfkk"]
+[ext_resource type="AudioStream" uid="uid://nshjqoer31n7" path="res://Sounds/Trimming plant.mp3" id="30_52juq"]
+[ext_resource type="AudioStream" uid="uid://djha1ux1v2a0y" path="res://Sounds/Checking temperature or soil levels.mp3" id="31_dxm7h"]
 [ext_resource type="Texture2D" uid="uid://buetfp1dgn2n4" path="res://Art/background.png" id="32_a84nj"]
+[ext_resource type="AudioStream" uid="uid://b1amalp4w42js" path="res://Sounds/Feed dropper pipette.mp3" id="32_g0wm8"]
 [ext_resource type="Texture2D" uid="uid://dmnrutn55i3cd" path="res://Art/Mock/water_btn.png" id="34_0ng3o"]
 [ext_resource type="Texture2D" uid="uid://ds43iiuw6qrdm" path="res://Art/Mock/trim_btn.png" id="35_s27dy"]
 [ext_resource type="Texture2D" uid="uid://dw168i6wgaoqj" path="res://Art/Mock/feed_btn.png" id="36_jewpw"]
@@ -151,6 +156,18 @@ fade_speed = 1.0
 
 [node name="Flicker" parent="Logic" instance=ExtResource("21_gp6uu")]
 position = Vector2(440, 184)
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="Logic" node_paths=PackedStringArray("watering_button", "trimming_button", "temperature_button", "feeding_button", "sfx_player")]
+script = ExtResource("28_cci4g")
+watering_button = NodePath("../../TaskButtons/WaterButton")
+trimming_button = NodePath("../../TaskButtons/TrimButton")
+temperature_button = NodePath("../../TaskButtons/CheckTempButton")
+feeding_button = NodePath("../../TaskButtons/FeedButton")
+sfx_player = NodePath(".")
+watering_sfx = ExtResource("29_xvfkk")
+trimming_sfx = ExtResource("30_52juq")
+temperature_sfx = ExtResource("31_dxm7h")
+feeding_sfx = ExtResource("32_g0wm8")
 
 [node name="TextBox" parent="." instance=ExtResource("6_rjoll")]
 visible = false

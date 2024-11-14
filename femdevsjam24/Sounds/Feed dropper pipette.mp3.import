@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1amalp4w42js"
+path="res://.godot/imported/Feed dropper pipette.mp3-365df39d646383320fa31e9ce40631cd.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Feed dropper pipette.mp3"
+dest_files=["res://.godot/imported/Feed dropper pipette.mp3-365df39d646383320fa31e9ce40631cd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

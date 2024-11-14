@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg5o067ywqve4"
+path="res://.godot/imported/planting potting digging.mp3-f22547de604c8a055e25f4f2f3f18792.mp3str"
+
+[deps]
+
+source_file="res://Sounds/planting potting digging.mp3"
+dest_files=["res://.godot/imported/planting potting digging.mp3-f22547de604c8a055e25f4f2f3f18792.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
