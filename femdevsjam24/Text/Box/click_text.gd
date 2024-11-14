@@ -19,6 +19,8 @@ class_name Final
 var index: int = 0
 var label: RichTextLabel
 
+var already_started: bool = false
+
 
 
 func _ready() -> void:
@@ -39,17 +41,20 @@ func _prepare_plant_visuals() -> void:
 				
 
 func start() -> void:
-	EventBus.connect("mouse_clicked", _next)
-	label.show()
-	_next()
-
-
-func _next() -> void:
-	if index == texts.size():
-		fade.fade_to_black()
-		await fade.fade_out_finished
-		get_tree().change_scene_to_file("res://menus/credits.tscn")
+	if already_started:
 		return
 	
-	label.text = "[b][center]" + texts[index]
-	index += 1
+	already_started = true
+	
+	for line in texts:
+		label.text = "[b][center]" + line
+		label.show()
+		fade.fade_from_black()
+		await fade.fade_in_finished
+		await get_tree().create_timer(1).timeout
+		fade.fade_to_black()
+		await fade.fade_out_finished
+
+	# wait an extra second for cinematic reasons
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://menus/credits.tscn")
