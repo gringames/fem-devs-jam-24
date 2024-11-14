@@ -40,7 +40,7 @@ var day_info: Dictionary = {
 			"The tree hasn't died yet, has it? That's great news. Sorry if I am a bit nervous about this. We need to make it work.",
 			"Anyway, let's go over your duties real quick. I need to get out to fix the damn vents that broke yesterday.",
 			"Keep the tree alive. I don't need to remind you this one, right?",
-			"Check your notepad if you aren't sure of what it needs.",
+			"Make sure you follow the care plan we prepared. Check your notepad if you don't remember what needs to be done each day.",
 			"Also, Sai said he would leave the newspaper on your desk when it arrives.",
 			"We'll receive it monthly now. I know it's a long time, but there isn't much we can do about it with how things are outside.",
 			"Lastly, when you are finished, for the love of God, do not forget to turn the lights off. We have NO energy to waste.",
