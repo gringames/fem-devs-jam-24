@@ -6,13 +6,14 @@ extends Node2D
 var plantSFX: AudioStreamPlayer
 
 func _ready():
-	$Clickable.connect("mouse_clicked_on_object", _start_fading_out)
+	$Button.connect("pressed", _start_fading_out)
 	get_parent().get_node("0PotDry").hide()
 	plantSFX = $PlantSFX
 
 
 func _start_fading_out() -> void:
-	plantSFX.play()
+	plantSFX.play(1.6)
+	await plantSFX.finished
 	fade.fade_to_black()
 	fade.connect("fade_out_finished", change_scene)
 

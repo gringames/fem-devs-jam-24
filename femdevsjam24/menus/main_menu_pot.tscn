@@ -2,14 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="1_oq6ly"]
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="2_fy5wt"]
-[ext_resource type="PackedScene" uid="uid://cr8ow5elky823" path="res://ClickableObjects/Clickable.tscn" id="2_okok4"]
+[ext_resource type="Texture2D" uid="uid://cj05jjcoa7byn" path="res://Art/Mock/seed_btn.png" id="3_246f8"]
 
 [node name="0PotDry2" type="Sprite2D"]
 position = Vector2(1000, 528)
 texture = ExtResource("1_oq6ly")
 script = ExtResource("2_fy5wt")
 
-[node name="Clickable" parent="." node_paths=PackedStringArray("visuals") instance=ExtResource("2_okok4")]
-position = Vector2(0, 256)
-scale = Vector2(29.7867, -16.9253)
-visuals = [NodePath("..")]
+[node name="Button" type="Button" parent="."]
+offset_left = -56.0
+offset_top = 264.0
+offset_right = 48.0
+offset_bottom = 368.0
+icon = ExtResource("3_246f8")

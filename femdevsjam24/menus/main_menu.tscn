@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl1gpg5puexqu" path="res://Game/Background.tscn" id="2_41n3b"]
 [ext_resource type="Script" path="res://menus/quit_game.gd" id="2_a1ba0"]
 [ext_resource type="PackedScene" uid="uid://dpjpp33w2ydhf" path="res://menus/main_menu_pot.tscn" id="3_k2jjv"]
-[ext_resource type="AudioStream" uid="uid://vfbj25dr5kcf" path="res://Sounds/Watering the plant Short.wav" id="4_j5auq"]
+[ext_resource type="AudioStream" uid="uid://bg5o067ywqve4" path="res://Sounds/planting potting digging.mp3" id="4_1jqq5"]
 [ext_resource type="PackedScene" uid="uid://cdbw55po5v68o" path="res://Game/black_fade.tscn" id="5_wm6mt"]
 [ext_resource type="FontFile" uid="uid://cfk57avok16na" path="res://Fonts/arsenal/Arsenal-Regular.otf" id="5_x1fmw"]
 [ext_resource type="AudioStream" uid="uid://co6mhkiea3kty" path="res://Music/Day 0 Soundscape Room Noise.mp3" id="7_ewkgf"]
@@ -35,7 +35,7 @@ sceneToOpenPath = "res://Game/game.tscn"
 fade = NodePath("../../BlackFadeCanvasLayer")
 
 [node name="PlantSFX" type="AudioStreamPlayer" parent="Background/0PotDry2"]
-stream = ExtResource("4_j5auq")
+stream = ExtResource("4_1jqq5")
 
 [node name="CreditsButton" type="Button" parent="."]
 visible = false
