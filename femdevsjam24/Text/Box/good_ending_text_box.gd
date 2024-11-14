@@ -155,7 +155,6 @@ func contBt():
 	
 func gotoGoodFinal():
 	BadEndingMusic.current_music_offset = 	audio_stream_player.get_playback_position()
-	print("current offset:", BadEndingMusic.current_music_offset)
 	get_tree().change_scene_to_file("res://Endings/good_final_ending.tscn")
 
 func gotoBadFinal():

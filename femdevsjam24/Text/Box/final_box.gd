@@ -40,7 +40,6 @@ func _ready() -> void:
 	appear()
 	
 	audio_stream_player =$AudioStreamPlayer
-	print("resuming music at", BadEndingMusic.current_music_offset)
 	audio_stream_player.play(BadEndingMusic.current_music_offset)
 
 
