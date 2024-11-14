@@ -31,6 +31,7 @@ var input_indicator: String = "%"
 
 var current_button: Button
 
+var audio_stream_player: AudioStreamPlayer
 
 func _ready() -> void:
 	text_label = $DialogueBox/Message
@@ -49,7 +50,7 @@ func _ready() -> void:
 	appear()
 	
 	EndingPlantState.final_plant_state = Plants.States.Withered
-	
+	audio_stream_player = $AudioStreamPlayer
 
 
 # PAGES --------------------------------------------------------------------------------------------
@@ -133,4 +134,5 @@ func _split_name_and_message(line: String) -> Array:
 	return split
 	
 func _close() -> void:
+	BadEndingMusic.current_music_offset = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Endings/bad_final_ending.tscn")

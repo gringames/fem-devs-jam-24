@@ -18,10 +18,10 @@ position = Vector2(0, 272)
 fade = NodePath("../BlackFadeCanvasLayer")
 final = NodePath("../Final")
 current_pages = Array[String](["Anton§You are nothing but an ungrateful and selfish prick!", "Don't you dare hung up on me. Don't you—"])
+resume_bad_music = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox"]
 stream = ExtResource("3_8behs")
-autoplay = true
 
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_f5b0h")]
 fade_speed = 0.5

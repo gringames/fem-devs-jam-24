@@ -11,10 +11,6 @@
 [node name="GoodEnding" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_iwq3x")
-autoplay = true
-
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_qb0wp")]
 fade_speed = 0.5
 auto_start = true
@@ -45,5 +41,9 @@ texture = ExtResource("6_ck1ae")
 
 [node name="TextBox2" parent="." instance=ExtResource("7_ji7wu")]
 position = Vector2(-416, -184)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox2"]
+stream = ExtResource("1_iwq3x")
+autoplay = true
 
 [editable path="Background"]

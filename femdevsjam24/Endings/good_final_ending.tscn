@@ -14,10 +14,6 @@
 [node name="GoodFinalEnding" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_y0pan")
-autoplay = true
-
 [node name="Final" parent="." node_paths=PackedStringArray("plant_visual", "pot_visual") instance=ExtResource("3_n4dir")]
 z_index = 14
 offset_left = -336.0
@@ -45,6 +41,10 @@ position = Vector2(-440, 80)
 fade = NodePath("../BlackFadeCanvasLayer")
 final = NodePath("../Final")
 current_pages = Array[String](["Anton§I always knew you had what it takes, doctor.", "Now I'll get the recognition I always deserved.", "Mizuki will be able to go back to her beloved city, and Sai will look back one day and be proud of what he accomplished.", "Of what we have accomplished.", "As for you... \"%\".", "That's what you wanted, right? It'll come to be as well. All thank to the decisions we were able to make.", "Bring the tree outside, doctor. Today, we make history."])
+resume_bad_music = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox"]
+stream = ExtResource("1_y0pan")
 
 [node name="Background" parent="." instance=ExtResource("5_0cj51")]
 z_index = -2

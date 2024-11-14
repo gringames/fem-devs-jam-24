@@ -10,16 +10,16 @@
 [node name="BadEnding" type="Node2D"]
 position = Vector2(424, 184)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_8ka7s")
-autoplay = true
-
 [node name="BlackFadeCanvasLayer" parent="." instance=ExtResource("4_yjrcf")]
 fade_speed = 0.5
 auto_start = true
 
 [node name="TextBox" parent="." instance=ExtResource("5_jnko3")]
 position = Vector2(-424, 88)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextBox"]
+stream = ExtResource("1_8ka7s")
+autoplay = true
 
 [node name="Background" parent="." instance=ExtResource("4_awyev")]
 z_index = -2

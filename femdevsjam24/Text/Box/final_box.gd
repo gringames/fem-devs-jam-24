@@ -20,6 +20,10 @@ var input_indicator: String = "%"
 
 var current_button: Button
 
+@export var resume_bad_music: bool = false
+var audio_stream_player: AudioStreamPlayer
+
+
 func _ready() -> void:
 	text_label = $DialogueBox/Message
 	name_label = $DialogueBox/Name
@@ -35,6 +39,9 @@ func _ready() -> void:
 	set_pages(current_pages)
 	appear()
 	
+	audio_stream_player =$AudioStreamPlayer
+	print("resuming music at", BadEndingMusic.current_music_offset)
+	audio_stream_player.play(BadEndingMusic.current_music_offset)
 
 
 # PAGES --------------------------------------------------------------------------------------------

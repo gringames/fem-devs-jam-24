@@ -45,6 +45,7 @@ var btn1_indicator: String = "#"
 var btn2_indicator: String = "&"
 
 var current_button: Button
+var audio_stream_player: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -63,6 +64,7 @@ func _ready() -> void:
 	appear()
 	
 	EndingPlantState.final_plant_state = Plants.States.Blossom
+	audio_stream_player = $AudioStreamPlayer
 
 
 # PAGES --------------------------------------------------------------------------------------------
@@ -152,6 +154,8 @@ func contBt():
 	continueBtn.hide()
 	
 func gotoGoodFinal():
+	BadEndingMusic.current_music_offset = 	audio_stream_player.get_playback_position()
+	print("current offset:", BadEndingMusic.current_music_offset)
 	get_tree().change_scene_to_file("res://Endings/good_final_ending.tscn")
 
 func gotoBadFinal():
