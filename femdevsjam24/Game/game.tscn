@@ -38,11 +38,11 @@
 [ext_resource type="AudioStream" uid="uid://djha1ux1v2a0y" path="res://Sounds/Checking temperature or soil levels.mp3" id="31_dxm7h"]
 [ext_resource type="Texture2D" uid="uid://buetfp1dgn2n4" path="res://Art/background.png" id="32_a84nj"]
 [ext_resource type="AudioStream" uid="uid://b1amalp4w42js" path="res://Sounds/Feed dropper pipette.mp3" id="32_g0wm8"]
-[ext_resource type="Texture2D" uid="uid://dmnrutn55i3cd" path="res://Art/Mock/water_btn.png" id="34_0ng3o"]
-[ext_resource type="Texture2D" uid="uid://ds43iiuw6qrdm" path="res://Art/Mock/trim_btn.png" id="35_s27dy"]
-[ext_resource type="Texture2D" uid="uid://dw168i6wgaoqj" path="res://Art/Mock/feed_btn.png" id="36_jewpw"]
-[ext_resource type="Texture2D" uid="uid://c1x6ytpeo8jqv" path="res://Art/Mock/check_temp_btn.png" id="37_5alt6"]
+[ext_resource type="Texture2D" uid="uid://cc5aegdacosbm" path="res://Art/ButtonImages/trim_button_icon.png" id="39_wrh6l"]
 [ext_resource type="PackedScene" uid="uid://bi7dw5pgb1mgr" path="res://Buttons/scalable_button.tscn" id="40_j07nt"]
+[ext_resource type="Texture2D" uid="uid://tknfdl4tq7tj" path="res://Art/ButtonImages/feed_button_icon.png" id="41_x8kcw"]
+[ext_resource type="Texture2D" uid="uid://b4tsogsejqjty" path="res://Art/ButtonImages/temp_button_icon.png" id="42_mi6es"]
+[ext_resource type="Texture2D" uid="uid://37inh6xdo5bb" path="res://Art/ButtonImages/water_button_icon.png" id="43_6e85m"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(424, 184)
@@ -200,20 +200,23 @@ article = NodePath("../NewspaperArticle")
 [node name="TaskButtons" type="Node" parent="."]
 
 [node name="TrimButton" type="Button" parent="TaskButtons"]
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = 271.0
-offset_right = 5.0
-offset_bottom = 375.0
+offset_left = -143.0
+offset_top = 221.0
+offset_right = 51.0
+offset_bottom = 415.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("35_s27dy")
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(94, 94)
+icon = ExtResource("39_wrh6l")
 
 [node name="ScalableButton" parent="TaskButtons/TrimButton" instance=ExtResource("40_j07nt")]
+change_pivot = false
 
 [node name="FeedButton" type="Button" parent="TaskButtons"]
 anchors_preset = 8
@@ -221,15 +224,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 29.0
-offset_top = 271.0
-offset_right = 133.0
-offset_bottom = 375.0
+offset_left = -15.0
+offset_top = 221.0
+offset_right = 180.0
+offset_bottom = 416.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("36_jewpw")
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(94, 94)
+icon = ExtResource("41_x8kcw")
 
 [node name="ScalableButton" parent="TaskButtons/FeedButton" instance=ExtResource("40_j07nt")]
+change_pivot = false
 
 [node name="CheckTempButton" type="Button" parent="TaskButtons"]
 anchors_preset = 8
@@ -237,15 +243,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 157.0
-offset_top = 271.0
-offset_right = 261.0
-offset_bottom = 375.0
+offset_left = 113.0
+offset_top = 221.0
+offset_right = 308.0
+offset_bottom = 416.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("37_5alt6")
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(94, 94)
+icon = ExtResource("42_mi6es")
 
 [node name="ScalableButton" parent="TaskButtons/CheckTempButton" instance=ExtResource("40_j07nt")]
+change_pivot = false
 
 [node name="WaterButton" type="Button" parent="TaskButtons"]
 anchors_preset = 8
@@ -253,13 +262,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = 271.0
-offset_right = -123.0
-offset_bottom = 375.0
+offset_left = -271.0
+offset_top = 221.0
+offset_right = -76.0
+offset_bottom = 416.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("34_0ng3o")
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(94, 94)
+icon = ExtResource("43_6e85m")
 
 [node name="ScalableButton" parent="TaskButtons/WaterButton" instance=ExtResource("40_j07nt")]
 position = Vector2(-1026.39, -291.37)
+change_pivot = false
