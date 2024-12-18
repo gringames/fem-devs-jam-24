@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bel1dyr6sigsc" path="res://Art/Plant/0_Pot_Dry.png" id="1_oq6ly"]
 [ext_resource type="Script" path="res://menus/fade_to_game.gd" id="2_fy5wt"]
-[ext_resource type="Texture2D" uid="uid://cj05jjcoa7byn" path="res://Art/Mock/seed_btn.png" id="3_246f8"]
+[ext_resource type="Texture2D" uid="uid://dloqx57iqd710" path="res://Art/ButtonImages/seed_button_icon.png" id="3_8tiob"]
 [ext_resource type="PackedScene" uid="uid://bi7dw5pgb1mgr" path="res://Buttons/scalable_button.tscn" id="4_6hj0n"]
 
 [node name="0PotDry2" type="Sprite2D"]
@@ -11,11 +11,15 @@ texture = ExtResource("1_oq6ly")
 script = ExtResource("2_fy5wt")
 
 [node name="Button" type="Button" parent="."]
-offset_left = -56.0
-offset_top = 264.0
-offset_right = 48.0
-offset_bottom = 368.0
-icon = ExtResource("3_246f8")
+offset_left = -520.0
+offset_top = -192.0
+offset_right = 514.0
+offset_bottom = 842.0
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(517, 517)
+icon = ExtResource("3_8tiob")
+flat = true
 
 [node name="ScalableButton" parent="Button" instance=ExtResource("4_6hj0n")]
 position = Vector2(56, -264)
+change_pivot = false

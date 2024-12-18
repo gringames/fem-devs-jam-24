@@ -200,20 +200,21 @@ article = NodePath("../NewspaperArticle")
 [node name="TaskButtons" type="Node" parent="."]
 
 [node name="TrimButton" type="Button" parent="TaskButtons"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -143.0
-offset_top = 221.0
-offset_right = 51.0
-offset_bottom = 415.0
+offset_left = -568.0
+offset_top = -204.0
+offset_right = 466.0
+offset_bottom = 830.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(94, 94)
+scale = Vector2(0.095, 0.095)
+pivot_offset = Vector2(517, 517)
 icon = ExtResource("39_wrh6l")
+flat = true
 
 [node name="ScalableButton" parent="TaskButtons/TrimButton" instance=ExtResource("40_j07nt")]
 change_pivot = false
@@ -224,15 +225,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = 221.0
-offset_right = 180.0
-offset_bottom = 416.0
+offset_left = -440.0
+offset_top = -204.0
+offset_right = 594.0
+offset_bottom = 830.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(94, 94)
+scale = Vector2(0.095, 0.095)
+pivot_offset = Vector2(517, 517)
 icon = ExtResource("41_x8kcw")
+flat = true
 
 [node name="ScalableButton" parent="TaskButtons/FeedButton" instance=ExtResource("40_j07nt")]
 change_pivot = false
@@ -243,15 +245,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 113.0
-offset_top = 221.0
-offset_right = 308.0
-offset_bottom = 416.0
+offset_left = -312.0
+offset_top = -204.0
+offset_right = 722.0
+offset_bottom = 830.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(94, 94)
+scale = Vector2(0.095, 0.095)
+pivot_offset = Vector2(517, 517)
 icon = ExtResource("42_mi6es")
+flat = true
 
 [node name="ScalableButton" parent="TaskButtons/CheckTempButton" instance=ExtResource("40_j07nt")]
 change_pivot = false
@@ -262,15 +265,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = 221.0
-offset_right = -76.0
-offset_bottom = 416.0
+offset_left = -696.0
+offset_top = -204.0
+offset_right = 338.0
+offset_bottom = 830.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(94, 94)
+scale = Vector2(0.095, 0.095)
+pivot_offset = Vector2(517, 517)
 icon = ExtResource("43_6e85m")
+flat = true
 
 [node name="ScalableButton" parent="TaskButtons/WaterButton" instance=ExtResource("40_j07nt")]
 position = Vector2(-1026.39, -291.37)
