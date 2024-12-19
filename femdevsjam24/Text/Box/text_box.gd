@@ -6,6 +6,8 @@ signal on_close
 @export var visible_by_default: bool = false
 @export var blibs: Array[AudioStream]
 
+var is_phone_box: bool = false
+
 var text_label: RichTextLabel
 var name_label: RichTextLabel
 
@@ -141,6 +143,8 @@ func _close() -> void:
 	disappear()
 	clear_text()
 	emit_signal("on_close")
+	if is_phone_box:
+		CallOpen.is_phone_box_open = false
 
 
 func _on_sent_hope() -> void:

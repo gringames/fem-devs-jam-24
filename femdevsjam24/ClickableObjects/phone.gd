@@ -26,6 +26,8 @@ func _ready() -> void:
 	ringing_phone.hide()
 	current_target_angle = shaking_angle
 	
+	text_box.is_phone_box = true;
+	
 	deactivate()
 
 
@@ -35,6 +37,9 @@ func _on_clicked() -> void:
 	_stop_shaking()
 	_play_pickup_sound()
 	deactivate()
+	CallOpen.is_phone_box_open = true
+	clickable.is_mouse_over = false
+	print("removing mouse focus from phone")
 
 
 func activate() -> void:

@@ -12,7 +12,11 @@ func _ready() -> void:
 		button.pivot_offset = Vector2(button.size / 2)
 
 func _scale_up() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	button.scale *= 1.2
 
 func _scale_down() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	button.scale /= 1.2
