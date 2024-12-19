@@ -39,7 +39,7 @@ func _on_clicked() -> void:
 	deactivate()
 	CallOpen.is_phone_box_open = true
 	clickable.is_mouse_over = false
-	print("removing mouse focus from phone")
+	clickable._scale_down()
 
 
 func activate() -> void:

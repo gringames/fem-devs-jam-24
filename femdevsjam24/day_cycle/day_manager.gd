@@ -365,26 +365,33 @@ func play_track_for_current_day() -> void:
 	
 	
 func _on_water_sapling() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	if todays_actions.has(Plants.Tasks.Water):
-		print("I shouldn't waste water")
 		return
 	todays_actions.push_back(Plants.Tasks.Water)
 	plant._get_wet()
 
 	
 func _on_feed_sapling() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	if todays_actions.has(Plants.Tasks.Feed):
 		return
 	todays_actions.push_back(Plants.Tasks.Feed)
 	
 
 func _on_trim_sapling() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	if todays_actions.has(Plants.Tasks.Trim):
 		return
 	todays_actions.push_back(Plants.Tasks.Trim)
 	
 
 func _on_check_temperature() -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	if todays_actions.has(Plants.Tasks.CheckTemperature):
 		return
 	todays_actions.push_back(Plants.Tasks.CheckTemperature)

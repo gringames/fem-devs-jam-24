@@ -35,5 +35,7 @@ func _play_feed_sfx() -> void:
 
 
 func _play_sfx(sfx: AudioStream, offset: float = 0) -> void:
+	if CallOpen.is_phone_box_open:
+		return
 	sfx_player.stream = sfx
 	sfx_player.play(offset)
