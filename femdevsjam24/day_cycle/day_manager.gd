@@ -332,15 +332,15 @@ func _set_up_task_list(content) -> void:
 
 func _create_tasks_checklist(tasks: Array) -> String:
 	if tasks.is_empty():
-		return "\t1) Turn off the lights."
+		return "1) Turn off the lights."
 	
 	var checklist: String = "Tasks for today:\n"
 	var task_counter: int = 1
 	
 	for task in tasks:
-		checklist +=  "\t" + str(task_counter) + ") " + _task_to_string(task) + "\n"
+		checklist +=  str(task_counter) + ") " + _task_to_string(task) + "\n"
 		task_counter += 1
-	return checklist + "\t" + str(task_counter) + ") Turn off the lights."
+	return checklist + str(task_counter) + ") Turn off the lights."
 
 
 func _task_to_string(task: Plants.Tasks) -> String:
